@@ -5,12 +5,7 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 ## Requirements
 
 * Installed PHP on OS-side.
-* Installed composer
-  * Download composer [here](https://getcomposer.org/download/).
-  * execute `sudo mv ~/Downloads/composer.phar /usr/local/bin/composer`.
-  * execute `sudo chmod 777 /usr/local/bin/composer`
-  
-Now try calling `composer`, it should work.
+* Installed [composer](https://getcomposer.org/download/).
 
 For developers: Visual Studio Code with installed plugins for PHP Development described [here](https://code.visualstudio.com/docs/languages/php).
 
