@@ -11,8 +11,19 @@
         </testsuite>
     </testsuites>
     <filter>
-        <blacklist>
-            <directory>./vendor</directory>
-        </blacklist>
+         <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+            <exclude>
+                    <directory suffix=".php">./vendor/</directory>
+                </exclude>
+        </whitelist>
     </filter>
+    <logging>
+        <log type="coverage-html" target="./report/text" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-clover" target="./report/coverage.xml"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+        <log type="junit" target="./report/logfile.xml"/>
+        <log type="testdox-html" target="./report/testdox.html"/>
+        <log type="testdox-text" target="./report/testdox.txt"/>
+    </logging>
 </phpunit>
