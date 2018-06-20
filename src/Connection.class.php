@@ -1,10 +1,10 @@
 <?php
 /**
- * ISPAPI
- * Copyright © 1API
+ * HEXONET
+ * Copyright © HEXONET
  */
 
-namespace ISPAPI;
+namespace HEXONET;
 
 /**
  * Function connect
@@ -12,7 +12,7 @@ namespace ISPAPI;
  *
  * @param array $params The credentials for the connection
  * @throws Exception Throws exception when credentials missing
- * @return \ISPAPI\Connection A connection to the API Server
+ * @return \HEXONET\Connection A connection to the API Server
  */
 function connect($params){
 	if(!isset($params)){
@@ -23,9 +23,9 @@ function connect($params){
 
 
 /**
- * ISPAPI Connection
+ * HEXONET Connection
  *
- * @package ISPAPI
+ * @package HEXONET
  */
 class Connection{
 

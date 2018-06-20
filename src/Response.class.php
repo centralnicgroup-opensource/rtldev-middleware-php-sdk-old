@@ -1,18 +1,18 @@
 <?php 
 /**
- * ISPAPI
- * Copyright © 1API
+ * HEXONET
+ * Copyright © HEXONET
  */
 
-namespace ISPAPI;
+namespace HEXONET;
 use ArrayAccess;
 use Iterator;
 use Countable;
 
 /**
- * ISPAPI Response
+ * HEXONET Response
  * 
- * @package ISPAPI
+ * @package HEXONET
  */
 class Response implements ArrayAccess, Iterator, Countable   {
 

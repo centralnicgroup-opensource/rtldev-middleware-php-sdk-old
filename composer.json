@@ -1,0 +1,48 @@
+{
+	"name": "hexonet/php-sdk",
+	"type": "library",
+	"description": "API connector library for the insanely fast HEXONET backend API",
+	"keywords": [
+		"SDK",
+		"api",
+		"connector",
+		"hexonet",
+		"domain",
+		"ssl",
+		"domain",
+		"isp",
+		"ispapi",
+		"cert",
+		"dns",
+		"backorder",
+		"premium",
+		"preregistration",
+		"registration",
+		"application"
+	],
+	"homepage": "https://github.com/hexonet/php-sdk",
+	"readme": "README.md",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Anthony Schneider",
+			"email": "anthonys@hexonet.net",
+			"homepage": "https://hexonet.net",
+			"role": "Developer"
+		},
+		{
+			"name": "Kai Schwarz",
+			"email": "kschwarz@hexonet.net",
+			"homepage": "https://hexonet.net",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.0.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"HEXONET\\": "src/"
+		}
+	}
+}
