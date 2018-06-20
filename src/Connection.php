@@ -13,12 +13,12 @@ namespace HEXONET;
  * Returns a Connection object connected to the API Server (URL, ENTITY, LOGIN, PASSWORD are mandatory to connect the server, ROLE ans USER are optional)
  *
  * @param array $params The credentials for the connection
- * @throws Exception Throws exception when credentials missing
+ * @throws \Exception Throws exception when credentials missing
  * @return \HEXONET\Connection A connection to the API Server
  */
-function connect($params){
-	if(!isset($params)){
-		throw new Exception('Credentials missing');
+function connect($params = array()){
+	if(empty($params)){
+		throw new \Exception('Credentials missing');
 	}
 	return new Connection($params);
 }

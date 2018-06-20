@@ -4,7 +4,7 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 
 ## Requirements
 
-* Installed php plus php-xml, php-mbstring, php-xdebug on OS-side.
+* Installed php plus php-xml, php-mbstring, php-xdebug, php-curl on OS-side.
 * Installed [composer](https://getcomposer.org/download/).
 
 For developers: Visual Studio Code with installed plugins for PHP Development described [here](https://code.visualstudio.com/docs/languages/php).
