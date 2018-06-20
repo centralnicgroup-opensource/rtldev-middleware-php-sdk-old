@@ -4,7 +4,7 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 
 ## Requirements
 
-Installed PHP5++ on OS-side.
+Installed PHP on OS-side.
 For developers: Visual Studio Code with installed plugins for PHP Development described [here](https://code.visualstudio.com/docs/languages/php).
 
 ## Getting Started
