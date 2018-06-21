@@ -208,7 +208,7 @@ class Response implements ArrayAccess, Iterator, Countable   {
 	 * @param int $offset An array key
 	 */
 	public function offsetExists($offset) {
-		if ( preg_match('/^[0-9]+$/', $offset) ) {
+		if ( preg_match('/^[0-9]+$/', $offset . "") ) {
 			$list = $this->as_list();
 			return isset($list[$offset]);
 		}
@@ -232,7 +232,7 @@ class Response implements ArrayAccess, Iterator, Countable   {
 	 * @param int $offset An array key
 	 */
 	public function offsetGet($offset) {
-		if ( preg_match('/^[0-9]+$/', $offset) ) {
+		if ( preg_match('/^[0-9]+$/', $offset . "") ) {
 			$list = $this->as_list();
 			return $list[$offset];
 		}
@@ -347,7 +347,7 @@ class Response implements ArrayAccess, Iterator, Countable   {
 	 */
 	public function nextpage(){
 		$list_hash = $this->as_list_hash();
-		return $list_hash["NEXTPAGE"];
+		return array_key_exists("NEXTPAGE", $list_hash) ? $list_hash["NEXTPAGE"] : null;
 	}
 	
 	/**
@@ -357,7 +357,7 @@ class Response implements ArrayAccess, Iterator, Countable   {
 	 */
 	public function nextpagefirst(){
 		$list_hash = $this->as_list_hash();
-		return $list_hash["NEXTPAGEFIRST"];
+		return array_key_exists("NEXTPAGEFIRST", $list_hash) ? $list_hash["NEXTPAGEFIRST"] : null;
 	}
 	
 	/**
@@ -367,7 +367,7 @@ class Response implements ArrayAccess, Iterator, Countable   {
 	 */
 	public function lastpagefirst(){
 		$list_hash = $this->as_list_hash();
-		return $list_hash["LASTPAGEFIRST"];
+		return array_key_exists("LASTPAGEFIRST", $list_hash) ? $list_hash["LASTPAGEFIRST"] : null;
 	}
 	
 	/**

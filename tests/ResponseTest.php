@@ -37,4 +37,84 @@ final class ResponseTest extends TestCase
         $this->assertEquals("659", $tmp['USERINDEX'], $msg);
         $this->assertEquals("199", $tmp['PARENTUSERINDEX'], $msg);
     }
+
+    public function testResponseFormatFurtherCoverage() : void
+    {
+        $api = HEXONET\connect(array(
+            "url" => "https://coreapi.1api.net/api/call.cgi",
+            "entity" => "1234",
+            "login" => "test.user",
+            "password" => "test.passw0rd"
+        ));      
+        $r = $api->call(array("COMMAND" => "GetUserIndex"));
+        $str = $r->as_string();
+        $this->assertInternalType("string", $str);
+
+        $props = $r->properties();
+        $this->assertInternalType("array", $props);
+        $this->assertArrayHasKey('USERINDEX', $props);
+        $this->assertArrayHasKey('PARENTUSERINDEX', $props);
+        $this->assertCount(1, $props['USERINDEX']);
+        $this->assertCount(1, $props['PARENTUSERINDEX']);
+        $this->assertEquals("659", $props['USERINDEX'][0]);
+        $this->assertEquals("199", $props['PARENTUSERINDEX'][0]);
+
+        $this->assertEquals(true, $r->is_success());
+        $this->assertEquals(false, $r->is_tmp_error());
+
+        $this->assertEquals(null, $r->__get("idontexist"));
+
+        $r->offsetSet(0, "value");//NOT implemented BUT existing
+        $r->offsetUnset(0);//NOT implemented BUT existing
+
+        $this->assertEquals(true, $r->offsetExists(0));
+        $this->assertEquals(true, $r->offsetExists("CODE"));
+
+        $row = $r->offsetGet(0);
+        $this->assertInternalType("array", $row);
+        $this->assertArrayHasKey('USERINDEX', $row);
+        $this->assertArrayHasKey('PARENTUSERINDEX', $row);
+        $this->assertEquals("659", $row['USERINDEX']);
+        $this->assertEquals("199", $row['PARENTUSERINDEX']);
+
+        $this->assertEquals("200", $r->offsetGet("CODE"));
+
+        $cols = $r->columns();
+        $this->assertInternalType("array", $cols);
+        $this->assertCount(2, $cols);
+        $this->assertContainsOnly("string", $cols);
+        $this->assertContains("USERINDEX", $cols);
+        $this->assertContains("PARENTUSERINDEX", $cols);
+
+        $this->assertEquals(0, $r->first());
+        // I would not expect the following to be correct
+        // ----- we might review this ------------------------
+        $this->assertEquals(-1, $r->last());//expecting 1 here
+        $this->assertEquals(0, $r->count());//expecting 1 here
+        $this->assertEquals(0, $r->total());//expecting 1 here
+        $this->assertEquals(0, $r->pages());//expecting 1 here
+        $this->assertEquals(-1, $r->lastpagefirst());//-1 ???
+        // ---------------------------------------------------
+        $this->assertEquals(1, $r->limit());
+        $this->assertEquals(1, $r->page());
+        $this->assertEquals(null, $r->prevpage());
+        $this->assertEquals(null, $r->nextpage());
+        $this->assertEquals(null, $r->prevpagefirst());
+        $this->assertEquals(null, $r->nextpagefirst());        
+        
+        $row = $r->rewind();
+        $this->assertInternalType("array", $row);
+        $this->assertArrayHasKey('USERINDEX', $row);
+        $this->assertArrayHasKey('PARENTUSERINDEX', $row);
+        $this->assertEquals("659", $row['USERINDEX']);
+        $this->assertEquals("199", $row['PARENTUSERINDEX']);
+
+        $row2 = $r->current();
+        $this->assertEquals($row, $row2);
+
+        $this->assertEquals(0, $r->key());
+        $r->next();
+        $this->assertEquals(null, $r->current());
+        $this->assertEquals(null, $r->valid());
+    }
 }

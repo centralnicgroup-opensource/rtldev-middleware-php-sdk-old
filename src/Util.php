@@ -106,7 +106,6 @@ class Util {
 	 */
 	public static function response_to_list_hash ($response) {
 
-		
 		$list = array(
 				"FIRST" => 0,
 				"PAGE" => 1,
@@ -183,7 +182,7 @@ class Util {
 	 * @return int A Unix-Timestamp
 	 */
 	public static function timesql($sqldatetime){
-		$datetime = new DateTime($sqldatetime);
+		$datetime = new \DateTime($sqldatetime);
 		return $datetime->format('U');
 	}
 	
