@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor>
+    <title>PHP SDK by HEXONET</title>
+    <parser>
+        <default-package-name>PHP SDK</default-package-name>
+        <target>build/api-cache</target>
+         <markers>
+            <item>TODO</item>
+            <item>FIXME</item>
+        </markers>
+        <extensions>
+            <extension>php</extension>
+        </extensions>
+    </parser>
+    <transformer>
+        <target>build/api</target>
+    </transformer>
+    <files>
+        <directory>.</directory>
+        <ignore>tests/*</ignore>
+        <ignore>build/*</ignore>
+        <ignore>var/*</ignore>
+        <ignore>vendor/*</ignore>
+        <ignore>report/*</ignore>
+    </files>
+    <plugins>
+        <plugin path="Core" />
+    </plugins>
+    <transformations>
+        <template name="responsive" />
+    </transformations>
+</phpdocumentor>

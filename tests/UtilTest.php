@@ -85,7 +85,7 @@ final class UtilTest extends TestCase
             "LIMIT" => 10
         ));
         $this->assertInstanceOf(HEXONET\Response::class, $r);
-        $list = $r->as_list();
+        $list = $r->asList();
         $this->assertInternalType("array", $list);
         $this->assertCount(10, $list);
     }
@@ -106,7 +106,7 @@ final class UtilTest extends TestCase
             "LIMIT" => 10
         ));
         $this->assertInstanceOf(HEXONET\Response::class, $r);
-        $list = $r->as_list();
+        $list = $r->asList();
         $this->assertInternalType("array", $list);
         $this->assertCount(10, $list);
     }
@@ -128,25 +128,25 @@ final class UtilTest extends TestCase
 
     public function testurlencode() : void
     {
-        $enc = HEXONET\Util::url_encode("asdf&1234");
+        $enc = HEXONET\Util::urlEncode("asdf&1234");
         $this->assertEquals("asdf%261234", $enc);
     }
 
     public function testurldecode() : void
     {
-        $dec = HEXONET\Util::url_decode("asdf%261234");
+        $dec = HEXONET\Util::urlDecode("asdf%261234");
         $this->assertEquals("asdf&1234", $dec);
     }
 
     public function testbase64encode() : void
     {
-        $enc = HEXONET\Util::base64_encode("iamnotencoded");
+        $enc = HEXONET\Util::base64Encode("iamnotencoded");
         $this->assertEquals("aWFtbm90ZW5jb2RlZA==", $enc);
     }
 
     public function testbase64decode() : void
     {
-        $dec = HEXONET\Util::base64_decode("aWFtbm90ZW5jb2RlZA==");
+        $dec = HEXONET\Util::base64Decode("aWFtbm90ZW5jb2RlZA==");
         $this->assertEquals("iamnotencoded", $dec);
     }
 }

@@ -4,3 +4,5 @@ basic-test.php
 /vendor/
 composer.lock
 /report/
+/docs/
+/build/

@@ -4,8 +4,11 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 
 ## Requirements
 
-* Installed php plus php-xml, php-mbstring, php-xdebug, php-curl on OS-side.
+* Installed php plus php-xml, php-mbstring, php-xdebug, php-curl, php-intl, graphviz on OS-side.
 * Installed [composer](https://getcomposer.org/download/).
+* Installed [phpDocumentor.phar](https://github.com/phpDocumentor/phpDocumentor2/releases) under /usr/local/bin.
+
+Make sure phpDocumentor.phar is executable.
 
 For developers: Visual Studio Code with installed plugins for PHP Development described [here](https://code.visualstudio.com/docs/languages/php).
 
@@ -20,17 +23,21 @@ Now you can already start working on the project.
 
 ### How to use this module in your project
 
-... TODO ...
+Run `composer require "hexonet/php-sdk:1.0.0"`. You may check packagist/github for a newer release version.
+In your script simply use `require 'vendor/autoload.php';` or `require 'vendor/hexonet/php-sdk';`
 
 ## Development
 
-### Run Tests
+### Run Unit Tests and Code Styling Check
 
-... TODO ...
+Run `composer run-script test`.
+First this executes all automated tests which can be found in subfolder "tests".
+Then it uses PHPCBF to autfix source code styling issues.
+Then it uses PHPCS to check if there are still styling issues left and displays them.
 
 ### Release an Update
 
-Simply make a PR / merge request.
+Simply make a PR / merge request. We care about versioning.
 
 ## Contributing
 
@@ -42,7 +49,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Anthony Schneider** - *lead development* - [ISharky](https://github.com/isharky)
+* **Anthony Schneider** - *development* - [ISharky](https://github.com/isharky)
 * **Kai Schwarz** - *development* - [PapaKai](https://github.com/papakai)
 
 See also the list of [contributors](https://github/hexonet/php-sdk/graphs/contributors) who participated in this project.
@@ -63,4 +70,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Documentation
 
-... TODO ...
+Run `composer run-script docs`. It calls /usr/local/bin/phpDocumentor.phar which uses its config file phpdoc.dist.xml.
+Documentation can be found under build/api.

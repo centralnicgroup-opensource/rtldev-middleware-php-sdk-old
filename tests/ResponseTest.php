@@ -47,7 +47,7 @@ final class ResponseTest extends TestCase
             "password" => "test.passw0rd"
         ));      
         $r = $api->call(array("COMMAND" => "GetUserIndex"));
-        $str = $r->as_string();
+        $str = $r->asString();
         $this->assertInternalType("string", $str);
 
         $props = $r->properties();
@@ -59,8 +59,8 @@ final class ResponseTest extends TestCase
         $this->assertEquals("659", $props['USERINDEX'][0]);
         $this->assertEquals("199", $props['PARENTUSERINDEX'][0]);
 
-        $this->assertEquals(true, $r->is_success());
-        $this->assertEquals(false, $r->is_tmp_error());
+        $this->assertEquals(true, $r->isSuccess());
+        $this->assertEquals(false, $r->isTmpError());
 
         $this->assertEquals(null, $r->__get("idontexist"));
 
