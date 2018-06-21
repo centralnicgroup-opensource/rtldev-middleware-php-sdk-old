@@ -9,23 +9,6 @@ declare(strict_types=1);
 namespace HEXONET;
 
 /**
- * Function connect
- * Returns a Connection object connected to the API Server (URL, ENTITY, LOGIN, PASSWORD are mandatory to connect the server, ROLE ans USER are optional)
- *
- * @param array $params The credentials for the connection
- * @throws \Exception Throws exception when credentials missing
- * @return \HEXONET\Connection A connection to the API Server
- */
-function connect($params = array())
-{
-    if (empty($params)) {
-        throw new \Exception('Credentials missing');
-    }
-    return new Connection($params);
-}
-
-
-/**
  * HEXONET Connection
  *
  * @package HEXONET
@@ -162,5 +145,21 @@ class Connection
     {
         $response = $this->callRaw($command, $config);
         return new Response($response);
+    }
+
+    /**
+     * Function connect
+     * Returns a Connection object connected to the API Server (URL, ENTITY, LOGIN, PASSWORD are mandatory to connect the server, ROLE ans USER are optional)
+     *
+     * @param array $params The credentials for the connection
+     * @throws \Exception Throws exception when credentials missing
+     * @return \HEXONET\Connection A connection to the API Server
+     */
+    public static function connect($params = array())
+    {
+        if (empty($params)) {
+            throw new \Exception('Credentials missing');
+        }
+        return new Connection($params);
     }
 }

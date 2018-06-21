@@ -8,7 +8,7 @@ final class UtilTest extends TestCase
 
     public function testCommandEncodeWithNestedCMDArray() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -31,7 +31,7 @@ final class UtilTest extends TestCase
 
     public function testCommandEncodeWithCMDArray() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -54,7 +54,7 @@ final class UtilTest extends TestCase
 
     public function testResponseToHashFromListCMD() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -71,7 +71,7 @@ final class UtilTest extends TestCase
 
     public function testResponseToListHashFromListCMD() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -92,7 +92,7 @@ final class UtilTest extends TestCase
 
     public function testResponseToListHashFromListCMDPage2() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",

@@ -8,7 +8,7 @@ final class ResponseTest extends TestCase
     public function testResponseFormat() : void
     {
         $msg = "testResponseFormat: assertion failed";
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -40,7 +40,7 @@ final class ResponseTest extends TestCase
 
     public function testResponseFormatFurtherCoverage() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",

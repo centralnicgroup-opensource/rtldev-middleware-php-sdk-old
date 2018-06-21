@@ -9,12 +9,12 @@ final class ConnectionTest extends TestCase
     {
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Credentials missing');
-        $api = HEXONET\connect();
+        $api =  HEXONET\Connection::connect();
     }
 
     public function testGlobalConnectMethodNoUser() : void
     {
-        $api = HEXONET\connect(array(
+        $api = HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -28,7 +28,7 @@ final class ConnectionTest extends TestCase
 
     public function testGlobalConnectMethodUser() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -44,7 +44,7 @@ final class ConnectionTest extends TestCase
 
     public function testGlobalConnectMethodRole() : void
     {
-        $api = HEXONET\connect(array(
+        $api = HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
@@ -59,7 +59,7 @@ final class ConnectionTest extends TestCase
 
     public function testCallConfigParameter() : void
     {
-        $api = HEXONET\connect(array(
+        $api =  HEXONET\Connection::connect(array(
             "url" => "https://coreapi.1api.net/api/call.cgi",
             "entity" => "1234",
             "login" => "test.user",
