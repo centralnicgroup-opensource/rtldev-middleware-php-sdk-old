@@ -62,11 +62,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Session based API Communication
 
-... TODO ...
+Not yet available, this needs a review of the SDK.
 
 ### Sessionless API Communication
 
-... TODO ...
+Have an eye on our [PHP SDK Demo App](https://github.com/hexonet/php-sdk-demo).
 
 ## Documentation
 
