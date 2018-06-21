@@ -2,7 +2,6 @@
 /tests/logs/*.log
 basic-test.php
 /vendor/
-composer.lock
 /report/
 /docs/
 /build/
