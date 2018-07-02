@@ -21,7 +21,7 @@ For developers: Visual Studio Code with installed plugins for PHP Development de
 
 ## Getting Started
 
-Clone the git repository into your standard go folder structure by  `git clone https://github.com/hexonet/php-sdk`.
+Clone the git repository into your standard git folder by  `git clone https://github.com/hexonet/php-sdk`.
 We have also a demo app available showing how to integrate and use our SDK. See [here](https://github.com/hexonet/php-sdk-demo).
 
 ### For development purposes
