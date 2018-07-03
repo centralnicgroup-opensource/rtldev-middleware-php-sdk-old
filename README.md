@@ -72,8 +72,3 @@ See also the list of [contributors](https://github/hexonet/php-sdk/graphs/contri
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Documentation
-
-Run `composer run-script docs`. It calls /usr/local/bin/phpDocumentor.phar which uses its config file phpdoc.dist.xml.
-Documentation can be found under build/api.
