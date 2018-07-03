@@ -21,11 +21,7 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 
 ### Requirements
 
-* Installed php plus php-xml, php-mbstring, php-xdebug, php-curl, php-intl, graphviz on OS-side.
 * Installed [composer](https://getcomposer.org/download/).
-* Installed [phpDocumentor.phar](https://github.com/phpDocumentor/phpDocumentor2/releases) under /usr/local/bin.
-
-Make sure phpDocumentor.phar is executable.
 
 ### Download from packagist
 
