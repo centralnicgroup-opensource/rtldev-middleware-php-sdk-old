@@ -9,7 +9,17 @@
 
 This module is a connector library for the insanely fast HEXONET Backend API. For further informations visit our [homepage](http://hexonet.net) and do not hesitate to contact us.
 
-## Requirements
+## Resources
+
+* [Usage Guide](https://github.com/hexonet/php-sdk/blob/master/README.md#how-to-use-this-module-in-your-project)
+* [SDK Documenation](https://rawgit.com/hexonet/php-sdk/master/target/site/apidocs/net/hexonet/apiconnector/package-summary.html)
+* [HEXONET Backend API Documentation](https://github.com/hexonet/hexonet-api-documentation/tree/master/API)
+* [Release Notes](https://github.com/hexonet/php-sdk/releases)
+* [Development Guide](https://github.com/hexonet/php-sdk/wiki/Development-Guide)
+
+## How to use this module in your project
+
+### Requirements
 
 * Installed php plus php-xml, php-mbstring, php-xdebug, php-curl, php-intl, graphviz on OS-side.
 * Installed [composer](https://getcomposer.org/download/).
@@ -17,42 +27,26 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 
 Make sure phpDocumentor.phar is executable.
 
-For developers: Visual Studio Code with installed plugins for PHP Development described [here](https://code.visualstudio.com/docs/languages/php).
+### Download from packagist
 
-## Getting Started
+This module is available on the [PHP Package Registry](https://packagist.org/packages/hexonet/php-sdk).
 
-Clone the git repository into your standard git folder by  `git clone https://github.com/hexonet/php-sdk`.
-We have also a demo app available showing how to integrate and use our SDK. See [here](https://github.com/hexonet/php-sdk-demo).
-
-### For development purposes
-
-Now you can already start working on the project.
-
-### How to use this module in your project
-
-Run `composer require "hexonet/php-sdk:1.0.0"`. You may check packagist/github for a newer release version.
+Run `composer require "hexonet/php-sdk:1.0.0"`. You find the available version listed on the registry page.
 In your script simply use `require 'vendor/autoload.php';` or `require 'vendor/hexonet/php-sdk';`
 
-## Development
+### Usage Examples
 
-### Run Unit Tests and Code Styling Check
+#### Session based API Communication
 
-Run `composer run-script test`.
-First this executes all automated tests which can be found in subfolder "tests".
-Then it uses PHPCBF to autfix source code styling issues.
-Then it uses PHPCS to check if there are still styling issues left and displays them.
+Not yet available, this needs a review of the SDK.
 
-### Release an Update
+#### Sessionless API Communication
 
-Simply make a PR / merge request. We care about versioning.
+Have an eye on our [PHP SDK Demo App](https://github.com/hexonet/php-sdk-demo).
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/hexonet/php-sdk/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/hexonet/php-sdk/tags).
+Please read [our development guide](https://github.com/hexonet/java-sdk/wiki/Development-Guide) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
@@ -63,17 +57,7 @@ See also the list of [contributors](https://github/hexonet/php-sdk/graphs/contri
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## How-to-use Examples
-
-### Session based API Communication
-
-Not yet available, this needs a review of the SDK.
-
-### Sessionless API Communication
-
-Have an eye on our [PHP SDK Demo App](https://github.com/hexonet/php-sdk-demo).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Documentation
 
