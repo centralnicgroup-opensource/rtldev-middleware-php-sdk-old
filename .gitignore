@@ -5,3 +5,7 @@ basic-test.php
 /report/
 /docs/
 /build/
+
+!build/
+build/*
+!build/api
