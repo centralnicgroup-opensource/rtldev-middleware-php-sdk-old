@@ -41,7 +41,22 @@ Not yet available, this needs a review of the SDK.
 
 #### Sessionless API Communication
 
-Have an eye on our [PHP SDK Demo App](https://github.com/hexonet/php-sdk-demo).
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+// --- SESSIONLESS API COMMUNICATION ---
+$api = \HEXONET\Connection::connect(array(
+    "url" => "https://coreapi.1api.net/api/call.cgi",
+    "login" => "test.user",
+    "password" => "test.passw0rd",
+    "entity" => "1234"
+));
+
+$r = $api->call(array(
+    "COMMAND" => "StatusAccount"
+));
+echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>";
+```
 
 ## Contributing
 
