@@ -29,8 +29,11 @@ This module is available on the [PHP Package Registry](https://packagist.org/pac
 
 Run `composer require "hexonet/php-sdk:1.0.0"`. You find the available version listed on the registry page.
 In your script simply use `require 'vendor/autoload.php';` or `require 'vendor/hexonet/php-sdk';`
+See our demonstration app which you can find [here](https://github.com/hexonet/php-sdk-demo).
 
 ### Usage Examples
+
+Please have an eye on our [HEXONET Backend API documentation](https://github.com/hexonet/hexonet-api-documentation/tree/master/API). Here you can find information on available Commands and their response data.
 
 #### Session based API Communication
 
