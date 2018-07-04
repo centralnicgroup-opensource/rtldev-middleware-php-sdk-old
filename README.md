@@ -67,7 +67,7 @@ Please read [our development guide](https://github.com/hexonet/java-sdk/wiki/Dev
 * **Anthony Schneider** - *development* - [ISharky](https://github.com/isharky)
 * **Kai Schwarz** - *development* - [PapaKai](https://github.com/papakai)
 
-See also the list of [contributors](https://github/hexonet/php-sdk/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/hexonet/php-sdk/graphs/contributors) who participated in this project.
 
 ## License
 
