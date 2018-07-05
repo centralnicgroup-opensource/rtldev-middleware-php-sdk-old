@@ -50,7 +50,8 @@ $api = \HEXONET\Connection::connect(array(
     "url" => "https://coreapi.1api.net/api/call.cgi",
     "login" => "test.user",
     "password" => "test.passw0rd",
-    "entity" => "1234"
+    "entity" => "1234",
+    //"remoteaddr" => "1.2.3.4" //optional: use this in case of ip filter setting
 ));
 
 $r = $api->call(array(
