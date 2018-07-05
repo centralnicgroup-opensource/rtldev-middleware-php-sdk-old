@@ -19,6 +19,8 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 
 ## How to use this module in your project
 
+We have also a demo app available showing how to integrate and use our SDK. See [here](https://github.com/hexonet/php-sdk-demo).
+
 ### Requirements
 
 * Installed [composer](https://getcomposer.org/download/).
@@ -29,7 +31,6 @@ This module is available on the [PHP Package Registry](https://packagist.org/pac
 
 Run `composer require "hexonet/php-sdk:1.0.0"`. You find the available version listed on the registry page.
 In your script simply use `require 'vendor/autoload.php';` or `require 'vendor/hexonet/php-sdk';`
-See our demonstration app which you can find [here](https://github.com/hexonet/php-sdk-demo).
 
 ### Usage Examples
 
