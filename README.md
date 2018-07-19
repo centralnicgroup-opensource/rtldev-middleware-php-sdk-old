@@ -30,7 +30,7 @@ We have also a demo app available showing how to integrate and use our SDK. See 
 
 This module is available on the [PHP Package Registry](https://packagist.org/packages/hexonet/php-sdk).
 
-Run `composer require "hexonet/php-sdk:1.0.0"`. You find the available version listed on the registry page.
+Run `composer require "hexonet/php-sdk:*"` to get the latest version downloaded and added to composer.json.
 In your script simply use `require 'vendor/autoload.php';` or `require 'vendor/hexonet/php-sdk';`
 
 ### Usage Examples
