@@ -62,6 +62,6 @@
 			"@cbf",
 			"@cs"
 		],
-		"changelog": "auto-changelog --commit-limit false --output HISTORY.md; git add HISTORY.md"
+		"changelog": "auto-changelog --template https://raw.githubusercontent.com/hexonet/auto-changelog-templates/master/compact.hts --commit-limit false --output HISTORY.md; git add HISTORY.md"
 	}
 }
