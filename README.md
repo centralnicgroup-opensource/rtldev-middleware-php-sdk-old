@@ -66,7 +66,7 @@ echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>";
 
 ## Contributing
 
-Please read [our development guide](https://github.com/hexonet/java-sdk/wiki/Development-Guide) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [our development guide](https://github.com/hexonet/php-sdk/wiki/Development-Guide) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
