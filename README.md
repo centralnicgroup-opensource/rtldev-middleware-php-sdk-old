@@ -33,7 +33,7 @@ This module is available on the [PHP Package Registry](https://packagist.org/pac
 Run `composer require "hexonet/php-sdk:*"` to get the latest version downloaded and added to composer.json.
 In your script simply use `require 'vendor/autoload.php';` or `require 'vendor/hexonet/php-sdk';`
 
-NOTE: The above will also set `"hexont/php-sdk": "*"` as dependency entry in your composer.json. When running `composer install` this would always install the latest release version. This is dangerous for production systems as major version upgrades may come with breaking changes and are then incompatible with your app. For production systems we suggest to use a version dependent syntax, e.g. `composer require "hexonet/php-sdk:v3.0.3"`.
+NOTE: The above will also set `"hexonet/php-sdk": "*"` as dependency entry in your composer.json. When running `composer install` this would always install the latest release version. This is dangerous for production systems as major version upgrades may come with breaking changes and are then incompatible with your app. For production systems we suggest to use a version dependent syntax, e.g. `composer require "hexonet/php-sdk:v3.0.3"`.
 You can find the versions listed at packagist or at github in the release / tag overview.
 
 ### Usage Examples
