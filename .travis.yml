@@ -1,0 +1,35 @@
+language: php
+sudo: false
+dist: trusty
+notifications:
+  email:
+    recipients:
+    - kschwarz@hexonet.net
+    on_success: never
+    on_failure: always
+  slack:
+    rooms:
+      secure: LD/JBQApJ7IUtIbnn4dzAoz7xze1GttpyZXKmNji9nCPxJ3EQZmC01oN9lBgnzXe7CANJ+epOkwB3eU2JTZyqY88Aa4YFfuOgpLbw9Ttsc7SqiVDGovr7aYElINhahG9W+9sYBWA9MT1HztUq5VkboXnKEUt6D4I8vVSfDoMiAujtf6NZo/pWk3yFD+t/8tn6LA1Q1Ey45lYon7zA7TehaKY+lDQPDmSFQguj8/G4PDVGNYrRiZlfltvcRCBCcPX/YXmN4RF94XGwwCI8PSWexhHOINHGAPjWK3MU7wtioVillB3cIp6j36bWrQLnAartBevepk/1vRYYAmHCFuV4yFHeBanTmtJNLu6qnny0gBtoaZFOvBQu9/a6qTlg6fz3wtUkhEwt18DpHSpdQWxXuKGbobmUnOhtSjBbOmvYZULfYIrhYkavrPEDzLEMitCwzETFI8z4EF0WMVq3nCmx2lBtwCMjhmCuE6MxITOwSYuv6Ivn9JmxcghCR2ACwDmqKp9f4S89xr20yf0/b/0lWWTdRDvO0clmguU7QlhlYRSVSPxyHRIxlkCVCqUa7GR20M1N1LtY2BFIWkz0EngcsQu6oSAHesrzVmsZIqqfsvAcNN82Rf2GtcRlkbIRe/LqQpE1Euug992zypDSP1Yc8LiggtJStNitunkaIUpj1k=
+    on_success: always
+    on_failure: always
+php:
+- '7.2.10'
+cache:
+  directories:
+  - "~/.composer/cache"
+  - "~/.npm"
+  - "node_modules"
+install:
+- composer install
+script:
+- composer run-script test
+after_success:
+- if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+    nvm install lts/* &&
+    nvm use lts/* &&
+    npm prune &&
+    npm i &&
+    npx travis-deploy-once "npx semantic-release" ; fi
+branches:
+  except:
+  - "/^v\\d+\\.\\d+\\.\\d+$/"

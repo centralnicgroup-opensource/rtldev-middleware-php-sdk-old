@@ -8,454 +8,467 @@ declare(strict_types=1);
 
 namespace HEXONET;
 
-use ArrayAccess;
-use Iterator;
-use Countable;
-
 /**
  * HEXONET Response
  *
  * @package HEXONET
  */
-class Response implements ArrayAccess, Iterator, Countable
+class Response extends ResponseTemplate
 {
 
     /**
-     * Iterator for the Iterator class
-     * @var int
+     * The API Command used within this request
+     * @var array[string]string
      */
-    private $iterator_position;
-    
+    private $command;
     /**
-     * Contains the response as a string
-     * @var string
+     * Column names available in this responsse
+     * NOTE: this includes also FIRST, LAST, LIMIT, COUNT, TOTAL
+     * and maybe further specific columns in case of a list query
+     * @var array[string]
      */
-    private $response_string;
-    
+    private $columnkeys;
     /**
-     * Contains the response as a hash
-     * @var array
+     * Container of Column Instances
+     * @var array[Column]
      */
-    private $response_hash;
-    
+    private $columns;
     /**
-     * Contains the response as a list hash
-     * @var array
+     * Record Index we currently point to in record list
+     * @var integer
      */
-    private $response_list_hash;
+    private $recordIndex;
+    /**
+     * Record List (List of rows)
+     * @var array[Record]
+     */
+    private $records;
 
     /**
      * Constructor
-     *
-     * @param Response $response A response as a string
+     * @param string $raw API plain response
+     * @param array[string]string $cmd API command used within this request
      */
-    public function __construct($response)
+    public function __construct($raw, $cmd = null)
     {
-        $this->iterator_position = 0;
-        $this->response_string = $response;
-    }
-    
-    /**
-     * Returns the response as a string
-     *
-     * @return string The response as a sting
-     */
-    public function asString()
-    {
-        return $this->response_string;
-    }
-    
-    /**
-     * Returns the response as a hash
-     *
-     * @return array The response as a hash
-     */
-    public function asHash()
-    {
-        if (!isset($this->response_hash)) {
-            $this->response_hash = Util::responseToHash($this->response_string);
-        }
-        return $this->response_hash;
-    }
-    
-    /**
-     * Returns the response as a list hash
-     *
-     * @return array The response as a list hash
-     */
-    public function asListHash()
-    {
-        if (!isset($this->response_list_hash)) {
-            $this->response_list_hash = Util::responseToListHash($this->asHash());
-        }
-        return $this->response_list_hash;
-    }
-    
-    /**
-     * Returns the response as a list
-     *
-     * @return array The response as a list
-     */
-    public function asList()
-    {
-        $list_hash = $this->asListHash();
-        return $list_hash["ITEMS"];
-    }
-    
-    /**
-     * Returns the response code
-     *
-     * @return int The response code
-     */
-    public function code()
-    {
-        return $this->__get("CODE");
-    }
-    
-    /**
-     * Returns the response description
-     *
-     * @return string The response description
-     */
-    public function description()
-    {
-        return $this->__get("DESCRIPTION");
-    }
-    
-    /**
-     * Returns the response properties
-     *
-     * @return array The response properties
-     */
-    public function properties()
-    {
-        return $this->__get("PROPERTY");
-    }
-    
-    /**
-     * Returns the response runtime
-     *
-     * @return float The response runtime
-     */
-    public function runtime()
-    {
-        return $this->__get("RUNTIME");
-    }
-    
-    /**
-     * Returns the response queutime
-     *
-     * @return float The response queutime
-     */
-    public function queuetime()
-    {
-        return $this->__get("QUEUETIME");
-    }
-    
-    /**
-     * Returns the property for a given index
-     * If no index given, the complete property list is returned
-     *
-     * @param int $index The index of the property
-     * @return array A proterty
-     */
-    public function property($index = null)
-    {
-        $properties = $this->asList();
-        if (is_int($index)) {
-            return isset($properties[$index]) ? $properties[$index] : null;
-        } else {
-            return $properties;
+        parent::__construct($raw);
+        $this->command = $cmd;
+        $this->columnkeys = array();
+        $this->columns = array();
+        $this->recordIndex = 0;
+        $this->records = array();
+
+        if (array_key_exists("PROPERTY", $this->hash)) {
+            $colKeys = array_keys($this->hash["PROPERTY"]);
+            $count = 0;
+            foreach ($colKeys as $k) {
+                $this->addColumn($k, $this->hash["PROPERTY"][$k]);
+                $count2 = $this->getColumn($k)->length;
+                if ($count2 > $count) {
+                    $count = $count2;
+                }
+            }
+            for ($i = 0; $i < $count; $i++) {
+                $d = array();
+                foreach ($colKeys as $k) {
+                    $col = $this->getColumn($k);
+                    if ($col) {
+                        $v = $col->getDataByIndex($i);
+                        if ($v !== null) {
+                            $d[$k] = $v;
+                        }
+                    }
+                }
+                $this->addRecord($d);
+            }
         }
     }
-    
+
     /**
-     * Returns true if the results is a success
-     * Success = response code starting with 2
-     *
-     * @return boolean
+     * Add a column to the column list
+     * @param string $key column name
+     * @param array[string] $data array of column data
+     * @return $this
      */
-    public function isSuccess()
+    public function addColumn($key, $data)
     {
-        return preg_match('/^2/', $this->code()) ? true : false;
+        $col = new Column($key, $data);
+        $this->columns[] = $col;
+        $this->columnkeys[] = $key;
+        return $this;
     }
-    
+
     /**
-     * Returns true if the results is a tmp error
-     * tmp error = response code starting with 4
-     *
-     * @return boolean
+     * Add a record to the record list
+     * @param array[string]string $h row hash data
+     * @return $this
      */
-    public function isTmpError()
+    public function addRecord($h)
     {
-        return preg_match('/^4/', $this->code()) ? true : false;
+        $this->records[] = new Record($h);
+        return $this;
     }
-    
+
     /**
-     * Operator overloading
-     * Example: __get("code") == $response->code
-     *
-     * @param string $name An array key
+     * Get column by column name
+     * @param string $key column name
+     * @return Column|null column instance or null if column does not exist
      */
-    public function __get($name)
+    public function getColumn($key)
     {
-        $hash = $this->asHash();
-        if (array_key_exists(strtoupper($name), $hash)) {
-            return $hash[strtoupper($name)];
+        return ($this->hasColumn($key) ? $this->columns[array_search($key, $this->columnkeys)] : null);
+    }
+
+    /**
+     * Get Data by Column Name and Index
+     * @param string $colkey column name
+     * @param integer $index column data index
+     * @return string|null column data at index or null if not found
+     */
+    public function getColumnIndex($colkey, $index)
+    {
+        $col = $this->getColumn($colkey);
+        return $col ? $col->getDataByIndex($index) : null;
+    }
+
+    /**
+     * Get Column Names
+     * @return array[string] Array of Column Names
+     */
+    public function getColumnKeys()
+    {
+        return $this->columnkeys;
+    }
+
+    /**
+     * Get List of Columns
+     * @return array[Column] Array of Columns
+     */
+    public function getColumns()
+    {
+        return $this->columns;
+    }
+
+    /**
+     * Get Command used in this request
+     * @return array[string]string command
+     */
+    public function getCommand()
+    {
+        return $this->command;
+    }
+
+    /**
+     * Get Page Number of current List Query
+     * @return integer|null page number or null in case of a non-list response
+     */
+    public function getCurrentPageNumber()
+    {
+        $first = $this->getFirstRecordIndex();
+        $limit = $this->getRecordsLimitation();
+        if ($first !== null && $limit) {
+            return (int)(floor($first / $limit) + 1);
         }
         return null;
     }
-    
 
     /**
-     * ArrayAccess : offsetSet not implemented
-     *
-     * @param int $offset An array key
-     * @param string $value A value
+     * Get Record of current record index
+     * @return Record|null Record or null in case of a non-list response
      */
-    public function offsetSet($offset, $value)
+    public function getCurrentRecord()
     {
-        //NOT IMPLEMENTED
+        return $this->hasCurrentRecord() ? $this->records[$this->recordIndex] : null;
     }
-    
+
     /**
-     * ArrayAccess : offsetExists
-     * Return true if the array key exists
-     *
-     * @param int $offset An array key
+     * Get Index of first row in this response
+     * @return integer|null first row index
      */
-    public function offsetExists($offset)
+    public function getFirstRecordIndex()
     {
-        if (preg_match('/^[0-9]+$/', $offset . "")) {
-            $list = $this->asList();
-            return isset($list[$offset]);
+        $col = $this->getColumn("FIRST");
+        if ($col) {
+            $f = $col->getDataByIndex(0);
+            return $f === null ? 0 : intval($f, 10);
         }
-        $hash = $this->asListHash();
-        return isset($hash[strtoupper($offset)]);
-    }
-    
-    /**
-     * ArrayAcess : offsetUnset not implemented
-     *
-     * @param int $offset An array key
-     */
-    public function offsetUnset($offset)
-    {
-        //NOT IMPLEMENTED
-    }
-    
-    /**
-     * ArrayAccess : offsetGet
-     * Return the array for the given offset
-     *
-     * @param int $offset An array key
-     */
-    public function offsetGet($offset)
-    {
-        if (preg_match('/^[0-9]+$/', $offset . "")) {
-            $list = $this->asList();
-            return $list[$offset];
+        if ($this->getRecordsCount()) {
+            return 0;
         }
-        $hash = $this->asListHash();
-        return isset($hash[strtoupper($offset)]) ? $hash[strtoupper($offset)] : null;
+        return null;
     }
-    
+
     /**
-     * Returns the columns
-     *
-     * @return array The columns
+     * Get last record index of the current list query
+     * @return integer|null record index or null for a non-list response
      */
-    public function columns()
+    public function getLastRecordIndex()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["COLUMNS"];
+        $col = $this->getColumn("LAST");
+        if ($col) {
+            $l = $col->getDataByIndex(0);
+            if ($l !== null) {
+                return intval($l, 10);
+            }
+        }
+        $c = $this->getRecordsCount();
+        if ($c) {
+            return $c - 1;
+        }
+        return null;
     }
-    
+
     /**
-     * Returns the index of the first element
-     *
-     * @return int The index of the first element
+     * Get Response as List Hash including useful meta data for tables
+     * @return array[string]string hash including list meta data and array of rows in hash notation
      */
-    public function first()
+    public function getListHash()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["FIRST"];
+        $lh = array();
+        foreach ($this->records as $rec) {
+            $lh[] = $rec->getData();
+        }
+        return array(
+            "LIST" => $lh,
+            "meta" => array(
+                "columns" => $this->getColumnKeys(),
+                "pg" => $this->getPagination()
+            )
+        );
     }
-    
+
     /**
-     * Returns the index of the last element
-     *
-     * @return int The index of the last element
+     * Get next record in record list
+     * @return Record|null Record or null in case there's no further record
      */
-    public function last()
+    public function getNextRecord()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["LAST"];
+        if ($this->hasNextRecord()) {
+            return $this->records[++$this->recordIndex];
+        }
+        return null;
     }
-    
+
     /**
-     * Returns the number of list elements returned (= last - first + 1)
-     *
-     * @return int The number of list elements returned
+     * Get Page Number of next list query
+     * @return integer|null page number or null if there's no next page
      */
-    public function count()
+    public function getNextPageNumber()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["COUNT"];
+        $cp = $this->getCurrentPageNumber();
+        if ($cp === null) {
+            return null;
+        }
+        $page = $cp + 1;
+        $pages = $this->getNumberOfPages();
+        return ($page <= $pages ? $page : $pages);
     }
-    
+
     /**
-     * Returns the limit of the response
-     *
-     * @return int The limit
+     * Get the number of pages available for this list query
+     * @return integer number of pages
      */
-    public function limit()
+    public function getNumberOfPages()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["LIMIT"];
+        $t = $this->getRecordsTotalCount();
+        $limit = $this->getRecordsLimitation();
+        if ($t && $limit) {
+            return (int)ceil($t / $this->getRecordsLimitation());
+        }
+        return 0;
     }
-    
+
     /**
-     * Returns the total number of elements found (!= count)
-     *
-     * @return int The total number of elements found
+     * Get object containing all paging data
+     * @return array[string]* paginator data
      */
-    public function total()
+    public function getPagination()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["TOTAL"];
+        return array(
+            "COUNT" => $this->getRecordsCount(),
+            "CURRENTPAGE" => $this->getCurrentPageNumber(),
+            "FIRST" => $this->getFirstRecordIndex(),
+            "LAST" => $this->getLastRecordIndex(),
+            "LIMIT" => $this->getRecordsLimitation(),
+            "NEXTPAGE" => $this->getNextPageNumber(),
+            "PAGES" => $this->getNumberOfPages(),
+            "PREVIOUSPAGE" => $this->getPreviousPageNumber(),
+            "TOTAL" => $this->getRecordsTotalCount()
+        );
     }
-    
+
     /**
-     * Returns the number of pages
-     *
-     * @return int The number of pages
+     * Get Page Number of previous list query
+     * @return integer|null page number or null if there's no previous page
      */
-    public function pages()
+    public function getPreviousPageNumber()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["PAGES"];
+        $cp = $this->getCurrentPageNumber();
+        if ($cp === null) {
+            return null;
+        }
+        $cp -= 1;
+        if ($cp === 0) {
+            return null;
+        }
+        return $cp;
     }
-    
+
     /**
-     * Returns the number of the current page (starts with 1)
-     *
-     * @return int The number of the current page
+     * Get previous record in record list
+     * @return Record|null Record or null if there's no previous record
      */
-    public function page()
+    public function getPreviousRecord()
     {
-        $list_hash = $this->asListHash();
-        return $list_hash["PAGE"];
+        if ($this->hasPreviousRecord()) {
+            return $this->records[--$this->recordIndex];
+        }
+        return null;
     }
-    
+
     /**
-     * Returns the number of the previous page
-     *
-     * @return int The number of the previous page
+     * Get Record at given index
+     * @param integer $idx record index
+     * @return Record|null Record or null if index does not exist
      */
-    public function prevpage()
+    public function getRecord($idx)
     {
-        $list_hash = $this->asListHash();
-        return isset($list_hash["PREVPAGE"]) ? $list_hash["PREVPAGE"] : null;
+        if ($idx >= 0 && $this->getRecordsCount() > $idx) {
+            return $this->records[$idx];
+        }
+        return null;
     }
-    
+
     /**
-     * Returns the first index for the previous page
-     *
-     * @return int The first index of the previous page
+     * Get all Records
+     * @return array[Record] array of records
      */
-    public function prevpagefirst()
+    public function getRecords()
     {
-        $list_hash = $this->asListHash();
-        return isset($list_hash["PREVPAGEFIRST"]) ? $list_hash["PREVPAGEFIRST"] : null;
+        return $this->records;
     }
-    
+
     /**
-     * Returns the number of the next page
-     *
-     * @return int The number of the next page
+     * Get count of rows in this response
+     * @return integer count of rows
      */
-    public function nextpage()
+    public function getRecordsCount()
     {
-        $list_hash = $this->asListHash();
-        return array_key_exists("NEXTPAGE", $list_hash) ? $list_hash["NEXTPAGE"] : null;
+        return count($this->records);
     }
-    
+
     /**
-     * Returns the first index for the next page
-     *
-     * @return int The first index of the next page
+     * Get total count of records available for the list query
+     * @return integer total count of records or count of records for a non-list response
      */
-    public function nextpagefirst()
+    public function getRecordsTotalCount()
     {
-        $list_hash = $this->asListHash();
-        return array_key_exists("NEXTPAGEFIRST", $list_hash) ? $list_hash["NEXTPAGEFIRST"] : null;
+        $col = $this->getColumn("TOTAL");
+        if ($col) {
+            $t = $col->getDataByIndex(0);
+            if ($t !== null) {
+                return intval($t, 10);
+            }
+        }
+        return $this->getRecordsCount();
     }
-    
+
     /**
-     * Returns the first index for the last page
-     *
-     * @return int The first index of the last page
+     * Get limit(ation) setting of the current list query
+     * This is the count of requested rows
+     * @return integer limit setting or count requested rows
      */
-    public function lastpagefirst()
+    public function getRecordsLimitation()
     {
-        $list_hash = $this->asListHash();
-        return array_key_exists("LASTPAGEFIRST", $list_hash) ? $list_hash["LASTPAGEFIRST"] : null;
+        $col = $this->getColumn("LIMIT");
+        if ($col) {
+            $l = $col->getDataByIndex(0);
+            if ($l !== null) {
+                return intval($l, 10);
+            }
+        }
+        return $this->getRecordsCount();
     }
-    
+
     /**
-     * Iterator : rewind
-     * Set the iterator to 0
-     *
-     * @return array The first element of the list
+     * Check if this list query has a next page
+     * @return boolean boolean result
      */
-    public function rewind()
+    public function hasNextPage()
     {
-        $this->iterator_position = 0;
-        return $this->property(0);
+        $cp = $this->getCurrentPageNumber();
+        if ($cp === null) {
+            return false;
+        }
+        return ($cp + 1 <= $this->getNumberOfPages());
     }
-    
+
     /**
-     * Iterator : current
-     * Returns the current element of the list
-     *
-     * @return array The current element of the list
+     * Check if this list query has a previous page
+     * @return boolean boolean result
      */
-    public function current()
+    public function hasPreviousPage()
     {
-        return $this->property($this->iterator_position);
+        $cp = $this->getCurrentPageNumber();
+        if ($cp === null) {
+            return false;
+        }
+        return (($cp - 1) > 0);
     }
-    
+
     /**
-     * Iterator : key
-     * Returns the key of the current element
-     *
-     * @return int The key of the current element
+     * Reset index in record list back to zero
+     * @return $this
      */
-    public function key()
+    public function rewindRecordList()
     {
-        return $this->iterator_position;
+        $this->recordIndex = 0;
+        return $this;
     }
-    
+
     /**
-     * Iterator : next
-     * Returns the key of the next element
-     *
-     * @return int The key of the next element
+     * Check if column exists in response
+     * @param string $key column name
+     * @return boolean boolean result
      */
-    public function next()
+    private function hasColumn($key)
     {
-        ++$this->iterator_position;
+        return (array_search($key, $this->columnkeys) !== false);
     }
-    
+
     /**
-     * Iterator : valid
-     * Returns the element if it exists
-     *
-     * @return array The element if it exists
+     * Check if the record list contains a record for the
+     * current record index in use
+     * @return boolean boolean result
      */
-    public function valid()
+    private function hasCurrentRecord()
     {
-        return $this->property($this->iterator_position);
+        $len = $this->getRecordsCount();
+        return (
+            $len > 0 &&
+            $this->recordIndex >= 0 &&
+            $this->recordIndex < $len
+        );
+    }
+
+    /**
+     * Check if the record list contains a next record for the
+     * current record index in use
+     * @return boolean boolean result
+     */
+    private function hasNextRecord()
+    {
+        $next = $this->recordIndex + 1;
+        return ($this->hasCurrentRecord() && ($next < $this->getRecordsCount()));
+    }
+
+    /**
+     * Check if the record list contains a previous record for the
+     * current record index in use
+     * @return boolean boolean result
+     */
+    private function hasPreviousRecord()
+    {
+        return ($this->recordIndex > 0 && $this->hasCurrentRecord());
     }
 }
