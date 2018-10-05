@@ -25,6 +25,7 @@ script:
 - composer run-script test
 after_success:
 - if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+    composer run-script docs &&
     git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/* &&
     git fetch --tags &&
     nvm install lts/* &&
