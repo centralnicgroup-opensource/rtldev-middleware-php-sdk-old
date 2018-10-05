@@ -89,8 +89,7 @@ final class ResponseTest extends TestCase
 
     public function test_getCurrentRecordNoRows() {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
-        $rec = $r->getCurrentRecord();
-        $this->assertNull($rec);
+        $this->assertNull($r->getCurrentRecord());
     }
 
     public function test_getListHash() {
@@ -105,8 +104,7 @@ final class ResponseTest extends TestCase
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $rec = $r->getNextRecord();
         $this->assertEquals(array('DOMAIN'=>'0-be-s01-0.com'), $rec->getData());
-        $rec = $r->getNextRecord();
-        $this->assertNull($rec);
+        $this->assertNull($r->getNextRecord());
     }
 
     public function test_getPagination() {
@@ -126,7 +124,6 @@ final class ResponseTest extends TestCase
     public function test_getPreviousRecord() {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $r->getNextRecord();
-        $rec = $r->getPreviousRecord();
         $this->assertEquals(array(
             'COUNT' => '2',
             'DOMAIN' => '0-60motorcycletimes.com',
@@ -134,9 +131,8 @@ final class ResponseTest extends TestCase
             'LAST' => '1',
             'LIMIT' => '2',
             'TOTAL' => '2701'
-        ), $rec->getData());
-        $rec = $r->getPreviousRecord();
-        $this->assertNull($rec);
+        ), ($r->getPreviousRecord())->getData());
+        $this->assertNull($r->getPreviousRecord());
     }
 
     public function test_hasNextPageNoRows() {

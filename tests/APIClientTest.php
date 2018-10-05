@@ -85,9 +85,9 @@ final class APIClientTest extends TestCase
 
     public function test_setSessionCredentials() {
         // credentials and otp code have to be unset when session id is set
-        self::$cl->setRoleCredentials('myaccountid', 'myrole', 'mypassword');
-        self::$cl->setOTP('12345678');
-        self::$cl->setSession('12345678');
+        self::$cl->setRoleCredentials('myaccountid', 'myrole', 'mypassword')
+                ->setOTP('12345678')
+                ->setSession('12345678');
         $tmp = self::$cl->getPOSTData(array(
             'COMMAND' => 'StatusAccount'
         ));
@@ -103,8 +103,8 @@ final class APIClientTest extends TestCase
     }
 
     public function test_saveReuseSession() {
-        self::$cl->setSession('12345678');
-        self::$cl->saveSession($_SESSION);
+        self::$cl->setSession('12345678')
+                ->saveSession($_SESSION);
         $cl2 = new CL();
         $cl2->reuseSession($_SESSION);
         $tmp = $cl2->getPOSTData(array(
@@ -163,8 +163,8 @@ final class APIClientTest extends TestCase
     }
 
     public function test_loginCredsOK() {
-        self::$cl->useOTESystem();
-        self::$cl->setCredentials('test.user', 'test.passw0rd');
+        self::$cl->useOTESystem()
+                ->setCredentials('test.user', 'test.passw0rd');
         $r = self::$cl->login();
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
@@ -174,7 +174,6 @@ final class APIClientTest extends TestCase
     }
 
     public function test_loginRoleCredsOK() {
-        //self::$cl->useOTESystem();
         self::$cl->setRoleCredentials('test.user', 'testrole', 'test.passw0rd');
         $r = self::$cl->login();
         $this->assertInstanceOf(R::class, $r);
@@ -195,8 +194,8 @@ final class APIClientTest extends TestCase
     //TODO -> not covered: login succeeded; no session returned
 
     public function test_loginExtendedCredsOK() {
-        self::$cl->useOTESystem();
-        self::$cl->setCredentials('test.user', 'test.passw0rd');
+        self::$cl->useOTESystem()
+                ->setCredentials('test.user', 'test.passw0rd');
         $r = self::$cl->loginExtended(array(
             "TIMEOUT" => 60
         ));
@@ -220,9 +219,9 @@ final class APIClientTest extends TestCase
     }
 
     public function test_requestCodeTmpErrorDbg() {
-        self::$cl->enableDebugMode();
-        self::$cl->setCredentials('test.user', 'test.passw0rd');
-        self::$cl->useOTESystem();
+        self::$cl->enableDebugMode()
+                ->setCredentials('test.user', 'test.passw0rd')
+                ->useOTESystem();
         $r = self::$cl->request(array( 'COMMAND' => 'GetUserIndex' ));
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);

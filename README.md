@@ -1,6 +1,5 @@
 # php-sdk
 
-
 [![Packagist](https://img.shields.io/packagist/v/hexonet/php-sdk.svg)](https://packagist.org/packages/hexonet/php-sdk)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/hexonet/php-sdk.svg)](https://packagist.org/packages/hexonet/php-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -54,15 +53,15 @@ $r = $cl->login();
 // $r = $cl->login('.. here your otp code ...');
 if ($r->isSuccess()){
     echo "LOGIN SUCCEEDED.<br/>";
-    
+
     // Now reuse the created API session for further request
     // You don't have to care about anything!
     $r = $cl->request(array(
         "COMMAND" => "StatusAccount"
     ));
-    echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>"; 
-    
-    // Perform session close and logout    
+    echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>";
+
+    // Perform session close and logout
     $r = $cl->logout();
     if ($r->isSuccess()){
         echo "LOGOUT SUCCEEDED.<br/>";
@@ -76,6 +75,7 @@ else {
 ```
 
 ##### Save session config into PHP Session
+
 If you're realizing your own frontend on top, you need a solution to keep the Backend API Session that the PHP-SDK wraps internally to be reusable in further page loads. This can be achieved by
 
 ```php
@@ -83,7 +83,7 @@ If you're realizing your own frontend on top, you need a solution to keep the Ba
 $cl->saveSession($_SESSION);
 ```
 
-and 
+and
 
 ```php
 // for every further request
@@ -107,8 +107,8 @@ echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>";
 ```
 
 #### FYI
-`$cl` - the APIClient Object - and `$r` - the Response Object - provide further useful Methods to access configure the connection and to access response data. Have an eye on the [class documentation](https://rawgit.com/hexonet/php-sdk/master/build/api/index.html).
 
+`$cl` - the APIClient Object - and `$r` - the Response Object - provide further useful Methods to access configure the connection and to access response data. Have an eye on the [class documentation](https://rawgit.com/hexonet/php-sdk/master/build/api/index.html).
 
 ## Contributing
 
