@@ -42,7 +42,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"HEXONET\\": "src/"
+			"HEXONET\\": "src/",
+			"HEXONET\\ResponseParser\\": "src/"
 		},
 		"classmap": ["src/"]
 	},
