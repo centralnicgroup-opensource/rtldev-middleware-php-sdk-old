@@ -160,7 +160,7 @@ final class ResponseTemplateManager
     public function isTemplateMatchPlain($plain, $id)
     {
         $h = $this->getTemplate($id)->getHash();
-        $tpl = RP\parse($plain);
+        $tpl = RP::parse($plain);
         return (
             ($h["CODE"] === $tpl["CODE"]) &&
             ($h["DESCRIPTION"] === $tpl["DESCRIPTION"])

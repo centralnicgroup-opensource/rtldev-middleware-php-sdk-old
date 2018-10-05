@@ -40,6 +40,30 @@ Record
  [x] Get data
  [x] Get data by key
 
+ResponseParser
+ [x] Parse
+ [x] Serialize property
+ [x] Serialize no property
+ [x] Serialize no code no description
+ [x] Serialize q tand r t
+
+ResponseTemplateManager
+ [x] Uniqueness
+ [x] Clone
+ [x] Get template not found
+ [x] Get templates
+ [x] Is template match hash
+ [x] Is template match plain
+ [x] Add template
+
+ResponseTemplate
+ [x] Constructor empty raw
+ [x] Get hash
+ [x] Get queuetime no
+ [x] Get queuetime
+ [x] Get runtime no
+ [x] Get runtime
+
 Response
  [x] Get current page number entries
  [x] Get current page number no entries
@@ -67,30 +91,6 @@ Response
  [x] Get previous page number no rows
  [x] Get previous page number rows
  [x] Rewind record list
-
-ResponseParser
- [x] Parse
- [x] Serialize property
- [x] Serialize no property
- [x] Serialize no code no description
- [x] Serialize q tand r t
-
-ResponseTemplateManager
- [x] Uniqueness
- [x] Clone
- [x] Get template not found
- [x] Get templates
- [x] Is template match hash
- [x] Is template match plain
- [x] Add template
-
-ResponseTemplate
- [x] Constructor empty raw
- [x] Get hash
- [x] Get queuetime no
- [x] Get queuetime
- [x] Get runtime no
- [x] Get runtime
 
 SocketConfig
  [x] Get p o s t data

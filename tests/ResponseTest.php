@@ -40,7 +40,7 @@ final class ResponseTest extends TestCase
         $h["PROPERTY"] = array(
             "DOMAIN" => array('mydomain1.com', 'mydomain2.com')
         );
-        $r = new R(RP\serialize($h));
+        $r = new R(RP::serialize($h));
         $this->assertEquals(0, $r->getFirstRecordIndex());
     }
 
@@ -169,7 +169,7 @@ final class ResponseTest extends TestCase
         $h["PROPERTY"] = array(
             'DOMAIN' => array('mydomain1.com', 'mydomain2.com')
         );
-        $r = new R(RP\serialize($h));
+        $r = new R(RP::serialize($h));
         $this->assertEquals(1, $r->getLastRecordIndex());
     }
 

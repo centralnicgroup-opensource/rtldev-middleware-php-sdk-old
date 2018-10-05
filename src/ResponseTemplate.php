@@ -40,7 +40,7 @@ class ResponseTemplate
             $raw = RTM::getInstance()->getTemplate("empty")->getPlain();
         }
         $this->raw = $raw;
-        $this->hash = RP\parse($raw);
+        $this->hash = RP::parse($raw);
     }
 
     /**
