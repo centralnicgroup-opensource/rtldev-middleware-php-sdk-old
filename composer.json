@@ -52,7 +52,7 @@
 		"php-mock/php-mock-phpunit": "^2.1"
 	},
 	"scripts": {
-		"docs": "phpDocumentor.phar",
+		"docs": "./phpDocumentor.phar",
 		"phar": "box build ./src",
 		"cs": "./vendor/bin/phpcs --standard=PSR2 -n src",
         "cbf": "./vendor/bin/phpcbf --standard=PSR2 -n src",
