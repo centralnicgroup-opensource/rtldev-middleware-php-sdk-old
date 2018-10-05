@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/hexonet/php-sdk/compare/v4.0.2...v4.0.3) (2018-10-05)
+
+
+### Bug Fixes
+
+* **docs:** fix class docs and ([c1a4e5e](https://github.com/hexonet/php-sdk/commit/c1a4e5e))
+
 ## [4.0.1](https://github.com/hexonet/php-sdk/compare/v4.0.0...v4.0.1) (2018-10-05)
 
 
