@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/hexonet/php-sdk/compare/v4.0.0...v4.0.1) (2018-10-05)
+
+
+### Bug Fixes
+
+* **composer:** consider ResponseParser namespace for autload ([032aac3](https://github.com/hexonet/php-sdk/commit/032aac3))
+
 # [4.0.0](https://github.com/hexonet/php-sdk/compare/v3.0.3...v4.0.0) (2018-10-05)
 
 

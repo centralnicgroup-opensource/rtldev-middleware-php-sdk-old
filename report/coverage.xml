@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1538728587">
-  <project timestamp="1538728587">
+<coverage generated="1538729015">
+  <project timestamp="1538729015">
     <package name="HEXONET">
-      <file name="/home/kai/git/php-sdk/src/APIClient.php">
+      <file name="/home/travis/build/hexonet/php-sdk/src/APIClient.php">
         <class name="HEXONET\APIClient" namespace="HEXONET">
           <metrics complexity="42" methods="25" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="116" coveredstatements="106" elements="141" coveredelements="129"/>
         </class>
@@ -149,7 +149,7 @@
         <line num="404" type="stmt" count="4"/>
         <metrics loc="406" ncloc="241" classes="1" methods="25" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="116" coveredstatements="106" elements="141" coveredelements="129"/>
       </file>
-      <file name="/home/kai/git/php-sdk/src/Column.php">
+      <file name="/home/travis/build/hexonet/php-sdk/src/Column.php">
         <class name="HEXONET\Column" namespace="HEXONET">
           <metrics complexity="7" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="13" coveredelements="13"/>
         </class>
@@ -168,7 +168,7 @@
         <line num="85" type="stmt" count="27"/>
         <metrics loc="87" ncloc="42" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="13" coveredelements="13"/>
       </file>
-      <file name="/home/kai/git/php-sdk/src/Record.php">
+      <file name="/home/travis/build/hexonet/php-sdk/src/Record.php">
         <class name="HEXONET\Record" namespace="HEXONET">
           <metrics complexity="5" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
         </class>
@@ -185,7 +185,7 @@
         <line num="79" type="stmt" count="4"/>
         <metrics loc="81" ncloc="34" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="11" coveredelements="11"/>
       </file>
-      <file name="/home/kai/git/php-sdk/src/Response.php">
+      <file name="/home/travis/build/hexonet/php-sdk/src/Response.php">
         <class name="HEXONET\Response" namespace="HEXONET" fullPackage="HEXONET" package="HEXONET">
           <metrics complexity="70" methods="31" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="132" coveredstatements="129" elements="163" coveredelements="157"/>
         </class>
@@ -354,7 +354,7 @@
         <line num="472" type="stmt" count="2"/>
         <metrics loc="474" ncloc="306" classes="1" methods="31" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="132" coveredstatements="129" elements="163" coveredelements="157"/>
       </file>
-      <file name="/home/kai/git/php-sdk/src/ResponseTemplate.php">
+      <file name="/home/travis/build/hexonet/php-sdk/src/ResponseTemplate.php">
         <class name="HEXONET\ResponseTemplate" namespace="HEXONET">
           <metrics complexity="13" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="17" elements="28" coveredelements="26"/>
         </class>
@@ -388,7 +388,7 @@
         <line num="133" type="stmt" count="0"/>
         <metrics loc="135" ncloc="75" classes="1" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="17" elements="28" coveredelements="26"/>
       </file>
-      <file name="/home/kai/git/php-sdk/src/ResponseTemplateManager.php">
+      <file name="/home/travis/build/hexonet/php-sdk/src/ResponseTemplateManager.php">
         <class name="HEXONET\ResponseTemplateManager" namespace="HEXONET">
           <metrics complexity="16" methods="11" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="21" elements="45" coveredelements="28"/>
         </class>
@@ -439,7 +439,7 @@
         <line num="166" type="stmt" count="2"/>
         <metrics loc="169" ncloc="98" classes="1" methods="11" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="21" elements="45" coveredelements="28"/>
       </file>
-      <file name="/home/kai/git/php-sdk/src/SocketConfig.php">
+      <file name="/home/travis/build/hexonet/php-sdk/src/SocketConfig.php">
         <class name="HEXONET\SocketConfig" namespace="HEXONET">
           <metrics complexity="18" methods="11" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="46" elements="57" coveredelements="57"/>
         </class>
@@ -503,7 +503,7 @@
         <metrics loc="200" ncloc="115" classes="1" methods="11" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="46" elements="57" coveredelements="57"/>
       </file>
     </package>
-    <file name="/home/kai/git/php-sdk/src/ResponseParser.php">
+    <file name="/home/travis/build/hexonet/php-sdk/src/ResponseParser.php">
       <line num="18" type="stmt" count="56"/>
       <line num="19" type="stmt" count="56"/>
       <line num="20" type="stmt" count="56"/>
