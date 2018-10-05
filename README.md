@@ -106,6 +106,10 @@ $r = $cl->request(array(
 echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>";
 ```
 
+#### FYI
+`$cl` - the APIClient Object - and `$r` - the Response Object - provide further useful Methods to access configure the connection and to access response data. Have an eye on the [class documentation](https://rawgit.com/hexonet/php-sdk/master/build/api/index.html).
+
+
 ## Contributing
 
 Please read [our development guide](https://github.com/hexonet/php-sdk/wiki/Development-Guide) for details on our code of conduct, and the process for submitting pull requests to us.
