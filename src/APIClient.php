@@ -70,7 +70,7 @@ class APIClient
 
     /**
      * Serialize given command for POST request including connection configuration data
-     * @param string|array[string]string $cmd API command to encode
+     * @param string|array $cmd API command to encode
      * @return string encoded POST data string
      */
     public function getPOSTData($cmd)
@@ -223,7 +223,7 @@ class APIClient
     /**
      * Perform API login to start session-based communication.
      * Use given specific command parameters.
-     * @param array[string]string $params given specific command parameters
+     * @param array $params given specific command parameters
      * @param string $otp optional one time password
      * @return Response Response
      */
@@ -256,7 +256,7 @@ class APIClient
 
     /**
      * Perform API request using the given command
-     * @param array[string]string $cmd API command to request
+     * @param array $cmd API command to request
      * @return Response Response
      */
     public function request($cmd)
@@ -337,8 +337,8 @@ class APIClient
 
     /**
      * Request all pages/entries for the given query command
-     * @param array[string]string $cmd API list command to use
-     * @return array[Response] Responses
+     * @param array $cmd API list command to use
+     * @return Response[] Responses
      */
     public function requestAllResponsePages($cmd)
     {
@@ -396,8 +396,8 @@ class APIClient
 
     /**
      * Translate all command parameter names to uppercase
-     * @param array[string]string $cmd api command
-     * @return array[string]string api command with uppercase parameter names
+     * @param array $cmd api command
+     * @return array api command with uppercase parameter names
      */
     private function toUpperCaseKeys($cmd)
     {

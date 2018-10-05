@@ -18,7 +18,7 @@ class ResponseParser
     /**
      * Method to parse plain API response into js object
      * @param string $raw API plain response
-     * @return array[string]string API response as hash
+     * @return array API response as hash
      */
     public static function parse($raw)
     {
@@ -53,7 +53,7 @@ class ResponseParser
 
     /**
      * Serialize given parsed response hash back to plain text
-     * @param array[string]string $r API response as hash
+     * @param array $r API response as hash
      * @return string plain API response
      */
     public static function serialize($r)

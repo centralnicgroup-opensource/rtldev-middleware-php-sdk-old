@@ -26,7 +26,7 @@ class Record
      *   // ... further column data ...
      * );
      * </code>
-     * @var array[string]string
+     * @var array
      */
     private $data;
 
@@ -40,7 +40,7 @@ class Record
      *   // ... further column data ...
      * );
      * </code>
-     * @param array[string]string $data data object
+     * @param array $data data object
      */
     public function __construct($data)
     {
@@ -49,7 +49,7 @@ class Record
 
     /**
      * get row data
-     * @return array[string]string row data
+     * @return array row data
      */
     public function getData()
     {

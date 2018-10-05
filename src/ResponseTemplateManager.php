@@ -36,7 +36,7 @@ final class ResponseTemplateManager
     private static $_instance = null;
     /**
      * template container
-     * @var array[string]string
+     * @var array
      */
     private $templates;
 
@@ -115,7 +115,7 @@ final class ResponseTemplateManager
 
     /**
      * Return all available response templates
-     * @return array[string]ResponseTemplate all available response template instances
+     * @return array all available response template instances
      */
     public function getTemplates()
     {
@@ -138,7 +138,7 @@ final class ResponseTemplateManager
 
     /**
      * Check if given API response hash matches a given template by code and description
-     * @param array[string]string $tpl api response hash
+     * @param array $tpl api response hash
      * @param string $id template id
      * @return boolean boolean result
      */

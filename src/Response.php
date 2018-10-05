@@ -18,19 +18,19 @@ class Response extends ResponseTemplate
 
     /**
      * The API Command used within this request
-     * @var array[string]string
+     * @var array
      */
     private $command;
     /**
      * Column names available in this responsse
      * NOTE: this includes also FIRST, LAST, LIMIT, COUNT, TOTAL
      * and maybe further specific columns in case of a list query
-     * @var array[string]
+     * @var string[]
      */
     private $columnkeys;
     /**
      * Container of Column Instances
-     * @var array[Column]
+     * @var Column[]
      */
     private $columns;
     /**
@@ -40,14 +40,14 @@ class Response extends ResponseTemplate
     private $recordIndex;
     /**
      * Record List (List of rows)
-     * @var array[Record]
+     * @var Record[]
      */
     private $records;
 
     /**
      * Constructor
      * @param string $raw API plain response
-     * @param array[string]string $cmd API command used within this request
+     * @param array $cmd API command used within this request
      */
     public function __construct($raw, $cmd = null)
     {
@@ -87,7 +87,7 @@ class Response extends ResponseTemplate
     /**
      * Add a column to the column list
      * @param string $key column name
-     * @param array[string] $data array of column data
+     * @param string[] $data array of column data
      * @return $this
      */
     public function addColumn($key, $data)
@@ -100,7 +100,7 @@ class Response extends ResponseTemplate
 
     /**
      * Add a record to the record list
-     * @param array[string]string $h row hash data
+     * @param array $h row hash data
      * @return $this
      */
     public function addRecord($h)
@@ -133,7 +133,7 @@ class Response extends ResponseTemplate
 
     /**
      * Get Column Names
-     * @return array[string] Array of Column Names
+     * @return string[] Array of Column Names
      */
     public function getColumnKeys()
     {
@@ -142,7 +142,7 @@ class Response extends ResponseTemplate
 
     /**
      * Get List of Columns
-     * @return array[Column] Array of Columns
+     * @return Column[] Array of Columns
      */
     public function getColumns()
     {
@@ -151,7 +151,7 @@ class Response extends ResponseTemplate
 
     /**
      * Get Command used in this request
-     * @return array[string]string command
+     * @return array command
      */
     public function getCommand()
     {
@@ -220,7 +220,7 @@ class Response extends ResponseTemplate
 
     /**
      * Get Response as List Hash including useful meta data for tables
-     * @return array[string]string hash including list meta data and array of rows in hash notation
+     * @return array hash including list meta data and array of rows in hash notation
      */
     public function getListHash()
     {
@@ -280,7 +280,7 @@ class Response extends ResponseTemplate
 
     /**
      * Get object containing all paging data
-     * @return array[string]* paginator data
+     * @return array paginator data
      */
     public function getPagination()
     {
@@ -341,7 +341,7 @@ class Response extends ResponseTemplate
 
     /**
      * Get all Records
-     * @return array[Record] array of records
+     * @return Record[] array of records
      */
     public function getRecords()
     {

@@ -26,7 +26,7 @@ class ResponseTemplate
     protected $raw;
     /**
      * hash representation of plain API response
-     * @var array[string]string
+     * @var array
      */
     protected $hash;
 
@@ -84,7 +84,7 @@ class ResponseTemplate
 
     /**
      * Get API response as Hash
-     * @return array[string]string API response hash
+     * @return array API response hash
      */
     public function getHash()
     {
