@@ -60,7 +60,7 @@ if ($r->isSuccess()){
     $r = $cl->request(array(
         "COMMAND" => "StatusAccount"
     ));
-    echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>"; 
+    echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>"; 
     
     // Perform session close and logout    
     $r = $cl->logout();
@@ -103,7 +103,7 @@ $cl->useOTESystem()//LIVE System would be used otherwise by default
 $r = $cl->request(array(
     "COMMAND" => "StatusAccount"
 ));
-echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>";
+echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>";
 ```
 
 #### FYI
