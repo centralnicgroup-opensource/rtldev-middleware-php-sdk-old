@@ -1,0 +1,97 @@
+APIClient
+ [x] Get p o s t data obj
+ [x] Get p o s t data str
+ [x] Get p o s t data null
+ [ ] Enable debug mode
+ [ ] Disable debug mode
+ [x] Get u r l
+ [x] Set u r l
+ [x] Set o t p set
+ [x] Set o t p reset
+ [x] Set session set
+ [x] Set session credentials
+ [x] Set session reset
+ [x] Save reuse session
+ [x] Set remote i p address set
+ [x] Set remote i p address reset
+ [x] Set credentials set
+ [x] Set credentials reset
+ [x] Set role credentials set
+ [x] Set role credentials reset
+ [x] Login creds o k
+ [x] Login role creds o k
+ [x] Login creds f a i l
+ [x] Login extended creds o k
+ [x] Logout o k
+ [x] Logout f a i l
+ [x] Request code tmp error dbg
+ [x] Request code tmp error no dbg
+ [x] Request next response page no last
+ [x] Request next response page last
+ [x] Request next response page no first
+ [x] Request all response pages o k
+ [x] Set user view
+ [x] Reset user view
+
+Column
+ [x] Get key
+
+Record
+ [x] Get data
+ [x] Get data by key
+
+Response
+ [x] Get current page number entries
+ [x] Get current page number no entries
+ [x] Get first record index no first no rows
+ [x] Get first record index no first rows
+ [x] Get columns
+ [x] Get column index exists
+ [x] Get column index not exists
+ [x] Get column keys
+ [x] Get current record rows
+ [x] Get current record no rows
+ [x] Get list hash
+ [x] Get next record
+ [x] Get pagination
+ [x] Get previous record
+ [x] Has next page no rows
+ [x] Has next page rows
+ [x] Has previous page no rows 1
+ [x] Has previous page no rows 2
+ [x] Get last record index no rows
+ [x] Get last record index no last rows
+ [x] Get next page number no rows
+ [x] Get next page number rows
+ [x] Get number of pages
+ [x] Get previous page number no rows
+ [x] Get previous page number rows
+ [x] Rewind record list
+
+ResponseParser
+ [x] Parse
+ [x] Serialize property
+ [x] Serialize no property
+ [x] Serialize no code no description
+ [x] Serialize q tand r t
+
+ResponseTemplateManager
+ [x] Uniqueness
+ [x] Clone
+ [x] Get template not found
+ [x] Get templates
+ [x] Is template match hash
+ [x] Is template match plain
+ [x] Add template
+
+ResponseTemplate
+ [x] Constructor empty raw
+ [x] Get hash
+ [x] Get queuetime no
+ [x] Get queuetime
+ [x] Get runtime no
+ [x] Get runtime
+
+SocketConfig
+ [x] Get p o s t data
+

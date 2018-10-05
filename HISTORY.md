@@ -1,3 +1,21 @@
+# [4.0.0](https://github.com/hexonet/php-sdk/compare/v3.0.3...v4.0.0) (2018-10-05)
+
+
+### Bug Fixes
+
+* **travis:** try config review ([dfdc6cd](https://github.com/hexonet/php-sdk/commit/dfdc6cd))
+* **travis:** try release process review ([c7cee36](https://github.com/hexonet/php-sdk/commit/c7cee36))
+
+
+### Features
+
+* **4.0.0:** Merge pull request [#2](https://github.com/hexonet/php-sdk/issues/2) from hexonet/v4.0.0 ([55d095c](https://github.com/hexonet/php-sdk/commit/55d095c))
+
+
+### BREAKING CHANGES
+
+* **4.0.0:** Review in direction of our generic UML Diagram.
+
 ### Changelog
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
