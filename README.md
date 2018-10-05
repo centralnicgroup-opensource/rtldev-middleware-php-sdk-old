@@ -12,6 +12,7 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 ## Resources
 
 * [Usage Guide](https://github.com/hexonet/php-sdk/blob/master/README.md#how-to-use-this-module-in-your-project)
+* [Migration Guide](https://github.com/hexonet/php-sdk/wiki/Migration-Guide)
 * [SDK Documenation](https://rawgit.com/hexonet/php-sdk/master/build/api/index.html)
 * [HEXONET Backend API Documentation](https://github.com/hexonet/hexonet-api-documentation/tree/master/API)
 * [Release Notes](https://github.com/hexonet/php-sdk/releases)
