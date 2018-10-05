@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/hexonet/php-sdk/compare/v4.0.3...v4.0.4) (2018-10-05)
+
+
+### Bug Fixes
+
+* **docs:** review jsdoc comments ([0d8f5d7](https://github.com/hexonet/php-sdk/commit/0d8f5d7))
+
 ## [4.0.3](https://github.com/hexonet/php-sdk/compare/v4.0.2...v4.0.3) (2018-10-05)
 
 

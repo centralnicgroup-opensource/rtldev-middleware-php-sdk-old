@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="common" tests="81" assertions="176" errors="2" failures="0" skipped="0" time="13.273038">
-    <testsuite name="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" tests="33" assertions="95" errors="2" failures="0" skipped="0" time="13.132636">
-      <testcase name="test_getPOSTDataObj" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="22" assertions="1" time="0.004004"/>
-      <testcase name="test_getPOSTDataStr" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="30" assertions="1" time="0.000815"/>
-      <testcase name="test_getPOSTDataNull" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="35" assertions="1" time="0.000785"/>
-      <testcase name="test_enableDebugMode" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="43" assertions="0" time="0.000756">
+  <testsuite name="common" tests="81" assertions="176" errors="2" failures="0" skipped="0" time="13.050582">
+    <testsuite name="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" tests="33" assertions="95" errors="2" failures="0" skipped="0" time="12.962594">
+      <testcase name="test_getPOSTDataObj" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="22" assertions="1" time="0.003894"/>
+      <testcase name="test_getPOSTDataStr" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="30" assertions="1" time="0.000738"/>
+      <testcase name="test_getPOSTDataNull" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="35" assertions="1" time="0.000754"/>
+      <testcase name="test_enableDebugMode" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="43" assertions="0" time="0.000561">
         <error type="PHPUnit\Framework\RiskyTestError">Risky Test
 </error>
       </testcase>
-      <testcase name="test_disableDebugMode" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="47" assertions="0" time="0.000944">
+      <testcase name="test_disableDebugMode" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="47" assertions="0" time="0.000576">
         <error type="PHPUnit\Framework\RiskyTestError">Risky Test
 </error>
       </testcase>
-      <testcase name="test_getURL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="51" assertions="1" time="0.001081"/>
-      <testcase name="test_setURL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="56" assertions="1" time="0.001077"/>
-      <testcase name="test_setOTPSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="62" assertions="1" time="0.001249"/>
-      <testcase name="test_setOTPReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="70" assertions="1" time="0.001248"/>
-      <testcase name="test_setSessionSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="78" assertions="1" time="0.001268"/>
-      <testcase name="test_setSessionCredentials" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="86" assertions="1" time="0.001385"/>
-      <testcase name="test_setSessionReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="97" assertions="1" time="0.001229"/>
-      <testcase name="test_saveReuseSession" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="105" assertions="1" time="0.001495"/>
-      <testcase name="test_setRemoteIPAddressSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="117" assertions="1" time="0.001269"/>
-      <testcase name="test_setRemoteIPAddressReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="125" assertions="1" time="0.001364"/>
-      <testcase name="test_setCredentialsSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="133" assertions="1" time="0.001420"/>
-      <testcase name="test_setCredentialsReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="141" assertions="1" time="0.001293"/>
-      <testcase name="test_setRoleCredentialsSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="149" assertions="1" time="0.001293"/>
-      <testcase name="test_setRoleCredentialsReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="157" assertions="1" time="0.001310"/>
-      <testcase name="test_loginCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="165" assertions="4" time="0.609569"/>
-      <testcase name="test_loginRoleCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="176" assertions="4" time="0.599694"/>
-      <testcase name="test_loginCredsFAIL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="187" assertions="2" time="0.603989"/>
-      <testcase name="test_loginExtendedCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="197" assertions="4" time="0.467850"/>
-      <testcase name="test_logoutOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="210" assertions="2" time="0.588128"/>
-      <testcase name="test_logoutFAIL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="216" assertions="2" time="0.581704"/>
-      <testcase name="test_requestCodeTmpErrorDbg" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="222" assertions="4" time="0.485048">
+      <testcase name="test_getURL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="51" assertions="1" time="0.000662"/>
+      <testcase name="test_setURL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="56" assertions="1" time="0.000679"/>
+      <testcase name="test_setOTPSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="62" assertions="1" time="0.000840"/>
+      <testcase name="test_setOTPReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="70" assertions="1" time="0.000809"/>
+      <testcase name="test_setSessionSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="78" assertions="1" time="0.000784"/>
+      <testcase name="test_setSessionCredentials" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="86" assertions="1" time="0.000912"/>
+      <testcase name="test_setSessionReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="97" assertions="1" time="0.000833"/>
+      <testcase name="test_saveReuseSession" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="105" assertions="1" time="0.000975"/>
+      <testcase name="test_setRemoteIPAddressSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="117" assertions="1" time="0.000777"/>
+      <testcase name="test_setRemoteIPAddressReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="125" assertions="1" time="0.000776"/>
+      <testcase name="test_setCredentialsSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="133" assertions="1" time="0.000866"/>
+      <testcase name="test_setCredentialsReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="141" assertions="1" time="0.000783"/>
+      <testcase name="test_setRoleCredentialsSet" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="149" assertions="1" time="0.000814"/>
+      <testcase name="test_setRoleCredentialsReset" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="157" assertions="1" time="0.000786"/>
+      <testcase name="test_loginCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="165" assertions="4" time="0.819225"/>
+      <testcase name="test_loginRoleCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="176" assertions="4" time="0.512402"/>
+      <testcase name="test_loginCredsFAIL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="187" assertions="2" time="0.469054"/>
+      <testcase name="test_loginExtendedCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="197" assertions="4" time="0.515756"/>
+      <testcase name="test_logoutOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="210" assertions="2" time="0.469809"/>
+      <testcase name="test_logoutFAIL" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="216" assertions="2" time="0.486541"/>
+      <testcase name="test_requestCodeTmpErrorDbg" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="222" assertions="4" time="0.510286">
         <system-out>https://coreapi.1api.net/api/call.cgi
 s_entity=1234&amp;s_login=test.user&amp;s_pw=test.passw0rd&amp;s_command=COMMAND%3DGetUserIndex
 [RESPONSE]
@@ -49,75 +49,75 @@ EOF
 
 </system-out>
       </testcase>
-      <testcase name="test_requestCodeTmpErrorNoDbg" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="234" assertions="4" time="0.543725"/>
-      <testcase name="test_requestNextResponsePageNoLast" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="244" assertions="12" time="1.083813"/>
-      <testcase name="test_requestNextResponsePageLast" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="265" assertions="3" time="0.464184"/>
-      <testcase name="test_requestNextResponsePageNoFirst" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="278" assertions="12" time="0.994396"/>
-      <testcase name="test_requestAllResponsePagesOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="299" assertions="21" time="5.132220"/>
-      <testcase name="test_setUserView" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="312" assertions="2" time="0.468264"/>
-      <testcase name="test_resetUserView" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="321" assertions="2" time="0.484767"/>
+      <testcase name="test_requestCodeTmpErrorNoDbg" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="234" assertions="4" time="0.485100"/>
+      <testcase name="test_requestNextResponsePageNoLast" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="244" assertions="12" time="0.989861"/>
+      <testcase name="test_requestNextResponsePageLast" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="265" assertions="3" time="0.476083"/>
+      <testcase name="test_requestNextResponsePageNoFirst" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="278" assertions="12" time="1.030617"/>
+      <testcase name="test_requestAllResponsePagesOK" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="299" assertions="21" time="5.227573"/>
+      <testcase name="test_setUserView" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="312" assertions="2" time="0.468057"/>
+      <testcase name="test_resetUserView" class="APIClientTest" classname="APIClientTest" file="/home/travis/build/hexonet/php-sdk/tests/APIClientTest.php" line="321" assertions="2" time="0.484411"/>
     </testsuite>
-    <testsuite name="ColumnTest" file="/home/travis/build/hexonet/php-sdk/tests/ColumnTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.001119">
-      <testcase name="test_getKey" class="ColumnTest" classname="ColumnTest" file="/home/travis/build/hexonet/php-sdk/tests/ColumnTest.php" line="9" assertions="1" time="0.001119"/>
+    <testsuite name="ColumnTest" file="/home/travis/build/hexonet/php-sdk/tests/ColumnTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000785">
+      <testcase name="test_getKey" class="ColumnTest" classname="ColumnTest" file="/home/travis/build/hexonet/php-sdk/tests/ColumnTest.php" line="9" assertions="1" time="0.000785"/>
     </testsuite>
-    <testsuite name="RecordTest" file="/home/travis/build/hexonet/php-sdk/tests/RecordTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.002312">
-      <testcase name="test_getData" class="RecordTest" classname="RecordTest" file="/home/travis/build/hexonet/php-sdk/tests/RecordTest.php" line="9" assertions="1" time="0.001174"/>
-      <testcase name="test_getDataByKey" class="RecordTest" classname="RecordTest" file="/home/travis/build/hexonet/php-sdk/tests/RecordTest.php" line="20" assertions="1" time="0.001138"/>
+    <testsuite name="RecordTest" file="/home/travis/build/hexonet/php-sdk/tests/RecordTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001400">
+      <testcase name="test_getData" class="RecordTest" classname="RecordTest" file="/home/travis/build/hexonet/php-sdk/tests/RecordTest.php" line="9" assertions="1" time="0.000673"/>
+      <testcase name="test_getDataByKey" class="RecordTest" classname="RecordTest" file="/home/travis/build/hexonet/php-sdk/tests/RecordTest.php" line="20" assertions="1" time="0.000727"/>
     </testsuite>
-    <testsuite name="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.007334">
-      <testcase name="test_parse" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="21" assertions="1" time="0.001676"/>
-      <testcase name="test_serializeProperty" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="26" assertions="1" time="0.001563"/>
-      <testcase name="test_serializeNoProperty" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="36" assertions="1" time="0.001395"/>
-      <testcase name="test_serializeNoCodeNoDescription" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="41" assertions="1" time="0.001351"/>
-      <testcase name="test_serializeQTandRT" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="48" assertions="1" time="0.001349"/>
+    <testsuite name="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.004541">
+      <testcase name="test_parse" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="21" assertions="1" time="0.001089"/>
+      <testcase name="test_serializeProperty" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="26" assertions="1" time="0.000903"/>
+      <testcase name="test_serializeNoProperty" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="36" assertions="1" time="0.000843"/>
+      <testcase name="test_serializeNoCodeNoDescription" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="41" assertions="1" time="0.000868"/>
+      <testcase name="test_serializeQTandRT" class="ResponseParserTest" classname="ResponseParserTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseParserTest.php" line="48" assertions="1" time="0.000838"/>
     </testsuite>
-    <testsuite name="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" tests="7" assertions="17" errors="0" failures="0" skipped="0" time="0.014419">
-      <testcase name="test_uniqueness" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="20" assertions="2" time="0.001691"/>
-      <testcase name="test_clone" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="28" assertions="2" time="0.001441"/>
-      <testcase name="test_getTemplateNotFound" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="34" assertions="2" time="0.001455"/>
-      <testcase name="test_getTemplates" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="40" assertions="8" time="0.003965"/>
-      <testcase name="test_isTemplateMatchHash" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="52" assertions="1" time="0.001829"/>
-      <testcase name="test_isTemplateMatchPlain" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="57" assertions="1" time="0.001938"/>
-      <testcase name="test_addTemplate" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="62" assertions="1" time="0.002100"/>
+    <testsuite name="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" tests="7" assertions="17" errors="0" failures="0" skipped="0" time="0.008986">
+      <testcase name="test_uniqueness" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="20" assertions="2" time="0.001101"/>
+      <testcase name="test_clone" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="28" assertions="2" time="0.000841"/>
+      <testcase name="test_getTemplateNotFound" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="34" assertions="2" time="0.000902"/>
+      <testcase name="test_getTemplates" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="40" assertions="8" time="0.002534"/>
+      <testcase name="test_isTemplateMatchHash" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="52" assertions="1" time="0.001192"/>
+      <testcase name="test_isTemplateMatchPlain" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="57" assertions="1" time="0.001151"/>
+      <testcase name="test_addTemplate" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateManagerTest.php" line="62" assertions="1" time="0.001265"/>
     </testsuite>
-    <testsuite name="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" tests="6" assertions="8" errors="0" failures="0" skipped="0" time="0.010536">
-      <testcase name="test_constructorEmptyRaw" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="9" assertions="2" time="0.001690"/>
-      <testcase name="test_getHash" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="15" assertions="2" time="0.001587"/>
-      <testcase name="test_getQueuetimeNo" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="21" assertions="1" time="0.002001"/>
-      <testcase name="test_getQueuetime" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="26" assertions="1" time="0.001816"/>
-      <testcase name="test_getRuntimeNo" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="31" assertions="1" time="0.002036"/>
-      <testcase name="test_getRuntime" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="36" assertions="1" time="0.001406"/>
+    <testsuite name="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" tests="6" assertions="8" errors="0" failures="0" skipped="0" time="0.006505">
+      <testcase name="test_constructorEmptyRaw" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="9" assertions="2" time="0.001067"/>
+      <testcase name="test_getHash" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="15" assertions="2" time="0.000973"/>
+      <testcase name="test_getQueuetimeNo" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="21" assertions="1" time="0.001251"/>
+      <testcase name="test_getQueuetime" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="26" assertions="1" time="0.001189"/>
+      <testcase name="test_getRuntimeNo" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="31" assertions="1" time="0.001224"/>
+      <testcase name="test_getRuntime" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTemplateTest.php" line="36" assertions="1" time="0.000801"/>
     </testsuite>
-    <testsuite name="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" tests="26" assertions="47" errors="0" failures="0" skipped="0" time="0.103334">
-      <testcase name="test_getCurrentPageNumberEntries" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="23" assertions="1" time="0.004312"/>
-      <testcase name="test_getCurrentPageNumberNoEntries" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="28" assertions="1" time="0.001597"/>
-      <testcase name="test_getFirstRecordIndexNoFirstNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="33" assertions="1" time="0.001415"/>
-      <testcase name="test_getFirstRecordIndexNoFirstRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="38" assertions="1" time="0.002208"/>
-      <testcase name="test_getColumns" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="47" assertions="1" time="0.004250"/>
-      <testcase name="test_getColumnIndexExists" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="53" assertions="1" time="0.004109"/>
-      <testcase name="test_getColumnIndexNotExists" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="59" assertions="1" time="0.004168"/>
-      <testcase name="test_getColumnKeys" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="65" assertions="7" time="0.005919"/>
-      <testcase name="test_getCurrentRecordRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="77" assertions="1" time="0.009387"/>
-      <testcase name="test_getCurrentRecordNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="90" assertions="1" time="0.001577"/>
-      <testcase name="test_getListHash" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="96" assertions="3" time="0.007736"/>
-      <testcase name="test_getNextRecord" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="104" assertions="2" time="0.004519"/>
-      <testcase name="test_getPagination" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="112" assertions="9" time="0.006761"/>
-      <testcase name="test_getPreviousRecord" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="126" assertions="2" time="0.009703"/>
-      <testcase name="test_hasNextPageNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="142" assertions="1" time="0.001765"/>
-      <testcase name="test_hasNextPageRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="147" assertions="1" time="0.004691"/>
-      <testcase name="test_hasPreviousPageNoRows1" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="152" assertions="1" time="0.001707"/>
-      <testcase name="test_hasPreviousPageNoRows2" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="157" assertions="1" time="0.004244"/>
-      <testcase name="test_getLastRecordIndexNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="162" assertions="1" time="0.001610"/>
-      <testcase name="test_getLastRecordIndexNoLastRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="167" assertions="1" time="0.002227"/>
-      <testcase name="test_getNextPageNumberNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="176" assertions="1" time="0.001684"/>
-      <testcase name="test_getNextPageNumberRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="181" assertions="1" time="0.005015"/>
-      <testcase name="test_getNumberOfPages" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="186" assertions="1" time="0.001751"/>
-      <testcase name="test_getPreviousPageNumberNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="191" assertions="1" time="0.001694"/>
-      <testcase name="test_getPreviousPageNumberRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="196" assertions="1" time="0.004506"/>
-      <testcase name="test_rewindRecordList" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="201" assertions="4" time="0.004780"/>
+    <testsuite name="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" tests="26" assertions="47" errors="0" failures="0" skipped="0" time="0.065013">
+      <testcase name="test_getCurrentPageNumberEntries" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="23" assertions="1" time="0.002974"/>
+      <testcase name="test_getCurrentPageNumberNoEntries" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="28" assertions="1" time="0.001092"/>
+      <testcase name="test_getFirstRecordIndexNoFirstNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="33" assertions="1" time="0.001045"/>
+      <testcase name="test_getFirstRecordIndexNoFirstRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="38" assertions="1" time="0.001355"/>
+      <testcase name="test_getColumns" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="47" assertions="1" time="0.002572"/>
+      <testcase name="test_getColumnIndexExists" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="53" assertions="1" time="0.002645"/>
+      <testcase name="test_getColumnIndexNotExists" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="59" assertions="1" time="0.002520"/>
+      <testcase name="test_getColumnKeys" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="65" assertions="7" time="0.003730"/>
+      <testcase name="test_getCurrentRecordRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="77" assertions="1" time="0.005716"/>
+      <testcase name="test_getCurrentRecordNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="90" assertions="1" time="0.000983"/>
+      <testcase name="test_getListHash" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="96" assertions="3" time="0.004974"/>
+      <testcase name="test_getNextRecord" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="104" assertions="2" time="0.002662"/>
+      <testcase name="test_getPagination" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="112" assertions="9" time="0.004328"/>
+      <testcase name="test_getPreviousRecord" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="126" assertions="2" time="0.005980"/>
+      <testcase name="test_hasNextPageNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="142" assertions="1" time="0.001108"/>
+      <testcase name="test_hasNextPageRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="147" assertions="1" time="0.002864"/>
+      <testcase name="test_hasPreviousPageNoRows1" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="152" assertions="1" time="0.001094"/>
+      <testcase name="test_hasPreviousPageNoRows2" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="157" assertions="1" time="0.002930"/>
+      <testcase name="test_getLastRecordIndexNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="162" assertions="1" time="0.000987"/>
+      <testcase name="test_getLastRecordIndexNoLastRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="167" assertions="1" time="0.001496"/>
+      <testcase name="test_getNextPageNumberNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="176" assertions="1" time="0.001126"/>
+      <testcase name="test_getNextPageNumberRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="181" assertions="1" time="0.003060"/>
+      <testcase name="test_getNumberOfPages" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="186" assertions="1" time="0.001051"/>
+      <testcase name="test_getPreviousPageNumberNoRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="191" assertions="1" time="0.001089"/>
+      <testcase name="test_getPreviousPageNumberRows" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="196" assertions="1" time="0.002651"/>
+      <testcase name="test_rewindRecordList" class="ResponseTest" classname="ResponseTest" file="/home/travis/build/hexonet/php-sdk/tests/ResponseTest.php" line="201" assertions="4" time="0.002981"/>
     </testsuite>
-    <testsuite name="SocketConfigTest" file="/home/travis/build/hexonet/php-sdk/tests/SocketConfigTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.001349">
-      <testcase name="test_getPOSTData" class="SocketConfigTest" classname="SocketConfigTest" file="/home/travis/build/hexonet/php-sdk/tests/SocketConfigTest.php" line="9" assertions="1" time="0.001349"/>
+    <testsuite name="SocketConfigTest" file="/home/travis/build/hexonet/php-sdk/tests/SocketConfigTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000758">
+      <testcase name="test_getPOSTData" class="SocketConfigTest" classname="SocketConfigTest" file="/home/travis/build/hexonet/php-sdk/tests/SocketConfigTest.php" line="9" assertions="1" time="0.000758"/>
     </testsuite>
   </testsuite>
 </testsuites>
