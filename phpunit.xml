@@ -4,7 +4,8 @@
         bootstrap="./vendor/autoload.php"
         convertErrorsToExceptions="true"
         convertNoticesToExceptions="true"
-        convertWarningsToExceptions="true">
+        convertWarningsToExceptions="true"
+        stderr="true">
     <testsuites>
         <testsuite name="common">
             <directory suffix="Test.php">tests</directory>
