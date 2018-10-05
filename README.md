@@ -58,7 +58,7 @@ if ($r->isSuccess()){
     // Now reuse the created API session for further request
     // You don't have to care about anything!
     $r = $cl->request(array(
-        "COMMAND" => "StatusAccount
+        "COMMAND" => "StatusAccount"
     ));
     echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>"; 
     
@@ -66,7 +66,7 @@ if ($r->isSuccess()){
     $r = $cl->logout();
     if ($r->isSuccess()){
         echo "LOGOUT SUCCEEDED.<br/>";
-    else {
+    } else {
         echo "LOGOUT FAILED.<br/>";
     }
 }
@@ -101,7 +101,7 @@ $cl->useOTESystem()//LIVE System would be used otherwise by default
    // ->setRemoteIPAddress("1.2.3.4:80"); // provide ip address used for active ip filter
    ->setCredentials("test.user", "test.passw0rd");
 $r = $cl->request(array(
-    "COMMAND" => "StatusAccount
+    "COMMAND" => "StatusAccount"
 ));
 echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>";
 ```
