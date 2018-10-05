@@ -43,7 +43,52 @@ Please have an eye on our [HEXONET Backend API documentation](https://github.com
 
 #### Session based API Communication
 
-Not yet available, this needs a review of the SDK.
+Available since version 4.x!
+
+```php
+$cl = new \HEXONET\APIClient();
+$cl->useOTESystem()//LIVE System would be used otherwise by default
+   ->setCredentials("test.user", "test.passw0rd");
+$r = $cl->login();
+// or this line for using 2FA
+// $r = $cl->login('.. here your otp code ...');
+if ($r->isSuccess()){
+    echo "LOGIN SUCCEEDED.<br/>";
+    
+    // Now reuse the created API session for further request
+    // You don't have to care about anything!
+    $r = $cl->request(array(
+        "COMMAND" => "StatusAccount
+    ));
+    echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>"; 
+    
+    // Perform session close and logout    
+    $r = $cl->logout();
+    if ($r->isSuccess()){
+        echo "LOGOUT SUCCEEDED.<br/>";
+    else {
+        echo "LOGOUT FAILED.<br/>";
+    }
+}
+else {
+    echo "LOGIN FAILED.<br/>";
+}
+```
+
+##### Save session config into PHP Session
+If you're realizing your own frontend on top, you need a solution to keep the Backend API Session that the PHP-SDK wraps internally to be reusable in further page loads. This can be achieved by
+
+```php
+// right after successful login
+$cl->saveSession($_SESSION);
+```
+
+and 
+
+```php
+// for every further request
+$cl->reuseSession($_SESSION);
+```
 
 #### Sessionless API Communication
 
@@ -51,16 +96,12 @@ Not yet available, this needs a review of the SDK.
 require __DIR__ . '/vendor/autoload.php';
 
 // --- SESSIONLESS API COMMUNICATION ---
-$api = \HEXONET\Connection::connect(array(
-    "url" => "https://coreapi.1api.net/api/call.cgi",
-    "login" => "test.user",
-    "password" => "test.passw0rd",
-    "entity" => "1234",
-    //"remoteaddr" => "1.2.3.4" //optional: use this in case of ip filter setting
-));
-
-$r = $api->call(array(
-    "COMMAND" => "StatusAccount"
+$cl = new \HEXONET\APIClient();
+$cl->useOTESystem()//LIVE System would be used otherwise by default
+   // ->setRemoteIPAddress("1.2.3.4:80"); // provide ip address used for active ip filter
+   ->setCredentials("test.user", "test.passw0rd");
+$r = $cl->request(array(
+    "COMMAND" => "StatusAccount
 ));
 echo "<pre>" . htmlspecialchars(print_r($r->asHash(), true)) . "</pre>";
 ```
