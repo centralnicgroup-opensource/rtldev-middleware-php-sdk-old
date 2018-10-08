@@ -327,16 +327,16 @@
         },
         {
             "name": "php-mock/php-mock-phpunit",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-mock/php-mock-phpunit.git",
-                "reference": "ff1cc1d4e7478ce74221e05742588619bee84f69"
+                "reference": "57b92e621f14c2c07a4567cd29ed4e87de0d2912"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-mock/php-mock-phpunit/zipball/ff1cc1d4e7478ce74221e05742588619bee84f69",
-                "reference": "ff1cc1d4e7478ce74221e05742588619bee84f69",
+                "url": "https://api.github.com/repos/php-mock/php-mock-phpunit/zipball/57b92e621f14c2c07a4567cd29ed4e87de0d2912",
+                "reference": "57b92e621f14c2c07a4567cd29ed4e87de0d2912",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +377,7 @@
                 "test",
                 "test double"
             ],
-            "time": "2018-04-06T13:54:43+00:00"
+            "time": "2018-10-07T14:38:37+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
