@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="common" tests="83" assertions="178" errors="2" failures="0" skipped="0" time="4.675972">
-    <testsuite name="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" tests="35" assertions="97" errors="2" failures="0" skipped="0" time="4.582594">
-      <testcase name="test_getPOSTDataObj" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="22" assertions="1" time="0.003270"/>
-      <testcase name="test_getPOSTDataStr" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="30" assertions="1" time="0.000592"/>
-      <testcase name="test_getPOSTDataNull" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="35" assertions="1" time="0.000919"/>
-      <testcase name="test_enableDebugMode" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="43" assertions="0" time="0.000630">
+  <testsuite name="common" tests="83" assertions="178" errors="2" failures="0" skipped="0" time="5.458159">
+    <testsuite name="HEXONETTEST\APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" tests="35" assertions="97" errors="2" failures="0" skipped="0" time="5.333739">
+      <testcase name="testGetPOSTDataObj" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="26" assertions="1" time="0.003335"/>
+      <testcase name="testGetPOSTDataStr" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="35" assertions="1" time="0.000604"/>
+      <testcase name="testGetPOSTDataNull" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="41" assertions="1" time="0.000861"/>
+      <testcase name="testEnableDebugMode" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="50" assertions="0" time="0.000717">
         <error type="PHPUnit\Framework\RiskyTestError">Risky Test
 </error>
       </testcase>
-      <testcase name="test_disableDebugMode" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="47" assertions="0" time="0.000544">
+      <testcase name="testDisableDebugMode" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="55" assertions="0" time="0.000955">
         <error type="PHPUnit\Framework\RiskyTestError">Risky Test
 </error>
       </testcase>
-      <testcase name="test_getSession" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="51" assertions="1" time="0.001084"/>
-      <testcase name="test_getSessionIDSet" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="56" assertions="1" time="0.000933"/>
-      <testcase name="test_getURL" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="63" assertions="1" time="0.000741"/>
-      <testcase name="test_setURL" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="68" assertions="1" time="0.000614"/>
-      <testcase name="test_setOTPSet" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="74" assertions="1" time="0.000615"/>
-      <testcase name="test_setOTPReset" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="82" assertions="1" time="0.000651"/>
-      <testcase name="test_setSessionSet" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="90" assertions="1" time="0.000709"/>
-      <testcase name="test_setSessionCredentials" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="98" assertions="1" time="0.000804"/>
-      <testcase name="test_setSessionReset" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="109" assertions="1" time="0.000857"/>
-      <testcase name="test_saveReuseSession" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="117" assertions="1" time="0.001063"/>
-      <testcase name="test_setRemoteIPAddressSet" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="129" assertions="1" time="0.001033"/>
-      <testcase name="test_setRemoteIPAddressReset" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="137" assertions="1" time="0.000655"/>
-      <testcase name="test_setCredentialsSet" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="145" assertions="1" time="0.000664"/>
-      <testcase name="test_setCredentialsReset" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="153" assertions="1" time="0.000643"/>
-      <testcase name="test_setRoleCredentialsSet" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="161" assertions="1" time="0.000763"/>
-      <testcase name="test_setRoleCredentialsReset" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="169" assertions="1" time="0.000778"/>
-      <testcase name="test_loginCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="177" assertions="4" time="0.205222"/>
-      <testcase name="test_loginRoleCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="188" assertions="4" time="0.149075"/>
-      <testcase name="test_loginCredsFAIL" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="198" assertions="2" time="0.147896"/>
-      <testcase name="test_loginExtendedCredsOK" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="208" assertions="4" time="0.175570"/>
-      <testcase name="test_logoutOK" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="221" assertions="2" time="0.149973"/>
-      <testcase name="test_logoutFAIL" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="227" assertions="2" time="0.161736"/>
-      <testcase name="test_requestCodeTmpErrorDbg" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="233" assertions="4" time="0.149153">
+      <testcase name="testGetSession" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="60" assertions="1" time="0.001237"/>
+      <testcase name="testGetSessionIDSet" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="66" assertions="1" time="0.001092"/>
+      <testcase name="testGetURL" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="74" assertions="1" time="0.001539"/>
+      <testcase name="testSetURL" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="80" assertions="1" time="0.000991"/>
+      <testcase name="testSetOTPSet" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="87" assertions="1" time="0.001118"/>
+      <testcase name="testSetOTPReset" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="96" assertions="1" time="0.000829"/>
+      <testcase name="testSetSessionSet" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="105" assertions="1" time="0.000714"/>
+      <testcase name="testSetSessionCredentials" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="114" assertions="1" time="0.000931"/>
+      <testcase name="testSetSessionReset" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="126" assertions="1" time="0.001637"/>
+      <testcase name="testSaveReuseSession" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="135" assertions="1" time="0.001198"/>
+      <testcase name="testSetRemoteIPAddressSet" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="148" assertions="1" time="0.001210"/>
+      <testcase name="testSetRemoteIPAddressReset" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="157" assertions="1" time="0.000685"/>
+      <testcase name="testSetCredentialsSet" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="166" assertions="1" time="0.000778"/>
+      <testcase name="testSetCredentialsReset" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="175" assertions="1" time="0.000687"/>
+      <testcase name="testSetRoleCredentialsSet" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="184" assertions="1" time="0.000730"/>
+      <testcase name="testSetRoleCredentialsReset" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="193" assertions="1" time="0.001586"/>
+      <testcase name="testLoginCredsOK" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="202" assertions="4" time="0.171707"/>
+      <testcase name="testLoginRoleCredsOK" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="214" assertions="4" time="0.169688"/>
+      <testcase name="testLoginCredsFAIL" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="225" assertions="2" time="0.136754"/>
+      <testcase name="testLoginExtendedCredsOK" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="236" assertions="4" time="0.153439"/>
+      <testcase name="testLogoutOK" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="250" assertions="2" time="0.158627"/>
+      <testcase name="testLogoutFAIL" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="257" assertions="2" time="0.158619"/>
+      <testcase name="testRequestCodeTmpErrorDbg" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="264" assertions="4" time="0.161359">
         <system-out>https://coreapi.1api.net/api/call.cgi
 s_entity=1234&amp;s_login=test.user&amp;s_pw=test.passw0rd&amp;s_command=COMMAND%3DGetUserIndex
 [RESPONSE]
@@ -51,75 +51,75 @@ EOF
 
 </system-out>
       </testcase>
-      <testcase name="test_requestCodeTmpErrorNoDbg" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="245" assertions="4" time="0.144224"/>
-      <testcase name="test_requestNextResponsePageNoLast" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="255" assertions="12" time="0.348392"/>
-      <testcase name="test_requestNextResponsePageLast" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="276" assertions="3" time="0.147096"/>
-      <testcase name="test_requestNextResponsePageNoFirst" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="289" assertions="12" time="0.642603"/>
-      <testcase name="test_requestAllResponsePagesOK" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="310" assertions="21" time="1.844732"/>
-      <testcase name="test_setUserView" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="323" assertions="2" time="0.146453"/>
-      <testcase name="test_resetUserView" class="APIClientTest" classname="APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="332" assertions="2" time="0.151907"/>
+      <testcase name="testRequestCodeTmpErrorNoDbg" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="277" assertions="4" time="0.149915"/>
+      <testcase name="testRequestNextResponsePageNoLast" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="288" assertions="12" time="0.375816"/>
+      <testcase name="testRequestNextResponsePageLast" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="310" assertions="3" time="0.156063"/>
+      <testcase name="testRequestNextResponsePageNoFirst" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="324" assertions="12" time="1.345073"/>
+      <testcase name="testRequestAllResponsePagesOK" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="346" assertions="21" time="1.861691"/>
+      <testcase name="testSetUserView" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="360" assertions="2" time="0.152640"/>
+      <testcase name="testResetUserView" class="HEXONETTEST\APIClientTest" classname="HEXONETTEST.APIClientTest" file="/home/kai/git/php-sdk/tests/APIClientTest.php" line="370" assertions="2" time="0.158913"/>
     </testsuite>
-    <testsuite name="ColumnTest" file="/home/kai/git/php-sdk/tests/ColumnTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000721">
-      <testcase name="test_getKey" class="ColumnTest" classname="ColumnTest" file="/home/kai/git/php-sdk/tests/ColumnTest.php" line="9" assertions="1" time="0.000721"/>
+    <testsuite name="HEXONETTEST\ColumnTest" file="/home/kai/git/php-sdk/tests/ColumnTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.001370">
+      <testcase name="testGetKey" class="HEXONETTEST\ColumnTest" classname="HEXONETTEST.ColumnTest" file="/home/kai/git/php-sdk/tests/ColumnTest.php" line="11" assertions="1" time="0.001370"/>
     </testsuite>
-    <testsuite name="RecordTest" file="/home/kai/git/php-sdk/tests/RecordTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001815">
-      <testcase name="test_getData" class="RecordTest" classname="RecordTest" file="/home/kai/git/php-sdk/tests/RecordTest.php" line="9" assertions="1" time="0.000884"/>
-      <testcase name="test_getDataByKey" class="RecordTest" classname="RecordTest" file="/home/kai/git/php-sdk/tests/RecordTest.php" line="20" assertions="1" time="0.000931"/>
+    <testsuite name="HEXONETTEST\RecordTest" file="/home/kai/git/php-sdk/tests/RecordTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001401">
+      <testcase name="testGetData" class="HEXONETTEST\RecordTest" classname="HEXONETTEST.RecordTest" file="/home/kai/git/php-sdk/tests/RecordTest.php" line="11" assertions="1" time="0.000838"/>
+      <testcase name="testGetDataByKey" class="HEXONETTEST\RecordTest" classname="HEXONETTEST.RecordTest" file="/home/kai/git/php-sdk/tests/RecordTest.php" line="23" assertions="1" time="0.000563"/>
     </testsuite>
-    <testsuite name="ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.005655">
-      <testcase name="test_parse" class="ResponseParserTest" classname="ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="21" assertions="1" time="0.001163"/>
-      <testcase name="test_serializeProperty" class="ResponseParserTest" classname="ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="26" assertions="1" time="0.001047"/>
-      <testcase name="test_serializeNoProperty" class="ResponseParserTest" classname="ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="36" assertions="1" time="0.001203"/>
-      <testcase name="test_serializeNoCodeNoDescription" class="ResponseParserTest" classname="ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="41" assertions="1" time="0.001007"/>
-      <testcase name="test_serializeQTandRT" class="ResponseParserTest" classname="ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="48" assertions="1" time="0.001235"/>
+    <testsuite name="HEXONETTEST\ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" tests="5" assertions="5" errors="0" failures="0" skipped="0" time="0.005245">
+      <testcase name="testParse" class="HEXONETTEST\ResponseParserTest" classname="HEXONETTEST.ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="25" assertions="1" time="0.001472"/>
+      <testcase name="testSerializeProperty" class="HEXONETTEST\ResponseParserTest" classname="HEXONETTEST.ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="31" assertions="1" time="0.001329"/>
+      <testcase name="testSerializeNoProperty" class="HEXONETTEST\ResponseParserTest" classname="HEXONETTEST.ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="42" assertions="1" time="0.000727"/>
+      <testcase name="testSerializeNoCodeNoDescription" class="HEXONETTEST\ResponseParserTest" classname="HEXONETTEST.ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="48" assertions="1" time="0.000709"/>
+      <testcase name="testSerializeQTandRT" class="HEXONETTEST\ResponseParserTest" classname="HEXONETTEST.ResponseParserTest" file="/home/kai/git/php-sdk/tests/ResponseParserTest.php" line="56" assertions="1" time="0.001008"/>
     </testsuite>
-    <testsuite name="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" tests="7" assertions="17" errors="0" failures="0" skipped="0" time="0.009979">
-      <testcase name="test_uniqueness" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="20" assertions="2" time="0.001193"/>
-      <testcase name="test_clone" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="28" assertions="2" time="0.000796"/>
-      <testcase name="test_getTemplateNotFound" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="34" assertions="2" time="0.001049"/>
-      <testcase name="test_getTemplates" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="40" assertions="8" time="0.003187"/>
-      <testcase name="test_isTemplateMatchHash" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="52" assertions="1" time="0.001352"/>
-      <testcase name="test_isTemplateMatchPlain" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="57" assertions="1" time="0.001141"/>
-      <testcase name="test_addTemplate" class="ResponseTemplateManagerTest" classname="ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="62" assertions="1" time="0.001261"/>
+    <testsuite name="HEXONETTEST\ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" tests="7" assertions="17" errors="0" failures="0" skipped="0" time="0.014315">
+      <testcase name="testUniqueness" class="HEXONETTEST\ResponseTemplateManagerTest" classname="HEXONETTEST.ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="24" assertions="2" time="0.002845"/>
+      <testcase name="testClone" class="HEXONETTEST\ResponseTemplateManagerTest" classname="HEXONETTEST.ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="32" assertions="2" time="0.001250"/>
+      <testcase name="testGetTemplateNotFound" class="HEXONETTEST\ResponseTemplateManagerTest" classname="HEXONETTEST.ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="39" assertions="2" time="0.001149"/>
+      <testcase name="testGetTemplates" class="HEXONETTEST\ResponseTemplateManagerTest" classname="HEXONETTEST.ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="46" assertions="8" time="0.003084"/>
+      <testcase name="testIsTemplateMatchHash" class="HEXONETTEST\ResponseTemplateManagerTest" classname="HEXONETTEST.ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="59" assertions="1" time="0.001474"/>
+      <testcase name="testIsTemplateMatchPlain" class="HEXONETTEST\ResponseTemplateManagerTest" classname="HEXONETTEST.ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="65" assertions="1" time="0.002441"/>
+      <testcase name="testAddTemplate" class="HEXONETTEST\ResponseTemplateManagerTest" classname="HEXONETTEST.ResponseTemplateManagerTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateManagerTest.php" line="71" assertions="1" time="0.002072"/>
     </testsuite>
-    <testsuite name="ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" tests="6" assertions="8" errors="0" failures="0" skipped="0" time="0.008431">
-      <testcase name="test_constructorEmptyRaw" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="9" assertions="2" time="0.001385"/>
-      <testcase name="test_getHash" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="15" assertions="2" time="0.001596"/>
-      <testcase name="test_getQueuetimeNo" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="21" assertions="1" time="0.001384"/>
-      <testcase name="test_getQueuetime" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="26" assertions="1" time="0.001495"/>
-      <testcase name="test_getRuntimeNo" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="31" assertions="1" time="0.001437"/>
-      <testcase name="test_getRuntime" class="ResponseTemplateTest" classname="ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="36" assertions="1" time="0.001134"/>
+    <testsuite name="HEXONETTEST\ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" tests="6" assertions="8" errors="0" failures="0" skipped="0" time="0.010991">
+      <testcase name="testConstructorEmptyRaw" class="HEXONETTEST\ResponseTemplateTest" classname="HEXONETTEST.ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="11" assertions="2" time="0.002407"/>
+      <testcase name="testGetHash" class="HEXONETTEST\ResponseTemplateTest" classname="HEXONETTEST.ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="18" assertions="2" time="0.001417"/>
+      <testcase name="testGetQueuetimeNo" class="HEXONETTEST\ResponseTemplateTest" classname="HEXONETTEST.ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="25" assertions="1" time="0.001529"/>
+      <testcase name="testGetQueuetime" class="HEXONETTEST\ResponseTemplateTest" classname="HEXONETTEST.ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="31" assertions="1" time="0.001860"/>
+      <testcase name="testGetRuntimeNo" class="HEXONETTEST\ResponseTemplateTest" classname="HEXONETTEST.ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="37" assertions="1" time="0.001945"/>
+      <testcase name="testGetRuntime" class="HEXONETTEST\ResponseTemplateTest" classname="HEXONETTEST.ResponseTemplateTest" file="/home/kai/git/php-sdk/tests/ResponseTemplateTest.php" line="43" assertions="1" time="0.001833"/>
     </testsuite>
-    <testsuite name="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" tests="26" assertions="47" errors="0" failures="0" skipped="0" time="0.065883">
-      <testcase name="test_getCurrentPageNumberEntries" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="23" assertions="1" time="0.002449"/>
-      <testcase name="test_getCurrentPageNumberNoEntries" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="28" assertions="1" time="0.001248"/>
-      <testcase name="test_getFirstRecordIndexNoFirstNoRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="33" assertions="1" time="0.001163"/>
-      <testcase name="test_getFirstRecordIndexNoFirstRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="38" assertions="1" time="0.002140"/>
-      <testcase name="test_getColumns" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="47" assertions="1" time="0.002233"/>
-      <testcase name="test_getColumnIndexExists" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="53" assertions="1" time="0.002351"/>
-      <testcase name="test_getColumnIndexNotExists" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="59" assertions="1" time="0.002857"/>
-      <testcase name="test_getColumnKeys" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="65" assertions="7" time="0.004489"/>
-      <testcase name="test_getCurrentRecordRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="77" assertions="1" time="0.004940"/>
-      <testcase name="test_getCurrentRecordNoRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="90" assertions="1" time="0.001367"/>
-      <testcase name="test_getListHash" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="95" assertions="3" time="0.004216"/>
-      <testcase name="test_getNextRecord" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="103" assertions="2" time="0.002421"/>
-      <testcase name="test_getPagination" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="110" assertions="9" time="0.004387"/>
-      <testcase name="test_getPreviousRecord" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="124" assertions="2" time="0.005015"/>
-      <testcase name="test_hasNextPageNoRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="138" assertions="1" time="0.000897"/>
-      <testcase name="test_hasNextPageRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="143" assertions="1" time="0.002296"/>
-      <testcase name="test_hasPreviousPageNoRows1" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="148" assertions="1" time="0.001609"/>
-      <testcase name="test_hasPreviousPageNoRows2" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="153" assertions="1" time="0.003128"/>
-      <testcase name="test_getLastRecordIndexNoRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="158" assertions="1" time="0.001180"/>
-      <testcase name="test_getLastRecordIndexNoLastRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="163" assertions="1" time="0.001676"/>
-      <testcase name="test_getNextPageNumberNoRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="172" assertions="1" time="0.001418"/>
-      <testcase name="test_getNextPageNumberRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="177" assertions="1" time="0.003631"/>
-      <testcase name="test_getNumberOfPages" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="182" assertions="1" time="0.000991"/>
-      <testcase name="test_getPreviousPageNumberNoRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="187" assertions="1" time="0.001093"/>
-      <testcase name="test_getPreviousPageNumberRows" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="192" assertions="1" time="0.002922"/>
-      <testcase name="test_rewindRecordList" class="ResponseTest" classname="ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="197" assertions="4" time="0.003766"/>
+    <testsuite name="HEXONETTEST\ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" tests="26" assertions="47" errors="0" failures="0" skipped="0" time="0.090416">
+      <testcase name="testGetCurrentPageNumberEntries" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="27" assertions="1" time="0.003440"/>
+      <testcase name="testGetCurrentPageNumberNoEntries" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="33" assertions="1" time="0.001599"/>
+      <testcase name="testGetFirstRecordIndexNoFirstNoRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="39" assertions="1" time="0.001576"/>
+      <testcase name="testGetFirstRecordIndexNoFirstRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="45" assertions="1" time="0.002562"/>
+      <testcase name="testGetColumns" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="55" assertions="1" time="0.004201"/>
+      <testcase name="testGetColumnIndexExists" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="62" assertions="1" time="0.003233"/>
+      <testcase name="testGetColumnIndexNotExists" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="69" assertions="1" time="0.002218"/>
+      <testcase name="testGetColumnKeys" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="76" assertions="7" time="0.007954"/>
+      <testcase name="testGetCurrentRecordRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="89" assertions="1" time="0.008884"/>
+      <testcase name="testGetCurrentRecordNoRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="103" assertions="1" time="0.002168"/>
+      <testcase name="testGetListHash" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="109" assertions="3" time="0.007660"/>
+      <testcase name="testGetNextRecord" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="118" assertions="2" time="0.003165"/>
+      <testcase name="testGetPagination" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="126" assertions="9" time="0.003931"/>
+      <testcase name="testGetPreviousRecord" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="141" assertions="2" time="0.007600"/>
+      <testcase name="testHasNextPageNoRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="156" assertions="1" time="0.001381"/>
+      <testcase name="testHasNextPageRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="162" assertions="1" time="0.004205"/>
+      <testcase name="testHasPreviousPageNoRows1" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="168" assertions="1" time="0.001415"/>
+      <testcase name="testHasPreviousPageNoRows2" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="174" assertions="1" time="0.003407"/>
+      <testcase name="testGetLastRecordIndexNoRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="180" assertions="1" time="0.001770"/>
+      <testcase name="testGetLastRecordIndexNoLastRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="186" assertions="1" time="0.001202"/>
+      <testcase name="testGetNextPageNumberNoRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="196" assertions="1" time="0.001768"/>
+      <testcase name="testGetNextPageNumberRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="202" assertions="1" time="0.002947"/>
+      <testcase name="testGetNumberOfPages" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="208" assertions="1" time="0.001972"/>
+      <testcase name="testGetPreviousPageNumberNoRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="214" assertions="1" time="0.002054"/>
+      <testcase name="testGetPreviousPageNumberRows" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="220" assertions="1" time="0.003355"/>
+      <testcase name="testRewindRecordList" class="HEXONETTEST\ResponseTest" classname="HEXONETTEST.ResponseTest" file="/home/kai/git/php-sdk/tests/ResponseTest.php" line="226" assertions="4" time="0.004749"/>
     </testsuite>
-    <testsuite name="SocketConfigTest" file="/home/kai/git/php-sdk/tests/SocketConfigTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000895">
-      <testcase name="test_getPOSTData" class="SocketConfigTest" classname="SocketConfigTest" file="/home/kai/git/php-sdk/tests/SocketConfigTest.php" line="9" assertions="1" time="0.000895"/>
+    <testsuite name="HEXONETTEST\SocketConfigTest" file="/home/kai/git/php-sdk/tests/SocketConfigTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000682">
+      <testcase name="testGetPOSTData" class="HEXONETTEST\SocketConfigTest" classname="HEXONETTEST.SocketConfigTest" file="/home/kai/git/php-sdk/tests/SocketConfigTest.php" line="11" assertions="1" time="0.000682"/>
     </testsuite>
   </testsuite>
 </testsuites>

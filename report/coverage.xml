@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1539618245">
-  <project timestamp="1539618245">
+<coverage generated="1539619525">
+  <project timestamp="1539619525">
     <package name="HEXONET">
       <file name="/home/kai/git/php-sdk/src/APIClient.php">
         <class name="HEXONET\APIClient" namespace="HEXONET">

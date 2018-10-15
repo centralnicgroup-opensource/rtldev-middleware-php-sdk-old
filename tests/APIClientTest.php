@@ -309,7 +309,7 @@ final class APIClientTest extends TestCase
 
     public function testRequestNextResponsePageLast()
     {
-        $this->expectException(Error::class);
+        $this->expectException(\Error::class);
         $this->expectExceptionMessage('Parameter LAST in use. Please remove it to avoid issues in requestNextPage.');
         $r = self::$cl->request(array(
             'COMMAND' => 'QueryDomainList',

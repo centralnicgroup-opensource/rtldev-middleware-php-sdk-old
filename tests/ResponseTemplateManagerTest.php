@@ -31,8 +31,8 @@ final class ResponseTemplateManagerTest extends TestCase
 
     public function testClone()
     {
-        $this->expectException(Error::class);
-        $this->expectExceptionMessage("Call to private HEXONET\ResponseTemplateManager::__clone() from context 'ResponseTemplateManagerTest'");
+        $this->expectException(\Error::class);
+        $this->expectExceptionMessage("Call to private HEXONET\ResponseTemplateManager::__clone() from context 'HEXONETTEST\ResponseTemplateManagerTest'");
         $rtm = clone self::$rtm;
     }
 
