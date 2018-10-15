@@ -1,9 +1,11 @@
-APIClient
+HEXONETTEST\APIClient
  [x] Get p o s t data obj
  [x] Get p o s t data str
  [x] Get p o s t data null
  [ ] Enable debug mode
  [ ] Disable debug mode
+ [x] Get session
+ [x] Get session i d set
  [x] Get u r l
  [x] Set u r l
  [x] Set o t p set
@@ -33,21 +35,21 @@ APIClient
  [x] Set user view
  [x] Reset user view
 
-Column
+HEXONETTEST\Column
  [x] Get key
 
-Record
+HEXONETTEST\Record
  [x] Get data
  [x] Get data by key
 
-ResponseParser
+HEXONETTEST\ResponseParser
  [x] Parse
  [x] Serialize property
  [x] Serialize no property
  [x] Serialize no code no description
  [x] Serialize q tand r t
 
-ResponseTemplateManager
+HEXONETTEST\ResponseTemplateManager
  [x] Uniqueness
  [x] Clone
  [x] Get template not found
@@ -56,7 +58,7 @@ ResponseTemplateManager
  [x] Is template match plain
  [x] Add template
 
-ResponseTemplate
+HEXONETTEST\ResponseTemplate
  [x] Constructor empty raw
  [x] Get hash
  [x] Get queuetime no
@@ -64,7 +66,7 @@ ResponseTemplate
  [x] Get runtime no
  [x] Get runtime
 
-Response
+HEXONETTEST\Response
  [x] Get current page number entries
  [x] Get current page number no entries
  [x] Get first record index no first no rows
@@ -92,6 +94,6 @@ Response
  [x] Get previous page number rows
  [x] Rewind record list
 
-SocketConfig
+HEXONETTEST\SocketConfig
  [x] Get p o s t data
 

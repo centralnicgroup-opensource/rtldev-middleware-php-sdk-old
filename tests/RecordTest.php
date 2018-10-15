@@ -1,12 +1,15 @@
 <?php
 declare(strict_types=1);
 
+namespace HEXONETTEST;
+
 use PHPUnit\Framework\TestCase;
 use HEXONET\Record as R;
 
 final class RecordTest extends TestCase
 {
-    public function test_getData() {
+    public function testGetData()
+    {
         $d = array(
             'DOMAIN' => 'mydomain.com',
             'RATING' => '1',
@@ -17,7 +20,8 @@ final class RecordTest extends TestCase
         $this->assertEquals($d, $rec->getData());
     }
 
-    public function test_getDataByKey() {
+    public function testGetDataByKey()
+    {
         $rec = new R(array(
             'DOMAIN' => 'mydomain.com',
             'RATING' => '1',

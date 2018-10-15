@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace HEXONETTEST;
+
 use PHPUnit\Framework\TestCase;
 use HEXONET\ResponseTemplate as RT;
 use HEXONET\ResponseTemplateManager as RTM;
@@ -9,15 +11,17 @@ final class ResponseTemplateManagerTest extends TestCase
 {
     public static $rtm;
 
-    public static function setupBeforeClass() {
+    public static function setupBeforeClass()
+    {
         self::$rtm = RTM::getInstance();
     }
 
-    public static function tearDownAfterClass() {
+    public static function tearDownAfterClass()
+    {
         self::$rtm = null;
     }
 
-    public function test_uniqueness()
+    public function testUniqueness()
     {
         $firstCall = RTM::getInstance();
         $secondCall = RTM::getInstance();
@@ -25,19 +29,22 @@ final class ResponseTemplateManagerTest extends TestCase
         $this->assertSame($firstCall, $secondCall);
     }
 
-    public function test_clone() {
-        $this->expectException(Error::class);
-        $this->expectExceptionMessage("Call to private HEXONET\ResponseTemplateManager::__clone() from context 'ResponseTemplateManagerTest'");
+    public function testClone()
+    {
+        $this->expectException(\Error::class);
+        $this->expectExceptionMessage("Call to private HEXONET\ResponseTemplateManager::__clone() from context 'HEXONETTEST\ResponseTemplateManagerTest'");
         $rtm = clone self::$rtm;
     }
 
-    public function test_getTemplateNotFound() {
+    public function testGetTemplateNotFound()
+    {
         $tpl = self::$rtm->getTemplate('IwontExist');
         $this->assertEquals(500, $tpl->getCode());
         $this->assertEquals('Response Template not found', $tpl->getDescription());
     }
 
-    public function test_getTemplates() {
+    public function testGetTemplates()
+    {
         $tpl = self::$rtm->getTemplates();
         $this->assertArrayHasKey("404", $tpl);
         $this->assertArrayHasKey("500", $tpl);
@@ -49,17 +56,20 @@ final class ResponseTemplateManagerTest extends TestCase
         $this->assertArrayHasKey("nocurl", $tpl);
     }
 
-    public function test_isTemplateMatchHash() {
+    public function testIsTemplateMatchHash()
+    {
         $tpl = new RT('');
         $this->assertEquals(true, self::$rtm->isTemplateMatchHash($tpl->getHash(), "empty"));
     }
 
-    public function test_isTemplateMatchPlain() {
+    public function testIsTemplateMatchPlain()
+    {
         $tpl = new RT('');
         $this->assertEquals(true, self::$rtm->isTemplateMatchPlain($tpl->getPlain(), "empty"));
     }
 
-    public function test_addTemplate() {
+    public function testAddTemplate()
+    {
         $tpl = self::$rtm->addTemplate('test', '')->getTemplate('test');
         $this->assertEquals(true, self::$rtm->isTemplateMatchPlain($tpl->getPlain(), "empty"));
     }

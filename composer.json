@@ -53,8 +53,8 @@
 	"scripts": {
 		"docs": "./phpDocumentor.phar",
 		"phar": "box build ./src",
-		"cs": "./vendor/bin/phpcs --standard=PSR2 -n src",
-        "cbf": "./vendor/bin/phpcbf --standard=PSR2 -n src",
+		"cs": "./vendor/bin/phpcs --standard=PSR2 -q -n --colors src tests",
+        "cbf": "./vendor/bin/phpcbf --standard=PSR2 -q src tests",
         "unit": "./vendor/bin/phpunit",
         "test": [
             "@unit",

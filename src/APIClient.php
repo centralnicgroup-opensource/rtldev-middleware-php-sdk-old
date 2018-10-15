@@ -90,6 +90,16 @@ class APIClient
     }
 
     /**
+     * Get the API Session ID that is currently set
+     * @return string|null API Session ID currently in use
+     */
+    public function getSession()
+    {
+        $sessid = $this->socketConfig->getSession();
+        return ($sessid === "" ? null : $sessid);
+    }
+
+    /**
      * Get the API connection url that is currently set
      * @return string API connection url currently in use
      */
