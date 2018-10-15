@@ -48,6 +48,18 @@ final class APIClientTest extends TestCase
         self::$cl->disableDebugMode();
     }
 
+    public function test_getSession() {
+        $sessid = self::$cl->getSession();
+        $this->assertNull($sessid);
+    }
+
+    public function test_getSessionIDSet() {
+        $sess = 'testsession12345';
+        $sessid = self::$cl->setSession($sess)->getSession();
+        $this->assertEquals($sessid, $sess);
+        self::$cl->setSession('');
+    }
+
     public function test_getURL() {
         $url = self::$cl->getURL();
         $this->assertEquals($url, 'https://coreapi.1api.net/api/call.cgi');
