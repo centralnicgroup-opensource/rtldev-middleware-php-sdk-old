@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/hexonet/php-sdk/compare/v4.0.4...v4.1.0) (2018-10-15)
+
+
+### Features
+
+* **client:** add method getSession ([fae89c0](https://github.com/hexonet/php-sdk/commit/fae89c0))
+
 ## [4.0.4](https://github.com/hexonet/php-sdk/compare/v4.0.3...v4.0.4) (2018-10-05)
 
 
