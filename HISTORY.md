@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/hexonet/php-sdk/compare/v4.1.0...v4.2.0) (2018-10-17)
+
+
+### Bug Fixes
+
+* **dependabot:** minor release on build commit msg ([900fc97](https://github.com/hexonet/php-sdk/commit/900fc97))
+
 # [4.1.0](https://github.com/hexonet/php-sdk/compare/v4.0.4...v4.1.0) (2018-10-15)
 
 
