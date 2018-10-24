@@ -1,5 +1,4 @@
 language: php
-sudo: false
 dist: trusty
 notifications:
   email:
@@ -20,6 +19,7 @@ cache:
   - "~/.npm"
   - "node_modules"
 install:
+- sudo apt install graphviz
 - composer install
 script:
 - composer run-script test
