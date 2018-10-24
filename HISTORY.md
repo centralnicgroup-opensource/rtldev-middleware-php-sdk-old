@@ -1,3 +1,5 @@
+# [4.3.0](https://github.com/hexonet/php-sdk/compare/v4.2.0...v4.3.0) (2018-10-24)
+
 # [4.2.0](https://github.com/hexonet/php-sdk/compare/v4.1.0...v4.2.0) (2018-10-17)
 
 

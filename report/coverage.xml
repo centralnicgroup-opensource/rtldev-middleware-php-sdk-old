@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1539768823">
-  <project timestamp="1539768823">
+<coverage generated="1540367236">
+  <project timestamp="1540367236">
     <package name="HEXONET">
       <file name="/home/travis/build/hexonet/php-sdk/src/APIClient.php">
         <class name="HEXONET\APIClient" namespace="HEXONET">
