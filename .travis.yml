@@ -12,7 +12,9 @@ notifications:
     on_success: always
     on_failure: always
 php:
-- '7.2.10'
+- '7.1'
+- '7.2'
+- '7.3'
 cache:
   directories:
   - "~/.composer/cache"
