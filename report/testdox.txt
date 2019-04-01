@@ -7,6 +7,8 @@ HEXONETTEST\APIClient
  [x] Get session
  [x] Get session i d set
  [x] Get u r l
+ [x] Get user agent
+ [x] Set user agent
  [x] Set u r l
  [x] Set o t p set
  [x] Set o t p reset

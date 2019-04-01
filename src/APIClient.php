@@ -38,11 +38,17 @@ class APIClient
      * @var boolean
      */
     private $debugMode;
+    /**
+     * user agent
+     * @var string
+     */
+    private $ua;
 
     public function __construct()
     {
         $this->socketURL = "";
         $this->debugMode = false;
+        $this->ua = "";
         $this->setURL("https://coreapi.1api.net/api/call.cgi");
         $this->socketConfig = new SocketConfig();
         $this->useLIVESystem();
@@ -108,6 +114,28 @@ class APIClient
         return $this->socketURL;
     }
 
+    /**
+     * Set a custom user agent (for platforms that use this SDK)
+     * @param string user agent label
+     * @param string user agent revision
+     */
+    public function setUserAgent($str, $rv)
+    {
+        $this->ua = $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ") php-sdk/" . $this->getVersion() . " php/" . PHP_VERSION;
+    }
+
+    /**
+     * Get the user agent string
+     * @return string user agent string
+     */
+    public function getUserAgent()
+    {
+        if (!strlen($this->ua)) {
+            $this->ua = "PHP-SDK (". PHP_OS . "; ". php_uname('m') . "; rv:" . $this->getVersion() . ") php/" . PHP_VERSION;
+        }
+        return $this->ua;
+    }
+    
     /**
      * Get the current module version
      * @return string module version
@@ -291,7 +319,7 @@ class APIClient
             CURLOPT_HEADER          =>  0,
             CURLOPT_RETURNTRANSFER  =>  1,
             //CURLOPT_ENCODING        => 'gzip',
-            CURLOPT_USERAGENT       =>  'php-sdk::' . $this->getVersion(),
+            CURLOPT_USERAGENT       =>  $this->getUserAgent(),
             CURLOPT_HTTPHEADER      =>  array(
                 'Expect:',
                 'Content-type: text/html; charset=UTF-8',

@@ -77,6 +77,21 @@ final class APIClientTest extends TestCase
         $this->assertEquals($url, 'https://coreapi.1api.net/api/call.cgi');
     }
 
+    public function testGetUserAgent()
+    {
+        $ua = "PHP-SDK (". PHP_OS . "; ". php_uname('m') . "; rv:" . self::$cl->getVersion() . ") php/" . PHP_VERSION;
+        $this->assertEquals(self::$cl->getUserAgent(), $ua);
+    }
+
+    public function testSetUserAgent()
+    {
+        $pid = "WHMCS";
+        $rv = "7.7.0";
+        $ua = $pid . " (". PHP_OS . "; ". php_uname('m') . "; rv:" . $rv . ") php-sdk/" . self::$cl->getVersion() . " php/" . PHP_VERSION;
+        self::$cl->setUserAgent($pid, $rv);
+        $this->assertEquals(self::$cl->getUserAgent(), $ua);
+    }
+
     public function testSetURL()
     {
         $url = self::$cl->setURL('http://coreapi.1api.net/api/call.cgi')->getURL();
