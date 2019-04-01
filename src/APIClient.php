@@ -142,7 +142,7 @@ class APIClient
      */
     public function getVersion()
     {
-        return "4.3.1";
+        return "4.4.0";
     }
 
     /**

@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/hexonet/php-sdk/compare/v4.3.1...v4.4.0) (2019-04-01)
+
+
+### Features
+
+* **apiclient:** review user-agent header usage ([6aa5342](https://github.com/hexonet/php-sdk/commit/6aa5342))
+
 ## [4.3.1](https://github.com/hexonet/php-sdk/compare/v4.3.0...v4.3.1) (2018-10-24)
 
 
