@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1554132519">
-  <project timestamp="1554132519">
+<coverage generated="1554365439">
+  <project timestamp="1554365439">
     <package name="HEXONET">
       <file name="/home/travis/build/hexonet/php-sdk/src/APIClient.php">
         <class name="HEXONET\APIClient" namespace="HEXONET">
-          <metrics complexity="47" methods="28" coveredmethods="26" conditionals="0" coveredconditionals="0" statements="124" coveredstatements="114" elements="152" coveredelements="140"/>
+          <metrics complexity="47" methods="28" coveredmethods="26" conditionals="0" coveredconditionals="0" statements="123" coveredstatements="113" elements="151" coveredelements="139"/>
         </class>
         <line num="47" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="49" type="stmt" count="1"/>
@@ -14,12 +14,12 @@
         <line num="53" type="stmt" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="55" type="stmt" count="1"/>
-        <line num="61" type="method" name="enableDebugMode" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="63" type="stmt" count="1"/>
-        <line num="64" type="stmt" count="1"/>
-        <line num="71" type="method" name="disableDebugMode" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="73" type="stmt" count="2"/>
-        <line num="74" type="stmt" count="2"/>
+        <line num="61" type="method" name="enableDebugMode" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="63" type="stmt" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="71" type="method" name="disableDebugMode" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="73" type="stmt" count="3"/>
+        <line num="74" type="stmt" count="3"/>
         <line num="82" type="method" name="getPOSTData" visibility="public" complexity="4" crap="4" count="29"/>
         <line num="84" type="stmt" count="29"/>
         <line num="85" type="stmt" count="29"/>
@@ -35,130 +35,129 @@
         <line num="105" type="stmt" count="2"/>
         <line num="112" type="method" name="getURL" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="114" type="stmt" count="2"/>
-        <line num="122" type="method" name="setUserAgent" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="124" type="stmt" count="1"/>
+        <line num="123" type="method" name="setUserAgent" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="125" type="stmt" count="1"/>
-        <line num="131" type="method" name="getUserAgent" visibility="public" complexity="2" crap="2" count="16"/>
-        <line num="133" type="stmt" count="16"/>
-        <line num="134" type="stmt" count="1"/>
-        <line num="136" type="stmt" count="16"/>
-        <line num="143" type="method" name="getVersion" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="145" type="stmt" count="2"/>
-        <line num="153" type="method" name="saveSession" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="155" type="stmt" count="1"/>
-        <line num="156" type="stmt" count="1"/>
+        <line num="126" type="stmt" count="1"/>
+        <line num="133" type="method" name="getUserAgent" visibility="public" complexity="2" crap="2" count="16"/>
+        <line num="135" type="stmt" count="16"/>
+        <line num="136" type="stmt" count="1"/>
+        <line num="138" type="stmt" count="16"/>
+        <line num="145" type="method" name="getVersion" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="147" type="stmt" count="2"/>
+        <line num="155" type="method" name="saveSession" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="157" type="stmt" count="1"/>
+        <line num="158" type="stmt" count="1"/>
         <line num="159" type="stmt" count="1"/>
-        <line num="168" type="method" name="reuseSession" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="170" type="stmt" count="1"/>
-        <line num="171" type="stmt" count="1"/>
+        <line num="161" type="stmt" count="1"/>
+        <line num="170" type="method" name="reuseSession" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="172" type="stmt" count="1"/>
-        <line num="180" type="method" name="setURL" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="182" type="stmt" count="2"/>
-        <line num="183" type="stmt" count="2"/>
-        <line num="191" type="method" name="setOTP" visibility="public" complexity="1" crap="1" count="7"/>
-        <line num="193" type="stmt" count="7"/>
-        <line num="194" type="stmt" count="7"/>
-        <line num="202" type="method" name="setSession" visibility="public" complexity="1" crap="1" count="9"/>
-        <line num="204" type="stmt" count="9"/>
-        <line num="205" type="stmt" count="9"/>
-        <line num="214" type="method" name="setRemoteIPAddress" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="216" type="stmt" count="2"/>
-        <line num="217" type="stmt" count="2"/>
-        <line num="226" type="method" name="setCredentials" visibility="public" complexity="1" crap="1" count="10"/>
-        <line num="228" type="stmt" count="10"/>
-        <line num="229" type="stmt" count="10"/>
+        <line num="173" type="stmt" count="1"/>
+        <line num="174" type="stmt" count="1"/>
+        <line num="182" type="method" name="setURL" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="184" type="stmt" count="2"/>
+        <line num="185" type="stmt" count="2"/>
+        <line num="193" type="method" name="setOTP" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="195" type="stmt" count="7"/>
+        <line num="196" type="stmt" count="7"/>
+        <line num="204" type="method" name="setSession" visibility="public" complexity="1" crap="1" count="9"/>
+        <line num="206" type="stmt" count="9"/>
+        <line num="207" type="stmt" count="9"/>
+        <line num="216" type="method" name="setRemoteIPAddress" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="218" type="stmt" count="2"/>
+        <line num="219" type="stmt" count="2"/>
+        <line num="228" type="method" name="setCredentials" visibility="public" complexity="1" crap="1" count="10"/>
         <line num="230" type="stmt" count="10"/>
-        <line num="240" type="method" name="setRoleCredentials" visibility="public" complexity="2" crap="2" count="4"/>
-        <line num="242" type="stmt" count="4"/>
-        <line num="250" type="method" name="login" visibility="public" complexity="3" crap="3" count="3"/>
-        <line num="252" type="stmt" count="3"/>
-        <line num="253" type="stmt" count="3"/>
+        <line num="231" type="stmt" count="10"/>
+        <line num="232" type="stmt" count="10"/>
+        <line num="242" type="method" name="setRoleCredentials" visibility="public" complexity="2" crap="2" count="4"/>
+        <line num="244" type="stmt" count="4"/>
+        <line num="252" type="method" name="login" visibility="public" complexity="3" crap="3" count="3"/>
         <line num="254" type="stmt" count="3"/>
-        <line num="255" type="stmt" count="2"/>
-        <line num="256" type="stmt" count="2"/>
-        <line num="258" type="stmt" count="3"/>
-        <line num="268" type="method" name="loginExtended" visibility="public" complexity="3" crap="3" count="1"/>
-        <line num="270" type="stmt" count="1"/>
-        <line num="271" type="stmt" count="1"/>
+        <line num="255" type="stmt" count="3"/>
+        <line num="256" type="stmt" count="3"/>
+        <line num="257" type="stmt" count="2"/>
+        <line num="258" type="stmt" count="2"/>
+        <line num="260" type="stmt" count="3"/>
+        <line num="270" type="method" name="loginExtended" visibility="public" complexity="3" crap="3" count="1"/>
         <line num="272" type="stmt" count="1"/>
         <line num="273" type="stmt" count="1"/>
-        <line num="275" type="stmt" count="1"/>
-        <line num="276" type="stmt" count="1"/>
+        <line num="274" type="stmt" count="1"/>
         <line num="277" type="stmt" count="1"/>
+        <line num="278" type="stmt" count="1"/>
         <line num="279" type="stmt" count="1"/>
-        <line num="286" type="method" name="logout" visibility="public" complexity="2" crap="2" count="2"/>
-        <line num="288" type="stmt" count="2"/>
-        <line num="289" type="stmt" count="2"/>
-        <line num="290" type="stmt" count="1"/>
-        <line num="292" type="stmt" count="2"/>
-        <line num="300" type="method" name="request" visibility="public" complexity="5" crap="5.65" count="14"/>
-        <line num="302" type="stmt" count="14"/>
-        <line num="303" type="stmt" count="14"/>
+        <line num="281" type="stmt" count="1"/>
+        <line num="288" type="method" name="logout" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="290" type="stmt" count="2"/>
+        <line num="291" type="stmt" count="2"/>
+        <line num="292" type="stmt" count="1"/>
+        <line num="294" type="stmt" count="2"/>
+        <line num="302" type="method" name="request" visibility="public" complexity="5" crap="5.65" count="14"/>
         <line num="304" type="stmt" count="14"/>
-        <line num="305" type="stmt" count="0"/>
-        <line num="306" type="stmt" count="0"/>
+        <line num="305" type="stmt" count="14"/>
+        <line num="306" type="stmt" count="14"/>
         <line num="307" type="stmt" count="0"/>
         <line num="308" type="stmt" count="0"/>
         <line num="309" type="stmt" count="0"/>
         <line num="310" type="stmt" count="0"/>
+        <line num="311" type="stmt" count="0"/>
         <line num="312" type="stmt" count="0"/>
-        <line num="314" type="stmt" count="14"/>
+        <line num="314" type="stmt" count="0"/>
         <line num="316" type="stmt" count="14"/>
         <line num="318" type="stmt" count="14"/>
-        <line num="319" type="stmt" count="14"/>
         <line num="320" type="stmt" count="14"/>
+        <line num="321" type="stmt" count="14"/>
         <line num="322" type="stmt" count="14"/>
-        <line num="323" type="stmt" count="14"/>
-        <line num="330" type="stmt" count="14"/>
-        <line num="331" type="stmt" count="14"/>
-        <line num="332" type="stmt" count="0"/>
-        <line num="334" type="stmt" count="14"/>
-        <line num="339" type="stmt" count="14"/>
-        <line num="340" type="stmt" count="14"/>
-        <line num="341" type="stmt" count="1"/>
-        <line num="342" type="stmt" count="1"/>
+        <line num="324" type="stmt" count="14"/>
+        <line num="325" type="stmt" count="14"/>
+        <line num="332" type="stmt" count="14"/>
+        <line num="333" type="stmt" count="14"/>
+        <line num="334" type="stmt" count="0"/>
+        <line num="336" type="stmt" count="14"/>
+        <line num="341" type="stmt" count="14"/>
+        <line num="342" type="stmt" count="14"/>
         <line num="343" type="stmt" count="1"/>
-        <line num="345" type="stmt" count="14"/>
-        <line num="354" type="method" name="requestNextResponsePage" visibility="public" complexity="4" crap="4" count="4"/>
-        <line num="356" type="stmt" count="4"/>
-        <line num="357" type="stmt" count="4"/>
-        <line num="358" type="stmt" count="1"/>
-        <line num="360" type="stmt" count="3"/>
-        <line num="361" type="stmt" count="3"/>
-        <line num="362" type="stmt" count="2"/>
-        <line num="364" type="stmt" count="3"/>
-        <line num="365" type="stmt" count="3"/>
+        <line num="344" type="stmt" count="1"/>
+        <line num="345" type="stmt" count="1"/>
+        <line num="347" type="stmt" count="14"/>
+        <line num="356" type="method" name="requestNextResponsePage" visibility="public" complexity="4" crap="4" count="4"/>
+        <line num="358" type="stmt" count="4"/>
+        <line num="359" type="stmt" count="4"/>
+        <line num="360" type="stmt" count="1"/>
+        <line num="362" type="stmt" count="3"/>
+        <line num="363" type="stmt" count="3"/>
+        <line num="364" type="stmt" count="2"/>
         <line num="366" type="stmt" count="3"/>
         <line num="367" type="stmt" count="3"/>
         <line num="368" type="stmt" count="3"/>
         <line num="369" type="stmt" count="3"/>
         <line num="370" type="stmt" count="3"/>
-        <line num="372" type="stmt" count="1"/>
-        <line num="381" type="method" name="requestAllResponsePages" visibility="public" complexity="2" crap="2" count="1"/>
-        <line num="383" type="stmt" count="1"/>
-        <line num="384" type="stmt" count="1"/>
+        <line num="371" type="stmt" count="3"/>
+        <line num="372" type="stmt" count="3"/>
+        <line num="374" type="stmt" count="1"/>
+        <line num="383" type="method" name="requestAllResponsePages" visibility="public" complexity="2" crap="2" count="1"/>
         <line num="385" type="stmt" count="1"/>
         <line num="386" type="stmt" count="1"/>
+        <line num="387" type="stmt" count="1"/>
         <line num="388" type="stmt" count="1"/>
-        <line num="389" type="stmt" count="1"/>
         <line num="390" type="stmt" count="1"/>
         <line num="391" type="stmt" count="1"/>
-        <line num="399" type="method" name="setUserView" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="401" type="stmt" count="2"/>
-        <line num="402" type="stmt" count="2"/>
-        <line num="409" type="method" name="resetUserView" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="411" type="stmt" count="0"/>
-        <line num="412" type="stmt" count="0"/>
-        <line num="419" type="method" name="useOTESystem" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="421" type="stmt" count="3"/>
-        <line num="422" type="stmt" count="3"/>
-        <line num="429" type="method" name="useLIVESystem" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="431" type="stmt" count="1"/>
-        <line num="432" type="stmt" count="1"/>
-        <line num="440" type="method" name="toUpperCaseKeys" visibility="private" complexity="1" crap="1" count="4"/>
-        <line num="442" type="stmt" count="4"/>
-        <metrics loc="444" ncloc="264" classes="1" methods="28" coveredmethods="26" conditionals="0" coveredconditionals="0" statements="124" coveredstatements="114" elements="152" coveredelements="140"/>
+        <line num="392" type="stmt" count="1"/>
+        <line num="393" type="stmt" count="1"/>
+        <line num="401" type="method" name="setUserView" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="403" type="stmt" count="2"/>
+        <line num="404" type="stmt" count="2"/>
+        <line num="411" type="method" name="resetUserView" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="413" type="stmt" count="0"/>
+        <line num="414" type="stmt" count="0"/>
+        <line num="421" type="method" name="useOTESystem" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="423" type="stmt" count="3"/>
+        <line num="424" type="stmt" count="3"/>
+        <line num="431" type="method" name="useLIVESystem" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="433" type="stmt" count="1"/>
+        <line num="434" type="stmt" count="1"/>
+        <line num="442" type="method" name="toUpperCaseKeys" visibility="private" complexity="1" crap="1" count="4"/>
+        <line num="444" type="stmt" count="4"/>
+        <metrics loc="446" ncloc="265" classes="1" methods="28" coveredmethods="26" conditionals="0" coveredconditionals="0" statements="123" coveredstatements="113" elements="151" coveredelements="139"/>
       </file>
       <file name="/home/travis/build/hexonet/php-sdk/src/Column.php">
         <class name="HEXONET\Column" namespace="HEXONET">
@@ -556,6 +555,6 @@
         <metrics loc="198" ncloc="113" classes="1" methods="11" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="46" elements="57" coveredelements="57"/>
       </file>
     </package>
-    <metrics files="8" loc="1672" ncloc="997" classes="8" methods="102" coveredmethods="92" conditionals="0" coveredconditionals="0" statements="403" coveredstatements="376" elements="505" coveredelements="468"/>
+    <metrics files="8" loc="1674" ncloc="998" classes="8" methods="102" coveredmethods="92" conditionals="0" coveredconditionals="0" statements="402" coveredstatements="375" elements="504" coveredelements="467"/>
   </project>
 </coverage>

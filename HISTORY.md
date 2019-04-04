@@ -1,3 +1,10 @@
+## [4.4.1](https://github.com/hexonet/php-sdk/compare/v4.4.0...v4.4.1) (2019-04-04)
+
+
+### Bug Fixes
+
+* **APIClient:** return apiclient instance in setUserAgent method ([ec469ab](https://github.com/hexonet/php-sdk/commit/ec469ab))
+
 # [4.4.0](https://github.com/hexonet/php-sdk/compare/v4.3.1...v4.4.0) (2019-04-01)
 
 
