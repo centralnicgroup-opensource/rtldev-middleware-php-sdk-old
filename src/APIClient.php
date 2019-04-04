@@ -118,10 +118,12 @@ class APIClient
      * Set a custom user agent (for platforms that use this SDK)
      * @param string user agent label
      * @param string user agent revision
+     * @return $this
      */
     public function setUserAgent($str, $rv)
     {
         $this->ua = $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ") php-sdk/" . $this->getVersion() . " php/" . PHP_VERSION;
+        return $this;
     }
 
     /**
