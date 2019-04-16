@@ -45,4 +45,16 @@ final class ResponseTemplateTest extends TestCase
         $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response\r\nruntime=0.12\r\nEOF\r\n");
         $this->assertEquals(0.12, $rt->getRuntime());
     }
+
+    public function testIsPendingNo()
+    {
+        $rt = new RT('');
+        $this->assertEquals(false, $rt->isPending());
+    }
+
+    public function testIsPending()
+    {
+        $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response\r\npending=1\r\nEOF\r\n");
+        $this->assertEquals(true, $rt->isPending());
+    }
 }

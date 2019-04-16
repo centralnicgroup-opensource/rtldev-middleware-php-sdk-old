@@ -132,4 +132,13 @@ class ResponseTemplate
     {
         return substr($this->hash["CODE"], 0, 1) === "4";
     }
+
+    /**
+     * Check if current operation is returned as pending
+     * @return boolean result
+     */
+    public function isPending()
+    {
+        return isset($this->hash["PENDING"]) ? $this->hash["PENDING"] === "1" : false;
+    }
 }

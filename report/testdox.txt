@@ -67,6 +67,8 @@ HEXONETTEST\ResponseTemplate
  [x] Get queuetime
  [x] Get runtime no
  [x] Get runtime
+ [x] Is pending no
+ [x] Is pending
 
 HEXONETTEST\Response
  [x] Get current page number entries
