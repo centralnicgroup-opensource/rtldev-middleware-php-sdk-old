@@ -1,3 +1,10 @@
+# [4.5.0](https://github.com/hexonet/php-sdk/compare/v4.4.1...v4.5.0) (2019-04-16)
+
+
+### Features
+
+* **responsetemplate:** add isPending method ([f12c64f](https://github.com/hexonet/php-sdk/commit/f12c64f))
+
 ## [4.4.1](https://github.com/hexonet/php-sdk/compare/v4.4.0...v4.4.1) (2019-04-04)
 
 
