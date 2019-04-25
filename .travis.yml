@@ -35,6 +35,7 @@ install:
   - travis_retry composer install
   - travis_retry composer global require squizlabs/php_codesniffer
 script:
+  - composer run-script codeCheck
   - composer run-script test
 jobs:
   include:
