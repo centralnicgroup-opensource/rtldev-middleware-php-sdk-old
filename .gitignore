@@ -1,11 +1,11 @@
 /tests/logs/*.txt
 /tests/logs/*.log
 basic-test.php
-/vendor/
-/report/
-/docs/
-/build/
-/node_modules/
+vendor
+report
+docs
+build
+node_modules
 
 !build/
 build/*

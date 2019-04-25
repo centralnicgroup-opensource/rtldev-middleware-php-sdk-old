@@ -17,7 +17,6 @@ cache:
   - "~/.npm"
   - "node_modules"
 php:
-  - '7.1'
   - '7.2'
   - '7.3'
 # Trigger a push build on master and dependabot branches + PRs build on every branches
@@ -29,9 +28,12 @@ branches:
 addons:
   apt:
     update: true
+before_install:
+  - export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 install:
   - sudo apt install -y graphviz
   - travis_retry composer install
+  - travis_retry composer global require squizlabs/php_codesniffer
 script:
   - composer run-script test
 jobs:
