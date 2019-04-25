@@ -11,13 +11,13 @@ final class ResponseParserTest extends TestCase
 {
     public static $rtm;
 
-    public static function setupBeforeClass()
+    public static function setupBeforeClass(): void
     {
         self::$rtm = RTM::getInstance();
         self::$rtm->addTemplate("OK", self::$rtm->generateTemplate("200", "Command completed successfully"));
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         self::$rtm = null;
     }

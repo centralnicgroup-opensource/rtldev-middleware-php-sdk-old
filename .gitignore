@@ -4,9 +4,10 @@ basic-test.php
 vendor
 report
 docs
-build
 node_modules
 
+build
 !build/
 build/*
 !build/api
+.phpunit.result.cache

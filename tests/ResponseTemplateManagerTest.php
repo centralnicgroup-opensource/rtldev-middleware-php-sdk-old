@@ -11,12 +11,12 @@ final class ResponseTemplateManagerTest extends TestCase
 {
     public static $rtm;
 
-    public static function setupBeforeClass()
+    public static function setupBeforeClass(): void
     {
         self::$rtm = RTM::getInstance();
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         self::$rtm = null;
     }
