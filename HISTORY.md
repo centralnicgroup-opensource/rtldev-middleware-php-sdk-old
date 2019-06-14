@@ -1,3 +1,10 @@
+## [4.5.1](https://github.com/hexonet/php-sdk/compare/v4.5.0...v4.5.1) (2019-06-14)
+
+
+### Bug Fixes
+
+* **APIClient:** fix typo in method call ([c932484](https://github.com/hexonet/php-sdk/commit/c932484))
+
 # [4.5.0](https://github.com/hexonet/php-sdk/compare/v4.4.1...v4.5.0) (2019-04-16)
 
 
