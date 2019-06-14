@@ -304,7 +304,7 @@ class APIClient
         $curl = curl_init($this->socketURL);
         $data = $this->getPOSTData($cmd);
         if ($curl === false) {
-            $r = RTM::getInstance()->getTemplate("nocurl").getPlain();
+            $r = RTM::getInstance()->getTemplate("nocurl")->getPlain();
             if ($this->debugMode) {
                 echo $this->socketURL . "\n";
                 echo $data . "\n";
@@ -331,7 +331,7 @@ class APIClient
         ));
         $r = curl_exec($curl);
         $r = ($r===false) ?
-            RTM::getInstance()->getTemplate("httperror").getPlain() :
+            RTM::getInstance()->getTemplate("httperror")->getPlain() :
             //gzdecode($r);
             $r;
 
