@@ -72,10 +72,7 @@
         "assets": [
           "HISTORY.md",
           "package.json",
-          "package-lock.json",
-          "npm-shrinkwrap.json",
           "composer.json",
-          "composer.lock",
           "build",
           "report",
           "src/APIClient.php"
