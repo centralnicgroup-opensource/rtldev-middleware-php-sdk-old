@@ -76,7 +76,7 @@ final class APIClientTest extends TestCase
     public function testGetURL()
     {
         $url = self::$cl->getURL();
-        $this->assertEquals($url, 'https://coreapi.1api.net/api/call.cgi');
+        $this->assertEquals($url, 'https://api.ispapi.net/api/call.cgi');
     }
 
     public function testGetUserAgent()
@@ -97,9 +97,9 @@ final class APIClientTest extends TestCase
 
     public function testSetURL()
     {
-        $url = self::$cl->setURL('http://coreapi.1api.net/api/call.cgi')->getURL();
-        $this->assertEquals($url, 'http://coreapi.1api.net/api/call.cgi');
-        self::$cl->setURL('https://coreapi.1api.net/api/call.cgi');
+        $url = self::$cl->setURL('http://api.ispapi.net/api/call.cgi')->getURL();
+        $this->assertEquals($url, 'http://api.ispapi.net/api/call.cgi');
+        self::$cl->setURL('https://api.ispapi.net/api/call.cgi');
     }
 
     public function testSetOTPSet()

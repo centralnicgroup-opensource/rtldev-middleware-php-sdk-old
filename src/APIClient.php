@@ -49,7 +49,7 @@ class APIClient
         $this->socketURL = "";
         $this->debugMode = false;
         $this->ua = "";
-        $this->setURL("https://coreapi.1api.net/api/call.cgi");
+        $this->setURL("https://api.ispapi.net/api/call.cgi");
         $this->socketConfig = new SocketConfig();
         $this->useLIVESystem();
     }
