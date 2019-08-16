@@ -1,3 +1,10 @@
+## [4.5.2](https://github.com/hexonet/php-sdk/compare/v4.5.1...v4.5.2) (2019-08-16)
+
+
+### Bug Fixes
+
+* **APIClient:** change default SDK url ([c5505fe](https://github.com/hexonet/php-sdk/commit/c5505fe))
+
 ## [4.5.1](https://github.com/hexonet/php-sdk/compare/v4.5.0...v4.5.1) (2019-06-14)
 
 
