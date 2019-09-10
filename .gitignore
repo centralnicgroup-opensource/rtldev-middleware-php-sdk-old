@@ -6,6 +6,7 @@ report
 docs
 node_modules
 package-lock.json
+composer.lock
 build
 !build/
 build/*
