@@ -1,3 +1,11 @@
+## [4.5.3](https://github.com/hexonet/php-sdk/compare/v4.5.2...v4.5.3) (2019-09-18)
+
+
+### Bug Fixes
+
+* **release process:** fix path to composer in travis ([cc3f453](https://github.com/hexonet/php-sdk/commit/cc3f453))
+* **release process:** review configuration ([6fa9481](https://github.com/hexonet/php-sdk/commit/6fa9481))
+
 ## [4.5.2](https://github.com/hexonet/php-sdk/compare/v4.5.1...v4.5.2) (2019-08-16)
 
 
