@@ -1,3 +1,10 @@
+## [4.5.4](https://github.com/hexonet/php-sdk/compare/v4.5.3...v4.5.4) (2019-09-18)
+
+
+### Bug Fixes
+
+* **npm:** review package.json ([2684e71](https://github.com/hexonet/php-sdk/commit/2684e71))
+
 ## [4.5.3](https://github.com/hexonet/php-sdk/compare/v4.5.2...v4.5.3) (2019-09-18)
 
 
