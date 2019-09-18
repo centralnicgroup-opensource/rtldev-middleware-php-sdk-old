@@ -19,7 +19,7 @@ addons:
   apt:
     update: true
 before_install:
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 install:
   - sudo apt install -y graphviz
   - travis_retry composer install
