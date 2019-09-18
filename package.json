@@ -44,44 +44,5 @@
     "@semantic-release/github": "^5.4.3",
     "conventional-changelog": "^3.1.10",
     "semantic-release": "^15.13.18"
-  },
-  "release": {
-    "debug": false,
-    "analyzeCommits": {
-      "preset": "angular"
-    },
-    "generateNotes": {
-      "preset": "angular"
-    },
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      "@semantic-release/git",
-      "@semantic-release/github"
-    ],
-    "prepare": [
-      {
-        "path": "@semantic-release/changelog",
-        "changelogFile": "HISTORY.md"
-      },
-      {
-        "path": "@semantic-release/exec",
-        "cmd": "./updateVersion.sh ${nextRelease.version} ${options.branch}"
-      },
-      {
-        "path": "@semantic-release/git",
-        "assets": [
-          "HISTORY.md",
-          "package.json",
-          "composer.json",
-          "build",
-          "report",
-          "src/APIClient.php"
-        ],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
-    ],
-    "publish": [
-      "@semantic-release/github"
-    ]
   }
 }
