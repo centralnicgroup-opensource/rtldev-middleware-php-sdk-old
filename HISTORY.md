@@ -1,3 +1,10 @@
+## [4.5.5](https://github.com/hexonet/php-sdk/compare/v4.5.4...v4.5.5) (2019-10-04)
+
+
+### Bug Fixes
+
+* **responsetemplate/mgr:** improve description of `423 Empty API response` ([63d6c4c](https://github.com/hexonet/php-sdk/commit/63d6c4c))
+
 ## [4.5.4](https://github.com/hexonet/php-sdk/compare/v4.5.3...v4.5.4) (2019-09-18)
 
 
