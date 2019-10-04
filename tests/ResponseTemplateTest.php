@@ -12,14 +12,14 @@ final class ResponseTemplateTest extends TestCase
     {
         $rt = new RT('');
         $this->assertEquals(423, $rt->getCode());
-        $this->assertEquals("Empty API response", $rt->getDescription());
+        $this->assertEquals("Empty API response. Probably unreachable API end point", $rt->getDescription());
     }
     
     public function testGetHash()
     {
         $h = (new RT(''))->getHash();
         $this->assertEquals("423", $h["CODE"]);
-        $this->assertEquals("Empty API response", $h["DESCRIPTION"]);
+        $this->assertEquals("Empty API response. Probably unreachable API end point", $h["DESCRIPTION"]);
     }
 
     public function testGetQueuetimeNo()
@@ -30,7 +30,7 @@ final class ResponseTemplateTest extends TestCase
 
     public function testGetQueuetime()
     {
-        $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response\r\nqueuetime=0\r\nEOF\r\n");
+        $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response. Probably unreachable API end point\r\nqueuetime=0\r\nEOF\r\n");
         $this->assertEquals(0, $rt->getQueuetime());
     }
 
@@ -42,7 +42,7 @@ final class ResponseTemplateTest extends TestCase
 
     public function testGetRuntime()
     {
-        $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response\r\nruntime=0.12\r\nEOF\r\n");
+        $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response. Probably unreachable API end point\r\nruntime=0.12\r\nEOF\r\n");
         $this->assertEquals(0.12, $rt->getRuntime());
     }
 
@@ -54,7 +54,7 @@ final class ResponseTemplateTest extends TestCase
 
     public function testIsPending()
     {
-        $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response\r\npending=1\r\nEOF\r\n");
+        $rt = new RT("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response. Probably unreachable API end point\r\npending=1\r\nEOF\r\n");
         $this->assertEquals(true, $rt->isPending());
     }
 }
