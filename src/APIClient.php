@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+#declare(strict_types=1);
 
 /**
  * HEXONET
@@ -351,13 +351,14 @@ class APIClient
      * Request the next page of list entries for the current list query
      * Useful for tables
      * @param Response $rr API Response of current page
+     * @throws Exception in case Command Parameter LAST is in use while using this method
      * @return Response|null Response or null in case there are no further list entries
      */
     public function requestNextResponsePage($rr)
     {
         $mycmd = $this->toUpperCaseKeys($rr->getCommand());
         if (array_key_exists("LAST", $mycmd)) {
-            throw new \Error("Parameter LAST in use. Please remove it to avoid issues in requestNextPage.");
+            throw new \Exception("Parameter LAST in use. Please remove it to avoid issues in requestNextPage.");
         }
         $first = 0;
         if (array_key_exists("FIRST", $mycmd)) {
