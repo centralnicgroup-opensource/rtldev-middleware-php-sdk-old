@@ -1,3 +1,10 @@
+## [5.0.1](https://github.com/hexonet/php-sdk/compare/v5.0.0...v5.0.1) (2020-01-22)
+
+
+### Bug Fixes
+
+* **composer:** cleanup; trigger new release for commit 99b5b35 ([0b63c3f](https://github.com/hexonet/php-sdk/commit/0b63c3f92669ae7575bf7dfb65e87fee3e3b3f53))
+
 # [5.0.0](https://github.com/hexonet/php-sdk/compare/v4.5.5...v5.0.0) (2020-01-22)
 
 
