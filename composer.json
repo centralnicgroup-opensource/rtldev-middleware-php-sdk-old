@@ -25,12 +25,6 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Anthony Schneider",
-			"email": "anthonys@hexonet.net",
-			"homepage": "https://hexonet.net",
-			"role": "Developer"
-		},
-		{
 			"name": "Kai Schwarz",
 			"email": "kschwarz@hexonet.net",
 			"homepage": "https://hexonet.net",
