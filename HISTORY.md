@@ -1,3 +1,16 @@
+# [5.0.0](https://github.com/hexonet/php-sdk/compare/v4.5.5...v5.0.0) (2020-01-22)
+
+
+### Code Refactoring
+
+* **php5 support:** review to still support PHP5; for refactoring our 3rd party integrations ([cd652d5](https://github.com/hexonet/php-sdk/commit/cd652d57de70dfdc88402dfbbe19848b5ca25446))
+
+
+### BREAKING CHANGES
+
+* **php5 support:** APIClient's method requestNextResponsePage now throws an Exception instead of an
+Error (PHP5 compatibility). We will review in future in direction of PHP7 only.
+
 ## [4.5.5](https://github.com/hexonet/php-sdk/compare/v4.5.4...v4.5.5) (2019-10-04)
 
 
