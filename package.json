@@ -39,7 +39,7 @@
   "devDependencies": {
     "npm": ">=6.13.4",
     "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/exec": "^3.3.6",
+    "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^7.0.16",
     "semantic-release": "^15.13.18"
   }
