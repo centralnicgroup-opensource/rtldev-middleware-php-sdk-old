@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/hexonet/php-sdk/compare/v5.0.1...v5.1.0) (2020-03-13)
+
+
+### Features
+
+* **apiclient:** support bulk parameters through nested array in API command ([5494a41](https://github.com/hexonet/php-sdk/commit/5494a41516eda545e0605663671dbcea95a8d848))
+
 ## [5.0.1](https://github.com/hexonet/php-sdk/compare/v5.0.0...v5.0.1) (2020-01-22)
 
 
