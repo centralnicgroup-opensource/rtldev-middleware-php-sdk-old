@@ -107,6 +107,39 @@ $r = $cl->request(array(
 echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>";
 ```
 
+#### Using array-based notation for bulk parameters in command [SINCE 5.2.0]
+
+Use the below to improve code a bit:
+
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+$cl = new \HEXONET\APIClient();
+$cl->useOTESystem()
+   ->setCredentials("test.user", "test.passw0rd");
+$r = $cl->request([
+    "COMMAND" => "QueryDomainOptions"
+    "DOMAIN" => ["example1.com", "example2.com"]
+]);
+echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>";
+```
+
+instead of:
+
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+$cl = new \HEXONET\APIClient();
+$cl->useOTESystem()
+   ->setCredentials("test.user", "test.passw0rd");
+$r = $cl->request([
+    "COMMAND" => "QueryDomainOptions"
+    "DOMAIN0" => "example1.com",
+    "DOMAIN1" => "example2.com"
+]);
+echo "<pre>" . htmlspecialchars(print_r($r->getHash(), true)) . "</pre>";
+```
+
 #### FYI
 
 `$cl` - the APIClient Object - and `$r` - the Response Object - provide further useful Methods to access configure the connection and to access response data. Have an eye on the [class documentation](https://rawgit.com/hexonet/php-sdk/master/build/api/index.html).

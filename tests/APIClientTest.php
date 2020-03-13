@@ -47,6 +47,15 @@ final class APIClientTest extends TestCase
         $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DModifyDomain');
     }
 
+    public function testGetPOSTDataObjNested()
+    {
+        $enc = self::$cl->getPOSTData(array(
+            'COMMAND' => 'QueryDomainOptions',
+            'DOMAIN' => ['example1.com', 'example2.com']
+        ));
+        $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DQueryDomainOptions%0ADOMAIN0%3Dexample1.com%0ADOMAIN1%3Dexample2.com');
+    }
+
     public function testEnableDebugMode()
     {
         self::$cl->enableDebugMode();

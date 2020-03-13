@@ -86,7 +86,13 @@ class APIClient
         if (!is_string($cmd)) {
             foreach ($cmd as $key => $val) {
                 if (isset($val)) {
-                    $tmp .= $key . "=" . preg_replace("/\r|\n/", "", $val) . "\n";
+                    if (is_array($val)) {
+                        foreach ($val as $idx => $v) {
+                            $tmp .= $key . $idx . "=" . preg_replace("/\r|\n/", "", $v) . "\n";
+                        }
+                    } else {
+                        $tmp .= $key . "=" . preg_replace("/\r|\n/", "", $val) . "\n";
+                    }
                 }
             }
         }
