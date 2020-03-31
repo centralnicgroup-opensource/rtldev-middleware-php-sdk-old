@@ -86,13 +86,7 @@ class APIClient
         if (!is_string($cmd)) {
             foreach ($cmd as $key => $val) {
                 if (isset($val)) {
-                    if (is_array($val)) {
-                        foreach ($val as $idx => $v) {
-                            $tmp .= $key . $idx . "=" . preg_replace("/\r|\n/", "", $v) . "\n";
-                        }
-                    } else {
-                        $tmp .= $key . "=" . preg_replace("/\r|\n/", "", $val) . "\n";
-                    }
+                    $tmp .= $key . "=" . preg_replace("/\r|\n/", "", $val) . "\n";
                 }
             }
         }
@@ -300,6 +294,67 @@ class APIClient
         return $rr;
     }
 
+    private function flattenCommand($cmd)
+    {
+        $mycmd = $this->toUpperCaseKeys($cmd);
+        $newcmd = [];
+        foreach ($mycmd as $key => $val) {
+            if (isset($val)) {
+                $val = preg_replace("/\r|\n/", "", $val);
+                if (is_array($val)) {
+                    foreach ($cmd[$key] as $idx => $v) {
+                        $newcmd[$key.$idx] = $v;
+                    }
+                } else {
+                    $newcmd[$key] = $val;
+                }
+            }
+        }
+        return $newcmd;
+    }
+
+    /**
+     * Auto convert API command parameters to punycode, if necessary.
+     * @param array $cmd API command
+     * @return array
+     */
+    private function autoIDNConvert($cmd)
+    {
+        // don't convert for convertidn command to avoid endless loop
+        // and ignore commands in string format (even deprecated)
+        if (is_string($cmd) || preg_match("/^CONVERTIDN$/i", $cmd["COMMAND"])) {
+            return $cmd;
+        }
+        $toconvert = [];
+        $keys = preg_grep("/^(DOMAIN|NAMESERVER|DNSZONE)([0-9]*)$/i", array_keys($cmd));
+        if (empty($keys)) {
+            return $cmd;
+        }
+        $idxs = [];
+        foreach ($keys as $key) {
+            if (isset($cmd[$key])) {
+                $cmd[$key] = preg_replace("/\r|\n/", "", $cmd[$key]);
+                if (preg_match('/[^a-z0-9\.\- ]/i', $cmd[$key])) {// maybe preg_grep as replacement
+                    $toconvert[] = $cmd[$key];
+                    $idxs[] = $key;
+                }
+            }
+        }
+        $r = $this->request([
+            "COMMAND" => "ConvertIDN",
+            "DOMAIN" => $toconvert
+        ]);
+        if ($r->isSuccess()) {
+            $col = $r->getColumn("ACE");
+            if ($col) {
+                foreach ($col->getData() as $idx => $pc) {
+                    $cmd[$idxs[$idx]] = $pc;
+                }
+            }
+        }
+        return $cmd;
+    }
+
     /**
      * Perform API request using the given command
      * @param array $cmd API command to request
@@ -307,8 +362,14 @@ class APIClient
      */
     public function request($cmd)
     {
+        // flatten nested api command bulk parameters
+        $mycmd = $this->flattenCommand($cmd);
+        // auto convert umlaut names to punycode
+        $mycmd = $this->autoIDNConvert($mycmd);
+        
+        // request command to API
         $curl = curl_init($this->socketURL);
-        $data = $this->getPOSTData($cmd);
+        $data = $this->getPOSTData($mycmd);
         if ($curl === false) {
             $r = RTM::getInstance()->getTemplate("nocurl")->getPlain();
             if ($this->debugMode) {
@@ -317,13 +378,13 @@ class APIClient
                 echo "CURL Not available\n";
                 echo $r . "\n";
             }
-            return new Response($r, $cmd);
+            return new Response($r, $mycmd);
         }
         curl_setopt_array($curl, array(
             //timeout: APIClient.socketTimeout,
             CURLOPT_POST            =>  1,
             //CURLOPT_POSTFIELDS      =>  gzencode($this->getPOSTData($cmd)),
-            CURLOPT_POSTFIELDS      =>  $this->getPOSTData($cmd),
+            CURLOPT_POSTFIELDS      =>  $data,
             CURLOPT_HEADER          =>  0,
             CURLOPT_RETURNTRANSFER  =>  1,
             //CURLOPT_ENCODING        => 'gzip',
@@ -350,7 +411,7 @@ class APIClient
             echo $data . "\n";
             echo $r . "\n";
         }
-        return new Response($r, $cmd);
+        return new Response($r, $mycmd);
     }
 
     /**
@@ -362,7 +423,7 @@ class APIClient
      */
     public function requestNextResponsePage($rr)
     {
-        $mycmd = $this->toUpperCaseKeys($rr->getCommand());
+        $mycmd = $rr->getCommand();
         if (array_key_exists("LAST", $mycmd)) {
             throw new \Exception("Parameter LAST in use. Please remove it to avoid issues in requestNextPage.");
         }

@@ -41,19 +41,10 @@ final class APIClientTest extends TestCase
     public function testGetPOSTDataNull()
     {
         $enc = self::$cl->getPOSTData(array(
-        'COMMAND' => 'ModifyDomain',
-        'AUTH' => null
+            'COMMAND' => 'ModifyDomain',
+            'AUTH' => null
         ));
         $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DModifyDomain');
-    }
-
-    public function testGetPOSTDataObjNested()
-    {
-        $enc = self::$cl->getPOSTData(array(
-            'COMMAND' => 'QueryDomainOptions',
-            'DOMAIN' => ['example1.com', 'example2.com']
-        ));
-        $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DQueryDomainOptions%0ADOMAIN0%3Dexample1.com%0ADOMAIN1%3Dexample2.com');
     }
 
     public function testEnableDebugMode()
@@ -286,6 +277,44 @@ final class APIClientTest extends TestCase
         $r = self::$cl->logout();
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isError(), true);
+    }
+
+    public function testRequestFlattenCommand()
+    {
+        self::$cl->setCredentials('test.user', 'test.passw0rd')
+                ->useOTESystem();
+        $r = self::$cl->request(array( 'COMMAND' => 'CheckDomains', 'DOMAIN' => ['example.com', 'example.net'] ));
+        $this->assertInstanceOf(R::class, $r);
+        $this->assertEquals($r->isSuccess(), true);
+        $this->assertEquals($r->getCode(), 200);
+        $this->assertEquals($r->getDescription(), "Command completed successfully");
+        $cmd = $r->getCommand();
+        $keys = array_keys($cmd);
+        $this->assertEquals(in_array("DOMAIN0", $keys), true);
+        $this->assertEquals(in_array("DOMAIN1", $keys), true);
+        $this->assertEquals(in_array("DOMAIN", $keys), false);
+        $this->assertEquals($cmd["DOMAIN0"], "example.com");
+        $this->assertEquals($cmd["DOMAIN1"], "example.net");
+    }
+
+    public function testRequestAUTOIdnConvert()
+    {
+        self::$cl->setCredentials('test.user', 'test.passw0rd')
+                ->useOTESystem();
+        $r = self::$cl->request(array( 'COMMAND' => 'CheckDomains', 'DOMAIN' => ['example.com', 'dömäin.example', 'example.net'] ));
+        $this->assertInstanceOf(R::class, $r);
+        $this->assertEquals($r->isSuccess(), true);
+        $this->assertEquals($r->getCode(), 200);
+        $this->assertEquals($r->getDescription(), "Command completed successfully");
+        $cmd = $r->getCommand();
+        $keys = array_keys($cmd);
+        $this->assertEquals(in_array("DOMAIN0", $keys), true);
+        $this->assertEquals(in_array("DOMAIN1", $keys), true);
+        $this->assertEquals(in_array("DOMAIN2", $keys), true);
+        $this->assertEquals(in_array("DOMAIN", $keys), false);
+        $this->assertEquals($cmd["DOMAIN0"], "example.com");
+        $this->assertEquals($cmd["DOMAIN1"], "xn--dmin-moa0i.example");
+        $this->assertEquals($cmd["DOMAIN2"], "example.net");
     }
 
     public function testRequestCodeTmpErrorDbg()
