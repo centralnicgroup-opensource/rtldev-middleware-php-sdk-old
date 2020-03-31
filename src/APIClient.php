@@ -10,6 +10,10 @@ namespace HEXONET;
 
 use \HEXONET\ResponseTemplateManager as RTM;
 
+// check the docs, don't worry about http usage here
+define("ISPAPI_CONNECTION_URL_PROXY", "http://127.0.0.1/api/call.cgi");
+define("ISPAPI_CONNECTION_URL", "https://api.ispapi.net/api/call.cgi");
+
 /**
  * HEXONET APIClient
  *
@@ -43,13 +47,17 @@ class APIClient
      * @var string
      */
     private $ua;
+    /**
+     * additional curl options to use
+     */
+    private $curlopts = [];
 
     public function __construct()
     {
         $this->socketURL = "";
         $this->debugMode = false;
         $this->ua = "";
-        $this->setURL("https://api.ispapi.net/api/call.cgi");
+        $this->setURL(ISPAPI_CONNECTION_URL);
         $this->socketConfig = new SocketConfig();
         $this->useLIVESystem();
     }
@@ -137,7 +145,53 @@ class APIClient
         }
         return $this->ua;
     }
+
+    /**
+     * Set proxy to use for API communication
+     * @param string $proxy proxy to use
+     * @return $this
+     */
+    public function setProxy($proxy)
+    {
+        $this->curlopts[CURLOPT_PROXY] = $proxy;
+        return $this;
+    }
     
+    /**
+     * Get proxy configuration for API communication
+     * @return string|null
+     */
+    public function getProxy()
+    {
+        if (isset($this->curlopts[CURLOPT_PROXY])) {
+            return $this->curlopts[CURLOPT_PROXY];
+        }
+        return null;
+    }
+
+    /**
+     * Set Referer to use for API communication
+     * @param string $referer Referer
+     * @return $this
+     */
+    public function setReferer($referer)
+    {
+        $this->curlopts[CURLOPT_REFERER] = $referer;
+        return $this;
+    }
+
+    /**
+     * Get Referer configuration for API communication
+     * @return string|null
+     */
+    public function getReferer()
+    {
+        if (isset($this->curlopts[CURLOPT_REFERER])) {
+            return $this->curlopts[CURLOPT_REFERER];
+        }
+        return null;
+    }
+
     /**
      * Get the current module version
      * @return string module version
@@ -294,6 +348,11 @@ class APIClient
         return $rr;
     }
 
+    /**
+     * Flatten API command's nested arrays for easier handling
+     * @param array $cmd API Command
+     * @return array
+     */
     private function flattenCommand($cmd)
     {
         $mycmd = $this->toUpperCaseKeys($cmd);
@@ -382,12 +441,12 @@ class APIClient
         }
         curl_setopt_array($curl, array(
             //timeout: APIClient.socketTimeout,
-            CURLOPT_POST            =>  1,
             //CURLOPT_POSTFIELDS      =>  gzencode($this->getPOSTData($cmd)),
+            //CURLOPT_ENCODING        => 'gzip',
+            CURLOPT_POST            =>  1,
             CURLOPT_POSTFIELDS      =>  $data,
             CURLOPT_HEADER          =>  0,
             CURLOPT_RETURNTRANSFER  =>  1,
-            //CURLOPT_ENCODING        => 'gzip',
             CURLOPT_USERAGENT       =>  $this->getUserAgent(),
             CURLOPT_HTTPHEADER      =>  array(
                 'Expect:',
@@ -395,7 +454,7 @@ class APIClient
                 //'Content-Encoding: gzip',
                 //'Accept-Encoding: gzip'
             )
-        ));
+        ) + $this->curlopts);
         $r = curl_exec($curl);
         $r = ($r===false) ?
             RTM::getInstance()->getTemplate("httperror")->getPlain() :
@@ -479,6 +538,27 @@ class APIClient
     public function resetUserView()
     {
         $this->socketConfig->setUser("");
+        return $this;
+    }
+
+    /**
+     * Activate High Performance Setup
+     * @return $this
+     */
+    public function useHighPerformanceConnectionSetup()
+    {
+        $this->setURL(ISPAPI_CONNECTION_URL_PROXY);
+        return $this;
+    }
+
+
+    /**
+     * Activate Default Connection Setup (which is the default anyways)
+     * @return $this
+     */
+    public function useDefaultConnectionSetup()
+    {
+        $this->setURL(ISPAPI_CONNECTION_URL);
         return $this;
     }
 

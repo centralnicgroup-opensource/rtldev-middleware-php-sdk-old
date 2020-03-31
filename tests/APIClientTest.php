@@ -76,7 +76,7 @@ final class APIClientTest extends TestCase
     public function testGetURL()
     {
         $url = self::$cl->getURL();
-        $this->assertEquals($url, 'https://api.ispapi.net/api/call.cgi');
+        $this->assertEquals($url, ISPAPI_CONNECTION_URL);
     }
 
     public function testGetUserAgent()
@@ -97,9 +97,9 @@ final class APIClientTest extends TestCase
 
     public function testSetURL()
     {
-        $url = self::$cl->setURL('http://api.ispapi.net/api/call.cgi')->getURL();
-        $this->assertEquals($url, 'http://api.ispapi.net/api/call.cgi');
-        self::$cl->setURL('https://api.ispapi.net/api/call.cgi');
+        $url = self::$cl->setURL(ISPAPI_CONNECTION_URL_PROXY)->getURL();
+        $this->assertEquals($url, ISPAPI_CONNECTION_URL_PROXY);
+        self::$cl->setURL(ISPAPI_CONNECTION_URL);
     }
 
     public function testSetOTPSet()
@@ -431,5 +431,31 @@ final class APIClientTest extends TestCase
         ));
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
+    }
+
+    public function testSetProxy()
+    {
+        self::$cl->setProxy('127.0.0.1');
+        $this->assertEquals(self::$cl->getProxy(), '127.0.0.1');
+        self::$cl->setProxy('');
+    }
+
+    public function testSetReferer()
+    {
+        self::$cl->setReferer('https://www.hexonet.net/');
+        $this->assertEquals(self::$cl->getReferer(), 'https://www.hexonet.net/');
+        self::$cl->setReferer('');
+    }
+
+    public function testUseHighPerformanceConnectionSetup()
+    {
+        self::$cl->useHighPerformanceConnectionSetup();
+        $this->assertEquals(self::$cl->getURL(), ISPAPI_CONNECTION_URL_PROXY);
+    }
+
+    public function testUseDefaultSetup()
+    {
+        self::$cl->useDefaultConnectionSetup();
+        $this->assertEquals(self::$cl->getURL(), ISPAPI_CONNECTION_URL);
     }
 }
