@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/hexonet/php-sdk/compare/v5.1.0...v5.2.0) (2020-03-31)
+
+
+### Features
+
+* **apiclient:** automatic IDN conversion of API command parameters to punycode ([79936b0](https://github.com/hexonet/php-sdk/commit/79936b0f9e49cc56e839657e1af30d76d78aa60a))
+
 # [5.1.0](https://github.com/hexonet/php-sdk/compare/v5.0.1...v5.1.0) (2020-03-13)
 
 
