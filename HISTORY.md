@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/hexonet/php-sdk/compare/v5.2.0...v5.3.0) (2020-03-31)
+
+
+### Features
+
+* **apiclient:** support the `High Performance Proxy Setup`. see README.md ([90c73ab](https://github.com/hexonet/php-sdk/commit/90c73ab84225a29a1a17fb6fa346bf22932de121))
+
 # [5.2.0](https://github.com/hexonet/php-sdk/compare/v5.1.0...v5.2.0) (2020-03-31)
 
 
