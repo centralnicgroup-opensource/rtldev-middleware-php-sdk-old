@@ -9,6 +9,7 @@
 namespace HEXONET;
 
 use \HEXONET\ResponseTemplateManager as RTM;
+use \HEXONET\Logger as L;
 
 // check the docs, don't worry about http usage here
 define("ISPAPI_CONNECTION_URL_PROXY", "http://127.0.0.1/api/call.cgi");
@@ -52,6 +53,11 @@ class APIClient
      */
     private $curlopts = [];
 
+    /**
+     * logger function name for debug mode
+     */
+    private $logger;
+
     public function __construct()
     {
         $this->socketURL = "";
@@ -60,6 +66,29 @@ class APIClient
         $this->setURL(ISPAPI_CONNECTION_URL);
         $this->socketConfig = new SocketConfig();
         $this->useLIVESystem();
+        $this->setDefaultLogger();
+    }
+
+    /**
+     * set custom logger to use instead of default one
+     * create your own class inheriting from \HEXONET\Logger and overriding method log
+     * @param Logger $customLogger
+     * @return $this
+     */
+    public function setCustomLogger($customLogger)
+    {
+        $this->logger = $customLogger;
+        return $this;
+    }
+
+    /**
+     * set default logger to use
+     * @return $this
+     */
+    public function setDefaultLogger()
+    {
+        $this->logger = new L();
+        return $this;
     }
 
     /**
@@ -435,10 +464,7 @@ class APIClient
         if ($curl === false) {
             $r = RTM::getInstance()->getTemplate("nocurl")->getPlain();
             if ($this->debugMode) {
-                echo $this->socketURL . "\n";
-                echo $data . "\n";
-                echo "CURL Not available\n";
-                echo $r . "\n";
+                $this->logger->log($data, $r, "CURL for PHP missing.");
             }
             return new Response($r, $mycmd, $cfg);
         }
@@ -469,9 +495,7 @@ class APIClient
         //-> That's what we do
         curl_close($curl);
         if ($this->debugMode) {
-            echo $this->socketURL . "\n";
-            echo $data . "\n";
-            echo $r . "\n";
+            $this->logger->log($data, new Response($r, $mycmd, $cfg));
         }
         return new Response($r, $mycmd, $cfg);
     }
