@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/hexonet/php-sdk/compare/v5.4.2...v5.5.0) (2020-04-01)
+
+
+### Features
+
+* **logger:** possibility to override debug mode's default logging mechanism. See README.md ([680c70e](https://github.com/hexonet/php-sdk/commit/680c70e888b2d8ce9cdac03530954c0c379ef04c))
+
 ## [5.4.2](https://github.com/hexonet/php-sdk/compare/v5.4.1...v5.4.2) (2020-04-01)
 
 
