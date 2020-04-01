@@ -1,3 +1,10 @@
+## [5.4.2](https://github.com/hexonet/php-sdk/compare/v5.4.1...v5.4.2) (2020-04-01)
+
+
+### Bug Fixes
+
+* **auto-versioning:** fixed broken version auto-update process ([58103b9](https://github.com/hexonet/php-sdk/commit/58103b95435dc7822df516aa49e6491fd2d545d2))
+
 ## [5.4.1](https://github.com/hexonet/php-sdk/compare/v5.4.0...v5.4.1) (2020-04-01)
 
 
