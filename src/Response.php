@@ -54,13 +54,14 @@ class Response extends ResponseTemplate
     {
         parent::__construct($raw);
         
-        if (empty($ph)) {
-            $ph = ["CONNECTION_URL" => ""];
+        // care about getting placeholder variables replaced
+        if (preg_match("/\{[A-Z_]+\}/", $this->raw)) {
+            foreach ($ph as $varName => $varVal) {
+                $this->raw = str_replace("{$varName}", $varVal, $this->raw);
+            }
+            $this->raw = preg_replace("/\{[A-Z_]+\}/", "", $this->raw);
+            parent::__construct($this->raw);
         }
-        foreach ($ph as $varName => $varVal) {
-            $this->raw = str_replace("{$varName}", $varVal, $this->raw);
-        }
-        parent::__construct($this->raw);
 
         $this->command = $cmd;
         $this->columnkeys = array();
