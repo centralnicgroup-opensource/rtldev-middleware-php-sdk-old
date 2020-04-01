@@ -14,6 +14,13 @@ final class ResponseTemplateTest extends TestCase
         $this->assertEquals(423, $rt->getCode());
         $this->assertEquals("Empty API response. Probably unreachable API end point {CONNECTION_URL}", $rt->getDescription());
     }
+
+    public function testInvalidAPIResponse()
+    {
+        $rt = new RT("[RESPONSE]\r\ncode=200\r\nqueuetime=0\r\nEOF\r\n");
+        $this->assertEquals(423, $rt->getCode());
+        $this->assertEquals("Invalid API response. Contact Support", $rt->getDescription());
+    }
     
     public function testGetHash()
     {

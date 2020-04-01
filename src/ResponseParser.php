@@ -45,9 +45,6 @@ class ResponseParser
                 }
             }
         }
-        if (!array_key_exists("DESCRIPTION", $hash)) {
-            $hash["DESCRIPTION"] = "";
-        }
         return $hash;
     }
 

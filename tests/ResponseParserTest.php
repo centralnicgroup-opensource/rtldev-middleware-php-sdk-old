@@ -22,12 +22,6 @@ final class ResponseParserTest extends TestCase
         self::$rtm = null;
     }
 
-    public function testParse()
-    {
-        $plain = preg_replace("/\r\nDESCRIPTION=/", "", self::$rtm->generateTemplate("421", ''));
-        $this->assertEmpty(RP::parse($plain)["DESCRIPTION"]);
-    }
-
     public function testSerializeProperty()
     {
         $r = self::$rtm->getTemplate('OK')->getHash();

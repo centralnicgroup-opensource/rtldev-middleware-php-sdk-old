@@ -41,6 +41,10 @@ class ResponseTemplate
         }
         $this->raw = $raw;
         $this->hash = RP::parse($raw);
+        if (!isset($this->hash["CODE"]) || !isset($this->hash["DESCRIPTION"])) {
+            $this->raw = RTM::getInstance()->getTemplate("invalid")->getPlain();
+            $this->hash = RP::parse($this->raw);
+        }
     }
 
     /**
