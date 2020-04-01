@@ -1,3 +1,10 @@
+## [5.4.1](https://github.com/hexonet/php-sdk/compare/v5.4.0...v5.4.1) (2020-04-01)
+
+
+### Bug Fixes
+
+* **messaging:** return a specific error template in case code or description are missing ([59119c3](https://github.com/hexonet/php-sdk/commit/59119c31f16a269e24b07609f5ee4364628e3321))
+
 # [5.4.0](https://github.com/hexonet/php-sdk/compare/v5.3.0...v5.4.0) (2020-04-01)
 
 
