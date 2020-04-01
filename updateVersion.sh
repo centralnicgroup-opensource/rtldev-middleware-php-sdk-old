@@ -6,8 +6,5 @@
 
 # version format: X.Y.Z
 newversion="$1";
-branch="$2";
 
-if [ "$branch" = "master" ]; then
-    sed -i "s/return \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/return \"${newversion}\"/g" src/APIClient.php
-fi;
+sed -i "s/return \"[0-9]\+\.[0-9]\+\.[0-9]\+\"/return \"${newversion}\"/g" src/APIClient.php

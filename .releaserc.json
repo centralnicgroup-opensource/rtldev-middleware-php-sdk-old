@@ -11,7 +11,7 @@
         [
             "@semantic-release/exec",
             {
-                "prepareCmd": "./updateVersion.sh ${nextRelease.version} ${options.branch}"
+                "prepareCmd": "./updateVersion.sh ${nextRelease.version}"
             }
         ],
         [
