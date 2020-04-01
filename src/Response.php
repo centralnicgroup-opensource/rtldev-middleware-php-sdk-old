@@ -48,10 +48,20 @@ class Response extends ResponseTemplate
      * Constructor
      * @param string $raw API plain response
      * @param array $cmd API command used within this request
+     * @param array $ph placeholder array to get vars in response description dynamically replaced
      */
-    public function __construct($raw, $cmd = null)
+    public function __construct($raw, $cmd = null, $ph = [])
     {
         parent::__construct($raw);
+        
+        if (empty($ph)) {
+            $ph = ["CONNECTION_URL" => ""];
+        }
+        foreach ($ph as $varName => $varVal) {
+            $this->raw = str_replace("{$varName}", $varVal, $this->raw);
+        }
+        parent::__construct($this->raw);
+
         $this->command = $cmd;
         $this->columnkeys = array();
         $this->columns = array();

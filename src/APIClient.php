@@ -427,6 +427,9 @@ class APIClient
         $mycmd = $this->autoIDNConvert($mycmd);
         
         // request command to API
+        $cfg = [
+            "CONNECTION_URL" => $this->socketURL
+        ];
         $curl = curl_init($this->socketURL);
         $data = $this->getPOSTData($mycmd);
         if ($curl === false) {
@@ -437,7 +440,7 @@ class APIClient
                 echo "CURL Not available\n";
                 echo $r . "\n";
             }
-            return new Response($r, $mycmd);
+            return new Response($r, $mycmd, $cfg);
         }
         curl_setopt_array($curl, array(
             //timeout: APIClient.socketTimeout,
@@ -470,7 +473,7 @@ class APIClient
             echo $data . "\n";
             echo $r . "\n";
         }
-        return new Response($r, $mycmd);
+        return new Response($r, $mycmd, $cfg);
     }
 
     /**

@@ -12,14 +12,14 @@ final class ResponseTemplateTest extends TestCase
     {
         $rt = new RT('');
         $this->assertEquals(423, $rt->getCode());
-        $this->assertEquals("Empty API response. Probably unreachable API end point", $rt->getDescription());
+        $this->assertEquals("Empty API response. Probably unreachable API end point {CONNECTION_URL}", $rt->getDescription());
     }
     
     public function testGetHash()
     {
         $h = (new RT(''))->getHash();
         $this->assertEquals("423", $h["CODE"]);
-        $this->assertEquals("Empty API response. Probably unreachable API end point", $h["DESCRIPTION"]);
+        $this->assertEquals("Empty API response. Probably unreachable API end point {CONNECTION_URL}", $h["DESCRIPTION"]);
     }
 
     public function testGetQueuetimeNo()

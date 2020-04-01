@@ -24,6 +24,17 @@ final class ResponseTest extends TestCase
         self::$rtm = null;
     }
 
+    public function testPlaceHolderReplacements()
+    {
+        // ensure no vars are returned in response, just in case no place holder replacements are provided
+        $r = new R("");
+        $this->assertEquals(0, preg_match("/\{[A-Z_]+\}/", $r->getDescription()), "case 1");
+
+        // ensure variable replacements are correctly handled in case place holder replacements are provided
+        $r = new R("", ["COMMAND" => "StatusAccount"], ["CONNECTION_URL" => "123HXPHFOUND123"]);
+        $this->assertEquals(true, preg_match("/123HXPHFOUND123/", $r->getDescription()), "case 2");
+    }
+
     public function testGetCurrentPageNumberEntries()
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
