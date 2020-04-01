@@ -1,3 +1,15 @@
+# [5.4.0](https://github.com/hexonet/php-sdk/compare/v5.3.0...v5.4.0) (2020-04-01)
+
+
+### Bug Fixes
+
+* **response:** fixed placeholder replacements ([4e188dd](https://github.com/hexonet/php-sdk/commit/4e188dd393f57a0013a8512b482d1a3d96683324))
+
+
+### Features
+
+* **response:** possibility of placeholder vars in standard responses to improve error details ([1d0a017](https://github.com/hexonet/php-sdk/commit/1d0a0170134232f9a83a006dd8979cee9f3d0d4b))
+
 # [5.3.0](https://github.com/hexonet/php-sdk/compare/v5.2.0...v5.3.0) (2020-03-31)
 
 
