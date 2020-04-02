@@ -1,3 +1,10 @@
+## [5.5.1](https://github.com/hexonet/php-sdk/compare/v5.5.0...v5.5.1) (2020-04-02)
+
+
+### Bug Fixes
+
+* **namespace:** review namespace usages ([509e988](https://github.com/hexonet/php-sdk/commit/509e9882e8412c4097ca988668383194b53a8537))
+
 # [5.5.0](https://github.com/hexonet/php-sdk/compare/v5.4.2...v5.5.0) (2020-04-01)
 
 
