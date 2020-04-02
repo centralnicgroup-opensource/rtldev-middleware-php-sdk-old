@@ -1,3 +1,10 @@
+## [5.6.1](https://github.com/hexonet/php-sdk/compare/v5.6.0...v5.6.1) (2020-04-02)
+
+
+### Bug Fixes
+
+* **security:** replace passwords whereever they could be used for output ([9e97123](https://github.com/hexonet/php-sdk/commit/9e9712315697e513860474fe01d02730a68666f7))
+
 # [5.6.0](https://github.com/hexonet/php-sdk/compare/v5.5.1...v5.6.0) (2020-04-02)
 
 
