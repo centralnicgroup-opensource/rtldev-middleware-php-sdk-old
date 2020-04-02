@@ -1,3 +1,10 @@
+# [5.6.0](https://github.com/hexonet/php-sdk/compare/v5.5.1...v5.6.0) (2020-04-02)
+
+
+### Features
+
+* **response:** added getCommandPlain (getting used command in plain text) ([c3992a4](https://github.com/hexonet/php-sdk/commit/c3992a48aa9e83c4eeeff3fff34cee018ef20ef5))
+
 ## [5.5.1](https://github.com/hexonet/php-sdk/compare/v5.5.0...v5.5.1) (2020-04-02)
 
 
