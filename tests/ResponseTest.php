@@ -23,6 +23,14 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         self::$rtm = null;
     }
 
+    public function testCommandPlain()
+    {
+        // ensure no vars are returned in response, just in case no place holder replacements are provided
+        $r = new R("", ["COMMAND" => "QueryDomainOptions", "DOMAIN0" => "example.com", "DOMAIN1" => "example.net" ]);
+        $expected = "COMMAND = QueryDomainOptions\nDOMAIN0 = example.com\nDOMAIN1 = example.net\n";
+        $this->assertEquals($expected, $r->getCommandPlain());
+    }
+
     public function testPlaceHolderReplacements()
     {
         // ensure no vars are returned in response, just in case no place holder replacements are provided

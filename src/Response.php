@@ -170,6 +170,19 @@ class Response extends \HEXONET\ResponseTemplate
     }
 
     /**
+     * Get Command used in this request in plain text format
+     * @return string command
+     */
+    public function getCommandPlain()
+    {
+        $tmp = "";
+        foreach ($this->command as $key => $val) {
+            $tmp .= "$key = $val\n";
+        }
+        return $tmp;
+    }
+
+    /**
      * Get Page Number of current List Query
      * @return integer|null page number or null in case of a non-list response
      */
