@@ -22,6 +22,18 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         session_destroy();
     }
 
+    public function testGetPOSTDataSecured()
+    {
+        self::$cl->setCredentials('test.user', 'test.passw0rd');
+        $enc = self::$cl->getPOSTData(array(
+            'COMMAND' => 'CheckAuthentication',
+            'SUBUSER' => 'test.user',
+            'PASSWORD' => 'test.passw0rd'
+        ), true);
+        self::$cl->setCredentials('', '');
+        $this->assertEquals('s_entity=54cd&s_login=test.user&s_pw=***&s_command=COMMAND%3DCheckAuthentication%0ASUBUSER%3Dtest.user%0APASSWORD%3D%2A%2A%2A', $enc);
+    }
+
     public function testGetPOSTDataObj()
     {
         $enc = self::$cl->getPOSTData(array(
@@ -34,7 +46,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testGetPOSTDataStr()
     {
         $enc = self::$cl->getPOSTData('gregergege');
-        $this->assertEquals($enc, 's_entity=54cd&s_command=');
+        $this->assertEquals($enc, 's_entity=54cd&s_command=gregergege');
     }
 
     public function testGetPOSTDataNull()

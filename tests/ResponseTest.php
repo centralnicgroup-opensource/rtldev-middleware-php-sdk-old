@@ -31,6 +31,14 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $r->getCommandPlain());
     }
 
+    public function testCommandPlainSecure()
+    {
+        // ensure no vars are returned in response, just in case no place holder replacements are provided
+        $r = new R("", ["COMMAND" => "CheckAuthentication", "SUBUSER" => "test.user", "PASSWORD" => "test.passw0rd" ]);
+        $expected = "COMMAND = CheckAuthentication\nSUBUSER = test.user\nPASSWORD = ***\n";
+        $this->assertEquals($expected, $r->getCommandPlain());
+    }
+
     public function testPlaceHolderReplacements()
     {
         // ensure no vars are returned in response, just in case no place holder replacements are provided

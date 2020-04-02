@@ -64,6 +64,10 @@ class Response extends \HEXONET\ResponseTemplate
         }
 
         $this->command = $cmd;
+        if (isset($this->command["PASSWORD"])) { // make password no longer accessible
+            $this->command["PASSWORD"] = "***";
+        }
+        
         $this->columnkeys = array();
         $this->columns = array();
         $this->recordIndex = 0;

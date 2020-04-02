@@ -114,11 +114,16 @@ class APIClient
     /**
      * Serialize given command for POST request including connection configuration data
      * @param string|array $cmd API command to encode
+     * @param bool $secured secure password (when used for output)
      * @return string encoded POST data string
      */
-    public function getPOSTData($cmd)
+    public function getPOSTData($cmd, $secured = false)
     {
         $data = $this->socketConfig->getPOSTData();
+        if ($secured) {
+            $data = preg_replace("/s_pw\=[^&]+/", "s_pw=***", $data);
+        }
+
         $tmp = "";
         if (!is_string($cmd)) {
             foreach ($cmd as $key => $val) {
@@ -126,8 +131,14 @@ class APIClient
                     $tmp .= $key . "=" . preg_replace("/\r|\n/", "", $val) . "\n";
                 }
             }
+        } else {
+            $tmp = $cmd;
+        }
+        if ($secured) {
+            $tmp = preg_replace("/PASSWORD\=[^\n]+/", "PASSWORD=***", $tmp);
         }
         $tmp = preg_replace("/\n$/", "", $tmp);
+                
         $data .= rawurlencode("s_command") . "=" . rawurlencode($tmp);
         return $data;
     }
@@ -461,10 +472,11 @@ class APIClient
         ];
         $curl = curl_init($this->socketURL);
         $data = $this->getPOSTData($mycmd);
+        $secured = $this->getPOSTData($mycmd, true);
         if ($curl === false) {
             $r = RTM::getInstance()->getTemplate("nocurl")->getPlain();
             if ($this->debugMode) {
-                $this->logger->log($data, $r, "CURL for PHP missing.");
+                $this->logger->log($secured, $r, "CURL for PHP missing.");
             }
             return new Response($r, $mycmd, $cfg);
         }
