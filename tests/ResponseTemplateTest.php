@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use PHPUnit\Framework\TestCase;
-use HEXONET\ResponseTemplate as RT;
+use \HEXONET\ResponseTemplate as RT;
 
-final class ResponseTemplateTest extends TestCase
+final class ResponseTemplateTest extends \PHPUnit\Framework\TestCase
 {
     public function testConstructorEmptyRaw()
     {

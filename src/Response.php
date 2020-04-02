@@ -13,7 +13,7 @@ namespace HEXONET;
  *
  * @package HEXONET
  */
-class Response extends ResponseTemplate
+class Response extends \HEXONET\ResponseTemplate
 {
 
     /**

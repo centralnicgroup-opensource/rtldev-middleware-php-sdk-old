@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use PHPUnit\Framework\TestCase;
-use HEXONET\SocketConfig as SC;
+use \HEXONET\SocketConfig as SC;
 
-final class SocketConfigTest extends TestCase
+final class SocketConfigTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetPOSTData()
     {

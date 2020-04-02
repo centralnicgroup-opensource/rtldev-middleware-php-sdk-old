@@ -3,11 +3,10 @@ declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use PHPUnit\Framework\TestCase;
-use HEXONET\ResponseTemplate as RT;
-use HEXONET\ResponseTemplateManager as RTM;
+use \HEXONET\ResponseTemplate as RT;
+use \HEXONET\ResponseTemplateManager as RTM;
 
-final class ResponseTemplateManagerTest extends TestCase
+final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
 {
     public static $rtm;
 

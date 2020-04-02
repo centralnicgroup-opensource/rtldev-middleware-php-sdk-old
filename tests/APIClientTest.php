@@ -3,11 +3,10 @@ declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use PHPUnit\Framework\TestCase;
-use HEXONET\APIClient as CL;
-use HEXONET\Response as R;
+use \HEXONET\APIClient as CL;
+use \HEXONET\Response as R;
 
-final class APIClientTest extends TestCase
+final class APIClientTest extends \PHPUnit\Framework\TestCase
 {
     public static $cl;
 
