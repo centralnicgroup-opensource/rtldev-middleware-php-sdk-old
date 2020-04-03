@@ -166,11 +166,15 @@ class APIClient
      * Set a custom user agent (for platforms that use this SDK)
      * @param string user agent label
      * @param string user agent revision
+     * @param array $modules further modules to add to user agent string, format: ["<module1>/<version>", "<module2>/<version>", ... ]
      * @return $this
      */
-    public function setUserAgent($str, $rv)
+    public function setUserAgent($str, $rv, $modules = [])
     {
-        $this->ua = $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ") php-sdk/" . $this->getVersion() . " php/" . PHP_VERSION;
+        $mods = empty($modules) ? "" : " " . implode(" ", $modules);
+        $this->ua = (
+            $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ")" . $mods . " php-sdk/" . $this->getVersion() . " php/" . PHP_VERSION
+        );
         return $this;
     }
 

@@ -106,6 +106,17 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(self::$cl->getUserAgent(), $ua);
     }
 
+    public function testSetUserAgentModules()
+    {
+        $pid = "WHMCS";
+        $rv = "7.7.0";
+        $mods = ["reg/2.6.2", "ssl/7.2.2", "dc/8.2.2"];
+        $ua = $pid . " (". PHP_OS . "; ". php_uname('m') . "; rv:" . $rv . ") " . implode(" ", $mods) . " php-sdk/" . self::$cl->getVersion() . " php/" . PHP_VERSION;
+        $cls = self::$cl->setUserAgent($pid, $rv, $mods);
+        $this->assertInstanceOf(CL::class, $cls);
+        $this->assertEquals(self::$cl->getUserAgent(), $ua);
+    }
+
     public function testSetURL()
     {
         $url = self::$cl->setURL(ISPAPI_CONNECTION_URL_PROXY)->getURL();
