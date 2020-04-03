@@ -1,3 +1,10 @@
+# [5.7.0](https://github.com/hexonet/php-sdk/compare/v5.6.1...v5.7.0) (2020-04-03)
+
+
+### Features
+
+* **apiclient:** allow to specify additional libraries via setUserAgent ([7f9cf7c](https://github.com/hexonet/php-sdk/commit/7f9cf7c79a0400eb0c7a03176c8946eea4a2c13a))
+
 ## [5.6.1](https://github.com/hexonet/php-sdk/compare/v5.6.0...v5.6.1) (2020-04-02)
 
 
