@@ -11,7 +11,7 @@
         [
             "@semantic-release/exec",
             {
-                "prepareCmd": "./updateVersion.sh ${nextRelease.version}"
+                "prepareCmd": "./updateVersion.sh ${nextRelease.version} && php create-phar.php"
             }
         ],
         [
@@ -22,10 +22,26 @@
                     "@(package|composer).json",
                     "build",
                     "report",
-                    "src/APIClient.php"
+                    "src/APIClient.php",
+                    "php-sdk-latest.phar",
+                    "php-sdk-latest.phar.gz"
                 ]
             }
         ],
-        "@semantic-release/github"
+        [
+            "@semantic-release/github",
+            {
+                "assets": [
+                    {
+                        "label": "PHP-SDK (phar)",
+                        "path": "php-sdk.phar"
+                    },
+                    {
+                        "label": "PHP-SDK (phar.gz)",
+                        "path": "php-sdk.phar.gz"
+                    }
+                ]
+            }
+        ]
     ]
 }
