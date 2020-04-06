@@ -1,3 +1,10 @@
+# [5.8.0](https://github.com/hexonet/php-sdk/compare/v5.7.0...v5.8.0) (2020-04-06)
+
+
+### Features
+
+* **phar:** create and upload phar/phar.gz archives in release process ([696d4a8](https://github.com/hexonet/php-sdk/commit/696d4a871c16675132b49e05f5fb26e4a900ad60))
+
 # [5.7.0](https://github.com/hexonet/php-sdk/compare/v5.6.1...v5.7.0) (2020-04-03)
 
 
