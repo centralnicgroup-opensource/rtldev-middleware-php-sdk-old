@@ -55,6 +55,7 @@ You can find the versions listed at packagist or at github in the release / tag 
 #### Alternatives
 
 Of course you could also using composer to install it from github or using the PHAR archives we offer for download in release overview, but the previous approach is the one we suggest.
+When using the .phar archive, please ensure to have the phar extension for PHP installed and loaded: `php-phar`
 
 ### High Performance Proxy Setup
 
