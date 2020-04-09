@@ -1,3 +1,10 @@
+## [5.8.1](https://github.com/hexonet/php-sdk/compare/v5.8.0...v5.8.1) (2020-04-09)
+
+
+### Bug Fixes
+
+* **security:** fixed password replace mechanism ([f22ab11](https://github.com/hexonet/php-sdk/commit/f22ab113019c3da571fac769e0388d7c83f56f15))
+
 # [5.8.0](https://github.com/hexonet/php-sdk/compare/v5.7.0...v5.8.0) (2020-04-06)
 
 
