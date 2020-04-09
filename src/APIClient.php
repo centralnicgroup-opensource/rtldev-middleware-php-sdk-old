@@ -123,7 +123,6 @@ class APIClient
         if ($secured) {
             $data = preg_replace("/s_pw\=[^&]+/", "s_pw=***", $data);
         }
-
         $tmp = "";
         if (!is_string($cmd)) {
             foreach ($cmd as $key => $val) {
@@ -511,7 +510,7 @@ class APIClient
         //-> That's what we do
         curl_close($curl);
         if ($this->debugMode) {
-            $this->logger->log($data, new Response($r, $mycmd, $cfg));
+            $this->logger->log($secured, new Response($r, $mycmd, $cfg));
         }
         return new Response($r, $mycmd, $cfg);
     }
