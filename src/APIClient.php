@@ -427,11 +427,11 @@ class APIClient
         if (is_string($cmd) || preg_match("/^CONVERTIDN$/i", $cmd["COMMAND"])) {
             return $cmd;
         }
-        $toconvert = [];
         $keys = preg_grep("/^(DOMAIN|NAMESERVER|DNSZONE)([0-9]*)$/i", array_keys($cmd));
         if (empty($keys)) {
             return $cmd;
         }
+        $toconvert = [];
         $idxs = [];
         foreach ($keys as $key) {
             if (isset($cmd[$key])) {
@@ -441,6 +441,9 @@ class APIClient
                     $idxs[] = $key;
                 }
             }
+        }
+        if (empty($toconvert)) {
+            return $cmd;
         }
         $r = $this->request([
             "COMMAND" => "ConvertIDN",
