@@ -1,3 +1,10 @@
+## [5.8.2](https://github.com/hexonet/php-sdk/compare/v5.8.1...v5.8.2) (2020-04-15)
+
+
+### Bug Fixes
+
+* **apiclient:** fixed automatic idn conversion ([aae4fe6](https://github.com/hexonet/php-sdk/commit/aae4fe68e4c63485d1023c014af03c5862f25f50))
+
 ## [5.8.1](https://github.com/hexonet/php-sdk/compare/v5.8.0...v5.8.1) (2020-04-09)
 
 
