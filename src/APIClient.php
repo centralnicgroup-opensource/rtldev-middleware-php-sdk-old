@@ -476,7 +476,7 @@ class APIClient
         $cfg = [
             "CONNECTION_URL" => $this->socketURL
         ];
-        $curl = curl_init($this->socketURL);
+        $curl = curl_init($cfg["CONNECTION_URL"]);
         $data = $this->getPOSTData($mycmd);
         $secured = $this->getPOSTData($mycmd, true);
         if ($curl === false) {
