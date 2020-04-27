@@ -398,17 +398,17 @@ class APIClient
      */
     private function flattenCommand($cmd)
     {
-        $mycmd = $this->toUpperCaseKeys($cmd);
         $newcmd = [];
-        foreach ($mycmd as $key => $val) {
+        foreach ($cmd as $key => $val) {
             if (isset($val)) {
                 $val = preg_replace("/\r|\n/", "", $val);
+                $newKey = \strtoupper($key);
                 if (is_array($val)) {
                     foreach ($cmd[$key] as $idx => $v) {
-                        $newcmd[$key.$idx] = $v;
+                        $newcmd[$newKey.$idx] = $v;
                     }
                 } else {
-                    $newcmd[$key] = $val;
+                    $newcmd[$newKey] = $val;
                 }
             }
         }
@@ -625,15 +625,5 @@ class APIClient
     {
         $this->socketConfig->setSystemEntity("54cd");
         return $this;
-    }
-
-    /**
-     * Translate all command parameter names to uppercase
-     * @param array $cmd api command
-     * @return array api command with uppercase parameter names
-     */
-    private function toUpperCaseKeys($cmd)
-    {
-        return array_change_key_case($cmd, CASE_UPPER);
     }
 }
