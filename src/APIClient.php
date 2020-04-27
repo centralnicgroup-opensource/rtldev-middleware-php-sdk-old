@@ -435,7 +435,6 @@ class APIClient
         $idxs = [];
         foreach ($keys as $key) {
             if (isset($cmd[$key])) {
-                $cmd[$key] = preg_replace("/\r|\n/", "", $cmd[$key]);
                 if (preg_match('/[^a-z0-9\.\- ]/i', $cmd[$key])) {// maybe preg_grep as replacement
                     $toconvert[] = $cmd[$key];
                     $idxs[] = $key;
