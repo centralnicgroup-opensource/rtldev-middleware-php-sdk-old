@@ -1,3 +1,10 @@
+## [5.8.3](https://github.com/hexonet/php-sdk/compare/v5.8.2...v5.8.3) (2020-04-27)
+
+
+### Bug Fixes
+
+* **apiclient:** remove deprecated private method toUpperCaseKeys ([bbab21e](https://github.com/hexonet/php-sdk/commit/bbab21ec869d87ab5ffbde5ee0590a3c4ac8e233))
+
 ## [5.8.2](https://github.com/hexonet/php-sdk/compare/v5.8.1...v5.8.2) (2020-04-15)
 
 
