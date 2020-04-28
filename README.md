@@ -124,8 +124,8 @@ Of course it could be of interest for integrators to look for a way of getting t
 ```php
 $cl = new \HEXONET\APIClient();
 $cl->useOTESystem()//LIVE System would be used otherwise by default
-   ->enableDebugMode()//Default Connection Setup would be used otherwise by default
-   ->setCustomLogger(new MyCustomerLogger())
+   ->enableDebugMode()//activate debug outputs
+   ->setCustomLogger(new MyCustomerLogger())//provide your mechanism here
    ->setCredentials("test.user", "test.passw0rd");
 $r = $cl->request(["COMMAND" => "StatusAccount"]);
 ```
