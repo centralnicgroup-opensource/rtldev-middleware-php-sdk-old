@@ -28,7 +28,7 @@ This module is a connector library for the insanely fast HEXONET Backend API. Fo
 * Getting the command again returned together with the response
 * Sessionless communication
 * Session based communication
-* Possibility to save API session identifier in PHP session
+* Possibility to save API session identifier in session
 * Configure a Proxy for API communication
 * Configure a Referer for API communication
 * High Performance Proxy Setup
