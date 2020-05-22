@@ -45,6 +45,7 @@
 	"scripts": {
 		"docs": "./phpDocumentor.phar",
 		"phar": "box build ./src",
+		"phpCompatibility": "./scripts/phpcompatibility.sh",
 		"codeCheck": "phpcs --ignore=\"*/vendor/*\" --standard=PSR1,PSR2 -q -n --colors src tests",
 		"codeFix": "phpcbf --ignore=\"*/vendor/*\" --standard=PSR1,PSR2 -q src tests",
 		"test": "phpunit"

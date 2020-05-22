@@ -27,6 +27,7 @@ install:
 script:
   - composer run-script codeCheck
   - composer run-script test
+  - composer run-script phpCompatibility
 jobs:
   include:
     - stage: release
