@@ -23,7 +23,7 @@ before_install:
 install:
   - sudo apt install -y graphviz
   - travis_retry composer install
-  - travis_retry composer global require dealerdirect/phpcodesniffer-composer-installer roave/security-advisories squizlabs/php_codesniffer phpcompatibility/php-compatibility
+  - travis_retry composer global require dealerdirect/phpcodesniffer-composer-installer roave/security-advisories:dev-master squizlabs/php_codesniffer phpcompatibility/php-compatibility
 script:
   - composer run-script codeCheck
   - composer run-script test
