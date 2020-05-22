@@ -23,7 +23,7 @@ before_install:
 install:
   - sudo apt install -y graphviz
   - travis_retry composer install
-  - travis_retry composer global require squizlabs/php_codesniffer
+  - travis_retry composer global require squizlabs/php_codesniffer phpcompatibility/php-compatibility
 script:
   - composer run-script codeCheck
   - composer run-script test

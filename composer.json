@@ -34,10 +34,6 @@
 	"require": {
 		"php": ">=5.6.0"
 	},
-	"require-dev": {
-		"phpcompatibility/php-compatibility": "*"
-	},
-	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
 			"\\HEXONET\\": "src/"
