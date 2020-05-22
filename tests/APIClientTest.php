@@ -10,13 +10,13 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
 {
     public static $cl;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         session_start();
         self::$cl = new CL();
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         self::$cl = null;
         session_destroy();
