@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+//declare(strict_types=1);
 
 namespace HEXONETTEST;
 
@@ -10,12 +10,12 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
 {
     public static $rtm;
 
-    public static function setupBeforeClass(): void
+    public static function setupBeforeClass()
     {
         self::$rtm = RTM::getInstance();
     }
 
-    public static function tearDownAfterClass(): void
+    public static function tearDownAfterClass()
     {
         self::$rtm = null;
     }
@@ -26,13 +26,6 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
         $secondCall = RTM::getInstance();
         $this->assertInstanceOf(RTM::class, $firstCall);
         $this->assertSame($firstCall, $secondCall);
-    }
-
-    public function testClone()
-    {
-        $this->expectException(\Error::class);
-        $this->expectExceptionMessage("Call to private HEXONET\ResponseTemplateManager::__clone() from context 'HEXONETTEST\ResponseTemplateManagerTest'");
-        $rtm = clone self::$rtm;
     }
 
     public function testGetTemplateNotFound()

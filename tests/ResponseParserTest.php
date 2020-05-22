@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+//declare(strict_types=1);
 
 namespace HEXONETTEST;
 
@@ -10,13 +10,13 @@ final class ResponseParserTest extends \PHPUnit\Framework\TestCase
 {
     public static $rtm;
 
-    public static function setupBeforeClass(): void
+    public static function setupBeforeClass()
     {
         self::$rtm = RTM::getInstance();
         self::$rtm->addTemplate("OK", self::$rtm->generateTemplate("200", "Command completed successfully"));
     }
 
-    public static function tearDownAfterClass(): void
+    public static function tearDownAfterClass()
     {
         self::$rtm = null;
     }

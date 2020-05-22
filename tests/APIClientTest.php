@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+//declare(strict_types=1);
 
 namespace HEXONETTEST;
 
@@ -10,13 +10,13 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
 {
     public static $cl;
 
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
         session_start();
         self::$cl = new CL();
     }
 
-    public static function tearDownAfterClass(): void
+    public static function tearDownAfterClass()
     {
         self::$cl = null;
         session_destroy();
