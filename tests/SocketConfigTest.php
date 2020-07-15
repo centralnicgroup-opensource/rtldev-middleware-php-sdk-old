@@ -7,8 +7,10 @@ use \HEXONET\SocketConfig as SC;
 
 final class SocketConfigTest extends \PHPUnit\Framework\TestCase
 {
-    public function testGetPOSTData()
-    {
+    /**
+     * test getPOSTData method
+     */
+    public function testGetPOSTData(): void {
         $d = (new SC())->getPOSTData();
         $this->assertEmpty($d);
     }
