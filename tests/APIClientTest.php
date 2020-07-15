@@ -251,7 +251,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertNotNull($rec->getDataByKey('SESSION'));
     }
 
-    public function testLoginRoleCredsOK()
+    /*public function testLoginRoleCredsOK()
     {
         self::$cl->setRoleCredentials('test.user', 'testrole', 'test.passw0rd');
         $r = self::$cl->login();
@@ -260,7 +260,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $rec = $r->getRecord(0);
         $this->assertNotNull($rec);
         $this->assertNotNull($rec->getDataByKey('SESSION'));
-    }
+    }*/
 
     public function testLoginCredsFAIL()
     {
