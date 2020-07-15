@@ -50,11 +50,13 @@ class APIClient
     private $ua;
     /**
      * additional curl options to use
+     * keys: CURLOPT_PROXY, CURLOPT_REFERER
+     * @var array
      */
     private $curlopts = [];
-
     /**
      * logger function name for debug mode
+     * @var Logger
      */
     private $logger;
 
