@@ -7,14 +7,8 @@ notifications:
     on_success: never
     on_failure: always
 php:
-  - "7.2"
   - "7.3"
-# Trigger a push build on master and dependabot branches + PRs build on every branches
-# Avoid double build on PRs (See https://github.com/travis-ci/travis-ci/issues/1147)
-branches:
-  only:
-    - master
-    - /^dependabot.*$/
+  - "7.4"
 addons:
   apt:
     update: true
