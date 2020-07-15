@@ -163,8 +163,8 @@ class APIClient
 
     /**
      * Set a custom user agent (for platforms that use this SDK)
-     * @param string user agent label
-     * @param string user agent revision
+     * @param string $str user agent label
+     * @param string $rv user agent revision
      * @param array $modules further modules to add to user agent string, format: ["<module1>/<version>", "<module2>/<version>", ... ]
      * @return $this
      */
@@ -241,7 +241,7 @@ class APIClient
      */
     public function getVersion()
     {
-        return "5.8.3";
+        return "5.8.4";
     }
 
     /**
@@ -417,7 +417,7 @@ class APIClient
 
     /**
      * Auto convert API command parameters to punycode, if necessary.
-     * @param array $cmd API command
+     * @param array|string $cmd API command
      * @return array
      */
     private function autoIDNConvert($cmd)
@@ -521,7 +521,7 @@ class APIClient
      * Request the next page of list entries for the current list query
      * Useful for tables
      * @param Response $rr API Response of current page
-     * @throws Exception in case Command Parameter LAST is in use while using this method
+     * @throws \Exception in case Command Parameter LAST is in use while using this method
      * @return Response|null Response or null in case there are no further list entries
      */
     public function requestNextResponsePage($rr)
@@ -541,9 +541,9 @@ class APIClient
             $mycmd["FIRST"] = $first;
             $mycmd["LIMIT"] = $limit;
             return $this->request($mycmd);
-        } else {
-            return null;
         }
+
+        return null;
     }
 
     /**

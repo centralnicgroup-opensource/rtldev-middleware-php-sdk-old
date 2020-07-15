@@ -1,3 +1,10 @@
+## [5.8.4](https://github.com/hexonet/php-sdk/compare/v5.8.3...v5.8.4) (2020-07-15)
+
+
+### Bug Fixes
+
+* **apiclient:** fixed types and a nasty return+else ([7492c9f](https://github.com/hexonet/php-sdk/commit/7492c9fb59b5ab4367a82a8330fd0654151e2401))
+
 ## [5.8.3](https://github.com/hexonet/php-sdk/compare/v5.8.2...v5.8.3) (2020-04-27)
 
 
