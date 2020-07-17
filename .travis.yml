@@ -18,7 +18,7 @@ before_install:
   - export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 install:
   - travis_retry composer update
-  - travis_retry composer global require phpstan/phpstan dealerdirect/phpcodesniffer-composer-installer roave/security-advisories:dev-master squizlabs/php_codesniffer phpcompatibility/php-compatibility
+  - travis_retry composer global require phpunit/phpunit phpstan/phpstan dealerdirect/phpcodesniffer-composer-installer roave/security-advisories:dev-master squizlabs/php_codesniffer phpcompatibility/php-compatibility
 script:
   - composer run-script phpStan
   - composer run-script phpCompatibility
