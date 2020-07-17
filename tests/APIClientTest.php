@@ -22,7 +22,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         session_destroy();
     }
 
-    public function testGetPOSTDataSecured()
+    public function testGetPOSTDataSecured(): void
     {
         self::$cl->setCredentials('test.user', 'test.passw0rd');
         $enc = self::$cl->getPOSTData(array(
@@ -34,7 +34,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('s_entity=54cd&s_login=test.user&s_pw=***&s_command=COMMAND%3DCheckAuthentication%0ASUBUSER%3Dtest.user%0APASSWORD%3D%2A%2A%2A', $enc);
     }
 
-    public function testGetPOSTDataObj()
+    public function testGetPOSTDataObj(): void
     {
         $enc = self::$cl->getPOSTData(array(
             'COMMAND' => 'ModifyDomain',
@@ -43,13 +43,13 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DModifyDomain%0AAUTH%3Dgwrgwqg%25%26%5C44t3%2A');
     }
 
-    public function testGetPOSTDataStr()
+    public function testGetPOSTDataStr(): void
     {
         $enc = self::$cl->getPOSTData('gregergege');
         $this->assertEquals($enc, 's_entity=54cd&s_command=gregergege');
     }
 
-    public function testGetPOSTDataNull()
+    public function testGetPOSTDataNull(): void
     {
         $enc = self::$cl->getPOSTData(array(
             'COMMAND' => 'ModifyDomain',
@@ -58,25 +58,25 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DModifyDomain');
     }
 
-    public function testEnableDebugMode()
+    public function testEnableDebugMode(): void
     {
         self::$cl->enableDebugMode();
         $this->assertEquals(1, 1);//suppress warning for risky test
     }
 
-    public function testDisableDebugMode()
+    public function testDisableDebugMode(): void
     {
         self::$cl->disableDebugMode();
         $this->assertEquals(1, 1);//suppress warning for risky test
     }
 
-    public function testGetSession()
+    public function testGetSession(): void
     {
         $sessid = self::$cl->getSession();
         $this->assertNull($sessid);
     }
 
-    public function testGetSessionIDSet()
+    public function testGetSessionIDSet(): void
     {
         $sess = 'testsession12345';
         $sessid = self::$cl->setSession($sess)->getSession();
@@ -84,19 +84,19 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         self::$cl->setSession('');
     }
 
-    public function testGetURL()
+    public function testGetURL(): void
     {
         $url = self::$cl->getURL();
         $this->assertEquals($url, ISPAPI_CONNECTION_URL);
     }
 
-    public function testGetUserAgent()
+    public function testGetUserAgent(): void
     {
         $ua = "PHP-SDK (". PHP_OS . "; ". php_uname('m') . "; rv:" . self::$cl->getVersion() . ") php/" . PHP_VERSION;
         $this->assertEquals(self::$cl->getUserAgent(), $ua);
     }
 
-    public function testSetUserAgent()
+    public function testSetUserAgent(): void
     {
         $pid = "WHMCS";
         $rv = "7.7.0";
@@ -106,7 +106,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(self::$cl->getUserAgent(), $ua);
     }
 
-    public function testSetUserAgentModules()
+    public function testSetUserAgentModules(): void
     {
         $pid = "WHMCS";
         $rv = "7.7.0";
@@ -117,14 +117,14 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(self::$cl->getUserAgent(), $ua);
     }
 
-    public function testSetURL()
+    public function testSetURL(): void
     {
         $url = self::$cl->setURL(ISPAPI_CONNECTION_URL_PROXY)->getURL();
         $this->assertEquals($url, ISPAPI_CONNECTION_URL_PROXY);
         self::$cl->setURL(ISPAPI_CONNECTION_URL);
     }
 
-    public function testSetOTPSet()
+    public function testSetOTPSet(): void
     {
         self::$cl->setOTP('12345678');
         $tmp = self::$cl->getPOSTData(array(
@@ -133,7 +133,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_otp=12345678&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetOTPReset()
+    public function testSetOTPReset(): void
     {
         self::$cl->setOTP('');
         $tmp = self::$cl->getPOSTData(array(
@@ -142,7 +142,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetSessionSet()
+    public function testSetSessionSet(): void
     {
         self::$cl->setSession('12345678');
         $tmp = self::$cl->getPOSTData(array(
@@ -151,7 +151,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_session=12345678&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetSessionCredentials()
+    public function testSetSessionCredentials(): void
     {
         // credentials and otp code have to be unset when session id is set
         self::$cl->setRoleCredentials('myaccountid', 'myrole', 'mypassword')
@@ -163,7 +163,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_session=12345678&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetSessionReset()
+    public function testSetSessionReset(): void
     {
         self::$cl->setSession('');
         $tmp = self::$cl->getPOSTData(array(
@@ -172,7 +172,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSaveReuseSession()
+    public function testSaveReuseSession(): void
     {
         self::$cl->setSession('12345678')
                 ->saveSession($_SESSION);
@@ -185,7 +185,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         self::$cl->setSession('');
     }
 
-    public function testSetRemoteIPAddressSet()
+    public function testSetRemoteIPAddressSet(): void
     {
         self::$cl->setRemoteIPAddress('10.10.10.10');
         $tmp = self::$cl->getPOSTData(array(
@@ -194,7 +194,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_remoteaddr=10.10.10.10&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetRemoteIPAddressReset()
+    public function testSetRemoteIPAddressReset(): void
     {
         self::$cl->setRemoteIPAddress('');
         $tmp = self::$cl->getPOSTData(array(
@@ -203,7 +203,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetCredentialsSet()
+    public function testSetCredentialsSet(): void
     {
         self::$cl->setCredentials('myaccountid', 'mypassword');
         $tmp = self::$cl->getPOSTData(array(
@@ -212,7 +212,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_login=myaccountid&s_pw=mypassword&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetCredentialsReset()
+    public function testSetCredentialsReset(): void
     {
         self::$cl->setCredentials('', '');
         $tmp = self::$cl->getPOSTData(array(
@@ -221,7 +221,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetRoleCredentialsSet()
+    public function testSetRoleCredentialsSet(): void
     {
         self::$cl->setRoleCredentials('myaccountid', 'myroleid', 'mypassword');
         $tmp = self::$cl->getPOSTData(array(
@@ -230,7 +230,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_login=myaccountid%21myroleid&s_pw=mypassword&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testSetRoleCredentialsReset()
+    public function testSetRoleCredentialsReset(): void
     {
         self::$cl->setRoleCredentials('', '', '');
         $tmp = self::$cl->getPOSTData(array(
@@ -239,7 +239,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
-    public function testLoginCredsOK()
+    public function testLoginCredsOK(): void
     {
         self::$cl->useOTESystem()
                 ->setCredentials('test.user', 'test.passw0rd');
@@ -251,7 +251,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertNotNull($rec->getDataByKey('SESSION'));
     }
 
-    /*public function testLoginRoleCredsOK()
+    /*public function testLoginRoleCredsOK(): void
     {
         self::$cl->setRoleCredentials('test.user', 'testrole', 'test.passw0rd');
         $r = self::$cl->login();
@@ -262,7 +262,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertNotNull($rec->getDataByKey('SESSION'));
     }*/
 
-    public function testLoginCredsFAIL()
+    public function testLoginCredsFAIL(): void
     {
         self::$cl->setCredentials('test.user', 'WRONGPASSWORD');
         $r = self::$cl->login();
@@ -273,7 +273,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     //TODO -> not covered: login failed; http timeout
     //TODO -> not covered: login succeeded; no session returned
 
-    public function testLoginExtendedCredsOK()
+    public function testLoginExtendedCredsOK(): void
     {
         self::$cl->useOTESystem()
                 ->setCredentials('test.user', 'test.passw0rd');
@@ -287,21 +287,21 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertNotNull($rec->getDataByKey('SESSION'));
     }
 
-    public function testLogoutOK()
+    public function testLogoutOK(): void
     {
         $r = self::$cl->logout();
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
     }
 
-    public function testLogoutFAIL()
+    public function testLogoutFAIL(): void
     {
         $r = self::$cl->logout();
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isError(), true);
     }
 
-    public function testRequestFlattenCommand()
+    public function testRequestFlattenCommand(): void
     {
         self::$cl->setCredentials('test.user', 'test.passw0rd')
                 ->useOTESystem();
@@ -319,7 +319,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($cmd["DOMAIN1"], "example.net");
     }
 
-    public function testRequestAUTOIdnConvert()
+    public function testRequestAUTOIdnConvert(): void
     {
         self::$cl->setCredentials('test.user', 'test.passw0rd')
                 ->useOTESystem();
@@ -339,7 +339,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($cmd["DOMAIN2"], "example.net");
     }
 
-    public function testRequestCodeTmpErrorDbg()
+    public function testRequestCodeTmpErrorDbg(): void
     {
         self::$cl->enableDebugMode()
                 ->setCredentials('test.user', 'test.passw0rd')
@@ -352,7 +352,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         //TODO: this response is a tmp error in node-sdk; "httperror" template
     }
 
-    public function testRequestCodeTmpErrorNoDbg()
+    public function testRequestCodeTmpErrorNoDbg(): void
     {
         self::$cl->disableDebugMode();
         $r = self::$cl->request(array( 'COMMAND' => 'GetUserIndex' ));
@@ -363,7 +363,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         //TODO: this response is a tmp error in node-sdk; "httperror" template
     }
 
-    public function testRequestNextResponsePageNoLast()
+    public function testRequestNextResponsePageNoLast(): void
     {
         $r = self::$cl->request(array(
             'COMMAND' => 'QueryDomainList',
@@ -385,7 +385,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($nr->getLastRecordIndex(), 3);
     }
 
-    public function testRequestNextResponsePageLast()
+    public function testRequestNextResponsePageLast(): void
     {
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Parameter LAST in use. Please remove it to avoid issues in requestNextPage.');
@@ -399,7 +399,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         self::$cl->requestNextResponsePage($r);
     }
 
-    public function testRequestNextResponsePageNoFirst()
+    public function testRequestNextResponsePageNoFirst(): void
     {
         self::$cl->disableDebugMode();
         $r = self::$cl->request(array(
@@ -421,7 +421,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($nr->getLastRecordIndex(), 3);
     }
 
-    public function testRequestAllResponsePagesOK()
+    public function testRequestAllResponsePagesOK(): void
     {
         $pages = self::$cl->requestAllResponsePages(array(
             'COMMAND' => 'QueryUserList',
@@ -435,7 +435,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         }
     }
 
-    public function testSetUserView()
+    public function testSetUserView(): void
     {
         self::$cl->setUserView('hexotestman.com');
         $r = self::$cl->request(array(
@@ -445,7 +445,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($r->isSuccess(), true);
     }
 
-    public function testResetUserView()
+    public function testResetUserView(): void
     {
         self::$cl->setUserView();
         $r = self::$cl->request(array(
@@ -455,27 +455,27 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($r->isSuccess(), true);
     }
 
-    public function testSetProxy()
+    public function testSetProxy(): void
     {
         self::$cl->setProxy('127.0.0.1');
         $this->assertEquals(self::$cl->getProxy(), '127.0.0.1');
         self::$cl->setProxy('');
     }
 
-    public function testSetReferer()
+    public function testSetReferer(): void
     {
         self::$cl->setReferer('https://www.hexonet.net/');
         $this->assertEquals(self::$cl->getReferer(), 'https://www.hexonet.net/');
         self::$cl->setReferer('');
     }
 
-    public function testUseHighPerformanceConnectionSetup()
+    public function testUseHighPerformanceConnectionSetup(): void
     {
         self::$cl->useHighPerformanceConnectionSetup();
         $this->assertEquals(self::$cl->getURL(), ISPAPI_CONNECTION_URL_PROXY);
     }
 
-    public function testUseDefaultSetup()
+    public function testUseDefaultSetup(): void
     {
         self::$cl->useDefaultConnectionSetup();
         $this->assertEquals(self::$cl->getURL(), ISPAPI_CONNECTION_URL);
