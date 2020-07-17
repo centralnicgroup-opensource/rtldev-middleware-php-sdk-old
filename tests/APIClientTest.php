@@ -8,6 +8,9 @@ use \HEXONET\Response as R;
 
 final class APIClientTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @var \HEXONET\APIClient|null $cl
+     */
     public static $cl;
 
     public static function setUpBeforeClass(): void
