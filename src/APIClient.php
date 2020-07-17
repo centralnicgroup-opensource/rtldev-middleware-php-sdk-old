@@ -481,11 +481,12 @@ class APIClient
         $data = $this->getPOSTData($mycmd);
         $secured = $this->getPOSTData($mycmd, true);
         if ($curl === false) {
-            $r = RTM::getInstance()->getTemplate("nocurl")->getPlain();
+            $plain = RTM::getInstance()->getTemplate("nocurl")->getPlain();
+            $r = new Response($plain, $mycmd, $cfg);
             if ($this->debugMode) {
                 $this->logger->log($secured, $r, "CURL for PHP missing.");
             }
-            return new Response($r, $mycmd, $cfg);
+            return $r;
         }
         curl_setopt_array($curl, array(
             //timeout: APIClient.socketTimeout,
