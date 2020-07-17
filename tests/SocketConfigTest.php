@@ -10,7 +10,8 @@ final class SocketConfigTest extends \PHPUnit\Framework\TestCase
     /**
      * test getPOSTData method
      */
-    public function testGetPOSTData(): void {
+    public function testGetPOSTData(): void
+    {
         $d = (new SC())->getPOSTData();
         $this->assertEmpty($d);
     }

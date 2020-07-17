@@ -3,7 +3,7 @@ dist: xenial
 notifications:
   email:
     recipients:
-      - kschwarz@hexonet.net
+      - middleware@hexonet.net
     on_success: never
     on_failure: always
 php:
