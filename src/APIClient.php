@@ -50,7 +50,6 @@ class APIClient
     private $ua;
     /**
      * additional curl options to use
-     * keys: CURLOPT_PROXY, CURLOPT_REFERER
      * @var array
      */
     private $curlopts = [];

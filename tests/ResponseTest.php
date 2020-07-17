@@ -9,6 +9,9 @@ use \HEXONET\ResponseParser as RP;
 
 final class ResponseTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @var \HEXONET\ResponseTemplateManager|null
+     */
     public static $rtm;
 
     public static function setupBeforeClass(): void

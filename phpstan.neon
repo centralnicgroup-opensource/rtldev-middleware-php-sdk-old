@@ -4,3 +4,5 @@ parameters:
         - src
         - tests
     checkMissingIterableValueType: false
+    bootstrapFiles:
+        - src/APIClient.php

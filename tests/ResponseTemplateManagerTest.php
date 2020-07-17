@@ -8,6 +8,9 @@ use \HEXONET\ResponseTemplateManager as RTM;
 
 final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @var \HEXONET\ResponseTemplateManager|null
+     */
     public static $rtm;
 
     public static function setupBeforeClass(): void
