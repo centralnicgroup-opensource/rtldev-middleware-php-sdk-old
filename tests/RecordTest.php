@@ -5,7 +5,7 @@ namespace HEXONETTEST;
 
 final class RecordTest extends \PHPUnit\Framework\TestCase
 {
-    public function testGetData()
+    public function testGetData(): void
     {
         $d = array(
             'DOMAIN' => 'mydomain.com',
@@ -17,7 +17,7 @@ final class RecordTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($d, $rec->getData());
     }
 
-    public function testGetDataByKey()
+    public function testGetDataByKey(): void
     {
         $rec = new \HEXONET\Record(array(
             'DOMAIN' => 'mydomain.com',

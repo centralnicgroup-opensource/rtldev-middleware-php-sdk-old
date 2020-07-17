@@ -23,7 +23,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         self::$rtm = null;
     }
 
-    public function testCommandPlain()
+    public function testCommandPlain(): void
     {
         // ensure no vars are returned in response, just in case no place holder replacements are provided
         $r = new R("", ["COMMAND" => "QueryDomainOptions", "DOMAIN0" => "example.com", "DOMAIN1" => "example.net" ]);
@@ -31,7 +31,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $r->getCommandPlain());
     }
 
-    public function testCommandPlainSecure()
+    public function testCommandPlainSecure(): void
     {
         // ensure no vars are returned in response, just in case no place holder replacements are provided
         $r = new R("", ["COMMAND" => "CheckAuthentication", "SUBUSER" => "test.user", "PASSWORD" => "test.passw0rd" ]);
@@ -39,7 +39,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $r->getCommandPlain());
     }
 
-    public function testPlaceHolderReplacements()
+    public function testPlaceHolderReplacements(): void
     {
         // ensure no vars are returned in response, just in case no place holder replacements are provided
         $r = new R("");
@@ -50,25 +50,25 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(true, preg_match("/123HXPHFOUND123/", $r->getDescription()), "case 2");
     }
 
-    public function testGetCurrentPageNumberEntries()
+    public function testGetCurrentPageNumberEntries(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $this->assertEquals(1, $r->getCurrentPageNumber());
     }
 
-    public function testGetCurrentPageNumberNoEntries()
+    public function testGetCurrentPageNumberNoEntries(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertNull($r->getCurrentPageNumber());
     }
 
-    public function testGetFirstRecordIndexNoFirstNoRows()
+    public function testGetFirstRecordIndexNoFirstNoRows(): void
     {
         $r = new R(self::$rtm->getTemplate('OK')->getPlain());
         $this->assertNull($r->getFirstRecordIndex());
     }
 
-    public function testGetFirstRecordIndexNoFirstRows()
+    public function testGetFirstRecordIndexNoFirstRows(): void
     {
         $h = self::$rtm->getTemplate('OK')->getHash();
         $h["PROPERTY"] = array(
@@ -78,28 +78,28 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(0, $r->getFirstRecordIndex());
     }
 
-    public function testGetColumns()
+    public function testGetColumns(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $cols = $r->getColumns();
         $this->assertEquals(6, count($cols));
     }
 
-    public function testGetColumnIndexExists()
+    public function testGetColumnIndexExists(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $data = $r->getColumnIndex('DOMAIN', 0);
         $this->assertEquals('0-60motorcycletimes.com', $data);
     }
 
-    public function testGetColumnIndexNotExists()
+    public function testGetColumnIndexNotExists(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $data = $r->getColumnIndex('COLUMN_NOT_EXISTS', 0);
         $this->assertNull($data);
     }
 
-    public function testGetColumnKeys()
+    public function testGetColumnKeys(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $colKeys = $r->getColumnKeys();
@@ -112,7 +112,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertContains('TOTAL', $colKeys);
     }
 
-    public function testGetCurrentRecordRows()
+    public function testGetCurrentRecordRows(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $rec = $r->getCurrentRecord();
@@ -126,13 +126,13 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         ), $rec->getData());
     }
 
-    public function testGetCurrentRecordNoRows()
+    public function testGetCurrentRecordNoRows(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertNull($r->getCurrentRecord());
     }
 
-    public function testGetListHash()
+    public function testGetListHash(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $lh = $r->getListHash();
@@ -141,7 +141,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($lh["meta"]["pg"], $r->getPagination());
     }
 
-    public function testGetNextRecord()
+    public function testGetNextRecord(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $rec = $r->getNextRecord();
@@ -149,7 +149,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertNull($r->getNextRecord());
     }
 
-    public function testGetPagination()
+    public function testGetPagination(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $pager = $r->getPagination();
@@ -164,7 +164,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertArrayHasKey('TOTAL', $pager);
     }
 
-    public function testGetPreviousRecord()
+    public function testGetPreviousRecord(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $r->getNextRecord();
@@ -179,37 +179,37 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertNull($r->getPreviousRecord());
     }
 
-    public function testHasNextPageNoRows()
+    public function testHasNextPageNoRows(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertEquals(false, $r->hasNextPage());
     }
 
-    public function testHasNextPageRows()
+    public function testHasNextPageRows(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $this->assertEquals(true, $r->hasNextPage());
     }
 
-    public function testHasPreviousPageNoRows1()
+    public function testHasPreviousPageNoRows1(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertEquals(false, $r->hasPreviousPage());
     }
 
-    public function testHasPreviousPageNoRows2()
+    public function testHasPreviousPageNoRows2(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $this->assertEquals(false, $r->hasPreviousPage());
     }
 
-    public function testGetLastRecordIndexNoRows()
+    public function testGetLastRecordIndexNoRows(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertNull($r->getLastRecordIndex());
     }
 
-    public function testGetLastRecordIndexNoLastRows()
+    public function testGetLastRecordIndexNoLastRows(): void
     {
         $h = self::$rtm->getTemplate('OK')->getHash();
         $h["PROPERTY"] = array(
@@ -219,37 +219,37 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(1, $r->getLastRecordIndex());
     }
 
-    public function testGetNextPageNumberNoRows()
+    public function testGetNextPageNumberNoRows(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertNull($r->getNextPageNumber());
     }
 
-    public function testGetNextPageNumberRows()
+    public function testGetNextPageNumberRows(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $this->assertEquals(2, $r->getNextPageNumber());
     }
 
-    public function testGetNumberOfPages()
+    public function testGetNumberOfPages(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertEquals(0, $r->getNumberOfPages());
     }
 
-    public function testGetPreviousPageNumberNoRows()
+    public function testGetPreviousPageNumberNoRows(): void
     {
         $r = new R(self::$rtm->getTemplate("OK")->getPlain());
         $this->assertNull($r->getPreviousPageNumber());
     }
 
-    public function testGetPreviousPageNumberRows()
+    public function testGetPreviousPageNumberRows(): void
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $this->assertNull($r->getPreviousPageNumber());
     }
 
-    public function testRewindRecordList()
+    public function testRewindRecordList(): void
     {
         $r = new R(self::$rtm->getTemplate('listP0')->getPlain());
         $this->assertNull($r->getPreviousRecord());

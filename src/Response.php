@@ -448,7 +448,7 @@ class Response extends \HEXONET\ResponseTemplate
      * Reset index in record list back to zero
      * @return $this
      */
-    public function rewindRecordList()
+    public function rewindRecordList(): Response
     {
         $this->recordIndex = 0;
         return $this;
@@ -457,9 +457,9 @@ class Response extends \HEXONET\ResponseTemplate
     /**
      * Check if column exists in response
      * @param string $key column name
-     * @return boolean boolean result
+     * @return bool boolean result
      */
-    private function hasColumn($key)
+    private function hasColumn($key): bool
     {
         return (array_search($key, $this->columnkeys) !== false);
     }
@@ -467,9 +467,9 @@ class Response extends \HEXONET\ResponseTemplate
     /**
      * Check if the record list contains a record for the
      * current record index in use
-     * @return boolean boolean result
+     * @return bool boolean result
      */
-    private function hasCurrentRecord()
+    private function hasCurrentRecord(): bool
     {
         $len = $this->getRecordsCount();
         return (
@@ -482,9 +482,9 @@ class Response extends \HEXONET\ResponseTemplate
     /**
      * Check if the record list contains a next record for the
      * current record index in use
-     * @return boolean boolean result
+     * @return bool boolean result
      */
-    private function hasNextRecord()
+    private function hasNextRecord(): bool
     {
         $next = $this->recordIndex + 1;
         return ($this->hasCurrentRecord() && ($next < $this->getRecordsCount()));
@@ -493,9 +493,9 @@ class Response extends \HEXONET\ResponseTemplate
     /**
      * Check if the record list contains a previous record for the
      * current record index in use
-     * @return boolean boolean result
+     * @return bool boolean result
      */
-    private function hasPreviousRecord()
+    private function hasPreviousRecord(): bool
     {
         return ($this->recordIndex > 0 && $this->hasCurrentRecord());
     }

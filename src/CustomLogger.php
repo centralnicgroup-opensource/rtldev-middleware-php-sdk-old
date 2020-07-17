@@ -9,6 +9,7 @@
 namespace MYCUSTOMNAMESPACE;
 
 use \HEXONET\Logger as L;
+use \HEXONET\Response as R;
 
 /**
  * MYCUSTOMNAMESPACE Logger
@@ -21,7 +22,7 @@ class Logger extends L
     /**
      * output/log given data
      */
-    public function log($post, $r, $error = null)
+    public function log(string $post, R $r, string $error = null): void
     {
         // apply your custom logging / output here
     }

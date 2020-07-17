@@ -20,7 +20,7 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
         self::$rtm = null;
     }
 
-    public function testUniqueness()
+    public function testUniqueness(): void
     {
         $firstCall = RTM::getInstance();
         $secondCall = RTM::getInstance();
@@ -28,14 +28,14 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($firstCall, $secondCall);
     }
 
-    public function testGetTemplateNotFound()
+    public function testGetTemplateNotFound(): void
     {
         $tpl = self::$rtm->getTemplate('IwontExist');
         $this->assertEquals(500, $tpl->getCode());
         $this->assertEquals('Response Template not found', $tpl->getDescription());
     }
 
-    public function testGetTemplates()
+    public function testGetTemplates(): void
     {
         $tpl = self::$rtm->getTemplates();
         $this->assertArrayHasKey("404", $tpl);
@@ -48,19 +48,19 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
         $this->assertArrayHasKey("nocurl", $tpl);
     }
 
-    public function testIsTemplateMatchHash()
+    public function testIsTemplateMatchHash(): void
     {
         $tpl = new RT('');
         $this->assertEquals(true, self::$rtm->isTemplateMatchHash($tpl->getHash(), "empty"));
     }
 
-    public function testIsTemplateMatchPlain()
+    public function testIsTemplateMatchPlain(): void
     {
         $tpl = new RT('');
         $this->assertEquals(true, self::$rtm->isTemplateMatchPlain($tpl->getPlain(), "empty"));
     }
 
-    public function testAddTemplate()
+    public function testAddTemplate(): void
     {
         $tpl = self::$rtm->addTemplate('test', '')->getTemplate('test');
         $this->assertEquals(true, self::$rtm->isTemplateMatchPlain($tpl->getPlain(), "empty"));

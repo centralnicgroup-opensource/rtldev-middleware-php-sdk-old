@@ -19,7 +19,7 @@ class Logger
     /**
      * output/log given data
      */
-    public function log($post, $r, $error = null)
+    public function log(string $post, Response $r, string $error = null): void
     {
          echo implode("\n", [
             print_r($r->getCommand(), true),
