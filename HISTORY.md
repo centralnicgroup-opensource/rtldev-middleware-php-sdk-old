@@ -1,3 +1,10 @@
+## [5.8.5](https://github.com/hexonet/php-sdk/compare/v5.8.4...v5.8.5) (2020-07-17)
+
+
+### Bug Fixes
+
+* **apiclient:** fixed log method call to use correct argument type ([0ba6cdd](https://github.com/hexonet/php-sdk/commit/0ba6cdd87c601153ad0e91e099ea293ccb6cd6ef))
+
 ## [5.8.4](https://github.com/hexonet/php-sdk/compare/v5.8.3...v5.8.4) (2020-07-15)
 
 
