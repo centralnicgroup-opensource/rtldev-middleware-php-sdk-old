@@ -173,7 +173,7 @@ class APIClient
     {
         $mods = empty($modules) ? "" : " " . implode(" ", $modules);
         $this->ua = (
-            $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ")" . $mods . " php-sdk/" . $this->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION])            
+            $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ")" . $mods . " php-sdk/" . $this->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION])
         );
         return $this;
     }
