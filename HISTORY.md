@@ -1,3 +1,10 @@
+## [5.8.6](https://github.com/hexonet/php-sdk/compare/v5.8.5...v5.8.6) (2020-07-23)
+
+
+### Bug Fixes
+
+* **apiclient:** use php version without extra data ([a9efa97](https://github.com/hexonet/php-sdk/commit/a9efa971302e4dbce449045917427477068e3546))
+
 ## [5.8.5](https://github.com/hexonet/php-sdk/compare/v5.8.4...v5.8.5) (2020-07-17)
 
 
