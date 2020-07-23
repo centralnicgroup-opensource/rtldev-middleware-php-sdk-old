@@ -173,7 +173,7 @@ class APIClient
     {
         $mods = empty($modules) ? "" : " " . implode(" ", $modules);
         $this->ua = (
-            $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ")" . $mods . " php-sdk/" . $this->getVersion() . " php/" . PHP_VERSION
+            $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ")" . $mods . " php-sdk/" . $this->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION])            
         );
         return $this;
     }
@@ -185,7 +185,7 @@ class APIClient
     public function getUserAgent()
     {
         if (!strlen($this->ua)) {
-            $this->ua = "PHP-SDK (". PHP_OS . "; ". php_uname('m') . "; rv:" . $this->getVersion() . ") php/" . PHP_VERSION;
+            $this->ua = "PHP-SDK (". PHP_OS . "; ". php_uname('m') . "; rv:" . $this->getVersion() . ") php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
         }
         return $this->ua;
     }
