@@ -1,11 +1,12 @@
 <?php
+
 //declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use \HEXONET\Response as R;
-use \HEXONET\ResponseTemplateManager as RTM;
-use \HEXONET\ResponseParser as RP;
+use HEXONET\Response as R;
+use HEXONET\ResponseTemplateManager as RTM;
+use HEXONET\ResponseParser as RP;
 
 final class ResponseTest extends \PHPUnit\Framework\TestCase
 {
@@ -148,7 +149,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     {
         $r = new R(self::$rtm->getTemplate("listP0")->getPlain());
         $rec = $r->getNextRecord();
-        $this->assertEquals(array('DOMAIN'=>'0-be-s01-0.com'), $rec->getData());
+        $this->assertEquals(array('DOMAIN' => '0-be-s01-0.com'), $rec->getData());
         $this->assertNull($r->getNextRecord());
     }
 

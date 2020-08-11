@@ -1,10 +1,11 @@
 <?php
+
 //declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use \HEXONET\ResponseParser as RP;
-use \HEXONET\ResponseTemplateManager as RTM;
+use HEXONET\ResponseParser as RP;
+use HEXONET\ResponseTemplateManager as RTM;
 
 final class ResponseParserTest extends \PHPUnit\Framework\TestCase
 {

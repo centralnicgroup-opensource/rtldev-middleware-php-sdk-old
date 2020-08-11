@@ -47,8 +47,8 @@
 		"phar": "box build ./src",
 		"phpStan": "phpstan analyze -c phpstan.neon",
 		"phpCompatibility": "./scripts/phpcompatibility.sh",
-		"codeCheck": "phpcs --ignore=\"*/vendor/*\" --standard=PSR1,PSR2 -q -n --colors src tests",
-		"codeFix": "phpcbf --ignore=\"*/vendor/*\" --standard=PSR1,PSR2 -q src tests",
+		"codeCheck": "phpcs --ignore=\"*/vendor/*\" --standard=PSR12 -q -n --colors src tests",
+		"codeFix": "phpcbf --ignore=\"*/vendor/*\" --standard=PSR12 -q src tests",
 		"test": "phpunit"
 	}
 }

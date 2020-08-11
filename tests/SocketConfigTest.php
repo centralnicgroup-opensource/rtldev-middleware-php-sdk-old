@@ -1,9 +1,10 @@
 <?php
+
 //declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use \HEXONET\SocketConfig as SC;
+use HEXONET\SocketConfig as SC;
 
 final class SocketConfigTest extends \PHPUnit\Framework\TestCase
 {

@@ -1,4 +1,5 @@
 <?php
+
 #declare(strict_types=1);
 
 /**
@@ -8,8 +9,8 @@
 
 namespace HEXONET;
 
-use \HEXONET\ResponseTemplateManager as RTM;
-use \HEXONET\Logger as L;
+use HEXONET\ResponseTemplateManager as RTM;
+use HEXONET\Logger as L;
 
 // check the docs, don't worry about http usage here
 define("ISPAPI_CONNECTION_URL_PROXY", "http://127.0.0.1/api/call.cgi");
@@ -185,7 +186,7 @@ class APIClient
     public function getUserAgent()
     {
         if (!strlen($this->ua)) {
-            $this->ua = "PHP-SDK (". PHP_OS . "; ". php_uname('m') . "; rv:" . $this->getVersion() . ") php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
+            $this->ua = "PHP-SDK (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $this->getVersion() . ") php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
         }
         return $this->ua;
     }
@@ -406,7 +407,7 @@ class APIClient
                 $newKey = \strtoupper($key);
                 if (is_array($val)) {
                     foreach ($cmd[$key] as $idx => $v) {
-                        $newcmd[$newKey.$idx] = $v;
+                        $newcmd[$newKey . $idx] = $v;
                     }
                 } else {
                     $newcmd[$newKey] = $val;
@@ -504,7 +505,7 @@ class APIClient
             )
         ) + $this->curlopts);
         $r = curl_exec($curl);
-        $r = ($r===false) ?
+        $r = ($r === false) ?
             RTM::getInstance()->getTemplate("httperror")->getPlain() :
             //gzdecode($r);
             $r;

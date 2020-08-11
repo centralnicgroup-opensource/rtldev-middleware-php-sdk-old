@@ -1,4 +1,5 @@
 <?php
+
 #declare(strict_types=1);
 
 /**
@@ -8,8 +9,8 @@
 
 namespace MYCUSTOMNAMESPACE;
 
-use \HEXONET\Logger as L;
-use \HEXONET\Response as R;
+use HEXONET\Logger as L;
+use HEXONET\Response as R;
 
 /**
  * MYCUSTOMNAMESPACE Logger

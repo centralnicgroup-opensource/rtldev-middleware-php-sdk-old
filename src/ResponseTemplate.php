@@ -1,4 +1,5 @@
 <?php
+
 #declare(strict_types=1);
 
 /**
@@ -8,8 +9,8 @@
 
 namespace HEXONET;
 
-use \HEXONET\ResponseParser as RP;
-use \HEXONET\ResponseTemplateManager as RTM;
+use HEXONET\ResponseParser as RP;
+use HEXONET\ResponseTemplateManager as RTM;
 
 /**
  * HEXONET ResponseTemplate

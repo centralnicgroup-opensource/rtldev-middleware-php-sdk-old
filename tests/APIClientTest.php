@@ -1,10 +1,11 @@
 <?php
+
 //declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use \HEXONET\APIClient as CL;
-use \HEXONET\Response as R;
+use HEXONET\APIClient as CL;
+use HEXONET\Response as R;
 
 final class APIClientTest extends \PHPUnit\Framework\TestCase
 {
@@ -95,7 +96,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
 
     public function testGetUserAgent(): void
     {
-        $ua = "PHP-SDK (". PHP_OS . "; ". php_uname('m') . "; rv:" . self::$cl->getVersion() . ") php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
+        $ua = "PHP-SDK (" . PHP_OS . "; " . php_uname('m') . "; rv:" . self::$cl->getVersion() . ") php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
         $this->assertEquals(self::$cl->getUserAgent(), $ua);
     }
 
@@ -103,7 +104,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     {
         $pid = "WHMCS";
         $rv = "7.7.0";
-        $ua = $pid . " (". PHP_OS . "; ". php_uname('m') . "; rv:" . $rv . ") php-sdk/" . self::$cl->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
+        $ua = $pid . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ") php-sdk/" . self::$cl->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
         $cls = self::$cl->setUserAgent($pid, $rv);
         $this->assertInstanceOf(CL::class, $cls);
         $this->assertEquals(self::$cl->getUserAgent(), $ua);
@@ -114,7 +115,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         $pid = "WHMCS";
         $rv = "7.7.0";
         $mods = ["reg/2.6.2", "ssl/7.2.2", "dc/8.2.2"];
-        $ua = $pid . " (". PHP_OS . "; ". php_uname('m') . "; rv:" . $rv . ") " . implode(" ", $mods) . " php-sdk/" . self::$cl->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
+        $ua = $pid . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ") " . implode(" ", $mods) . " php-sdk/" . self::$cl->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
         $cls = self::$cl->setUserAgent($pid, $rv, $mods);
         $this->assertInstanceOf(CL::class, $cls);
         $this->assertEquals(self::$cl->getUserAgent(), $ua);

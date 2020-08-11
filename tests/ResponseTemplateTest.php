@@ -1,9 +1,10 @@
 <?php
+
 //declare(strict_types=1);
 
 namespace HEXONETTEST;
 
-use \HEXONET\ResponseTemplate as RT;
+use HEXONET\ResponseTemplate as RT;
 
 final class ResponseTemplateTest extends \PHPUnit\Framework\TestCase
 {
