@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install apt packages for phpDocumentor
-        run: apt -yq install graphviz plantuml
       - name: Install Dependencies::PHP${{ matrix.php-version }}
         run: |
           echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
@@ -44,8 +42,8 @@ jobs:
         uses: actions/setup-node@v2
       - name: Install dependencies
         run: |
-          npm prune
-          npm i
+          npm prune && npm i
+          sudo apt install graphviz plantuml
           composer run-script docs
       - name: Release
         env:

@@ -6,21 +6,26 @@
         <cache>build/api-cache</cache>
     </paths>
     <version number="3.0.0">
-        <api format="php">
+        <folder>latest</folder>
+        <api>
             <source dsn=".">
                 <path>src</path>
             </source>
+            <output>api</output>
             <ignore hidden="true" symlinks="true">
                 <path>src/CustomLogger.php</path>
+                <path>tests/**/*</path>
+                <path>build/**/*</path>
+                <path>vendor/**/*</path>
             </ignore>
-            <default-package-name>HEXONET</default-package-name>
+            <extensions>
+                <extension>php</extension>
+            </extensions>
             <markers>
                 <marker>TODO</marker>
                 <marker>FIXME</marker>
             </markers>
-            <extensions>
-                <extension>php</extension>
-            </extensions>
+            <default-package-name>HEXONET</default-package-name>
         </api>
     </version>
 </phpdocumentor>
