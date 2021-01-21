@@ -6,7 +6,6 @@
         <cache>build/api-cache</cache>
     </paths>
     <version number="3.0.0">
-        <folder>latest</folder>
         <api>
             <source dsn=".">
                 <path>src</path>
