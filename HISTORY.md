@@ -1,3 +1,15 @@
+## [5.8.7](https://github.com/hexonet/php-sdk/compare/v5.8.6...v5.8.7) (2021-01-21)
+
+
+### Bug Fixes
+
+* **ci:** add missing composer update for autoloader ([3cb0525](https://github.com/hexonet/php-sdk/commit/3cb05256e25b0b583dad433d243118f9b4957ada))
+* **ci:** apt package installation reviewed ([a17e3ce](https://github.com/hexonet/php-sdk/commit/a17e3ce7cea9a51982c35c405d65afeb5defeef9))
+* **ci:** fixed phpcs reported issues ([6b061d3](https://github.com/hexonet/php-sdk/commit/6b061d3eda807da09eb29f045d2f1892d9f6ae17))
+* **ci:** migration from Travis CI to github actions ([e3d86b9](https://github.com/hexonet/php-sdk/commit/e3d86b99f24fcd68e78f3f576253ac32bebffc28))
+* **phpdocumentor:** upgrade; review config; add to release step ([2ed94d0](https://github.com/hexonet/php-sdk/commit/2ed94d0963731827bebce9b224b4e380aba04c82))
+* **responsetemplatemanager:** method __wakeup must have public visibility ([9f3c7f1](https://github.com/hexonet/php-sdk/commit/9f3c7f19adcd17fd57bb8f97ef92aa82ff5204e9))
+
 ## [5.8.6](https://github.com/hexonet/php-sdk/compare/v5.8.5...v5.8.6) (2020-07-23)
 
 
