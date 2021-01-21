@@ -20,7 +20,7 @@
                 "assets": [
                     "HISTORY.md",
                     "@(package|composer).json",
-                    "build",
+                    "build/api",
                     "report",
                     "src/APIClient.php"
                 ]
