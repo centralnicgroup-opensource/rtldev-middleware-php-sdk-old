@@ -1,3 +1,10 @@
+## [5.8.8](https://github.com/hexonet/php-sdk/compare/v5.8.7...v5.8.8) (2021-01-21)
+
+
+### Bug Fixes
+
+* **ci:** ignore tag commits ([dbda7ef](https://github.com/hexonet/php-sdk/commit/dbda7ef1b0759862840a340530208c1afbc87843))
+
 ## [5.8.7](https://github.com/hexonet/php-sdk/compare/v5.8.6...v5.8.7) (2021-01-21)
 
 
