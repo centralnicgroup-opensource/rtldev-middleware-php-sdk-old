@@ -1,3 +1,10 @@
+## [5.8.9](https://github.com/hexonet/php-sdk/compare/v5.8.8...v5.8.9) (2021-01-21)
+
+
+### Bug Fixes
+
+* **ci:** exclude build/api-cache from @semantic-release/git assets ([11cfe91](https://github.com/hexonet/php-sdk/commit/11cfe91a4eae2964ec985d532eb3fea2f40c9774))
+
 ## [5.8.8](https://github.com/hexonet/php-sdk/compare/v5.8.7...v5.8.8) (2021-01-21)
 
 
