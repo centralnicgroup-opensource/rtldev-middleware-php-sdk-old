@@ -1,0 +1,53 @@
+name: Release
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Test @ PHP ${{ matrix.php-version }} - x86 - ubuntu-latest
+    # Support [skip ci] out of box with github actions Workaround
+    # Only works for push https://github.com/actions/runner/issues/774
+    if: github.event_name == 'pull_request' || (github.event_name == 'push' && contains(toJson(github.event.commits), '[skip ci]') == false)
+    strategy:
+      matrix:
+        php-version:
+          - 7.4
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Dependencies::PHP${{ matrix.php-version }}
+        run: |
+          echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+          composer global require phpunit/phpunit phpstan/phpstan dealerdirect/phpcodesniffer-composer-installer roave/security-advisories:dev-master squizlabs/php_codesniffer phpcompatibility/php-compatibility
+      - name: Code Validation
+        run: |
+          composer run-script phpStan
+          composer run-script phpCompatibility
+          composer run-script codeCheck
+          composer run-script test
+  release:
+    name: Release @ NodeJS LTS - x86 - ubuntu-latest
+    runs-on: ubuntu-latest
+    needs:
+      - test
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup NodeJS LTS
+        uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: |
+          npm prune
+          npm i
+      - name: Release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          WHMCSMP_LOGIN: ${{ secrets.WHMCSMP_LOGIN }}
+          WHMCSMP_PASSWORD: ${{ secrets.WHMCSMP_PASSWORD }}
+          WHMCSMP_PRODUCTID: ${{ secrets.WHMCSMP_PRODUCTID_ISPAPI_SSL }}
+        run: npx semantic-release
