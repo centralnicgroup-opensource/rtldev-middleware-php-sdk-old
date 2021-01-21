@@ -54,7 +54,7 @@ class Response extends \HEXONET\ResponseTemplate
     public function __construct($raw, $cmd = null, $ph = [])
     {
         parent::__construct($raw);
-        
+
         // care about getting placeholder variables replaced
         if (preg_match("/\{[A-Z_]+\}/", $this->raw)) {
             foreach ($ph as $varName => $varVal) {
@@ -68,7 +68,7 @@ class Response extends \HEXONET\ResponseTemplate
         if (isset($this->command["PASSWORD"])) { // make password no longer accessible
             $this->command["PASSWORD"] = "***";
         }
-        
+
         $this->columnkeys = array();
         $this->columns = array();
         $this->recordIndex = 0;

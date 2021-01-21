@@ -21,7 +21,7 @@ final class ResponseTemplateTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(423, $rt->getCode());
         $this->assertEquals("Invalid API response. Contact Support", $rt->getDescription());
     }
-    
+
     public function testGetHash(): void
     {
         $h = (new RT(''))->getHash();

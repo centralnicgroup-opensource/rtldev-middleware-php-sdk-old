@@ -139,7 +139,7 @@ class APIClient
             $tmp = preg_replace("/PASSWORD\=[^\n]+/", "PASSWORD=***", $tmp);
         }
         $tmp = preg_replace("/\n$/", "", $tmp);
-                
+
         $data .= rawurlencode("s_command") . "=" . rawurlencode($tmp);
         return $data;
     }
@@ -201,7 +201,7 @@ class APIClient
         $this->curlopts[CURLOPT_PROXY] = $proxy;
         return $this;
     }
-    
+
     /**
      * Get proxy configuration for API communication
      * @return string|null
@@ -472,7 +472,7 @@ class APIClient
         $mycmd = $this->flattenCommand($cmd);
         // auto convert umlaut names to punycode
         $mycmd = $this->autoIDNConvert($mycmd);
-        
+
         // request command to API
         $cfg = [
             "CONNECTION_URL" => $this->socketURL
