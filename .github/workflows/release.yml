@@ -50,9 +50,5 @@ jobs:
           composer run-script docs
       - name: Release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          WHMCSMP_LOGIN: ${{ secrets.WHMCSMP_LOGIN }}
-          WHMCSMP_PASSWORD: ${{ secrets.WHMCSMP_PASSWORD }}
-          WHMCSMP_PRODUCTID: ${{ secrets.WHMCSMP_PRODUCTID_ISPAPI_SSL }}
         run: npx semantic-release
