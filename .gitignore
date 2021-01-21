@@ -7,10 +7,7 @@ docs
 node_modules
 package-lock.json
 composer.lock
-build
-!build/
-build/*
-!build/api
+build/api-cache
 .phpunit.result.cache
 php-sdk.phar
 php-sdk.phar.gz

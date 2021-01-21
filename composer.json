@@ -43,8 +43,7 @@
 		]
 	},
 	"scripts": {
-		"docs": "./phpDocumentor.phar",
-		"phar": "box build ./src",
+		"docs": "./phpDocumentor.phar --defaultpackagename=HEXONET",
 		"phpStan": "phpstan analyze -c phpstan.neon",
 		"phpCompatibility": "./scripts/phpcompatibility.sh",
 		"codeCheck": "phpcs --ignore=\"*/vendor/*\" --standard=PSR12 -s -q -n --colors src tests",

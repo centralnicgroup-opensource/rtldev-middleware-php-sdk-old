@@ -1,32 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<phpdocumentor>
+<?xml version="1.0" encoding="UTF-8"?>
+<phpdocumentor configVersion="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.phpdoc.org">
     <title>PHP SDK by HEXONET</title>
-    <parser>
-        <default-package-name>PHP SDK</default-package-name>
-        <target>build/api-cache</target>
-         <markers>
-            <item>TODO</item>
-            <item>FIXME</item>
-        </markers>
-        <extensions>
-            <extension>php</extension>
-        </extensions>
-    </parser>
-    <transformer>
-        <target>build/api</target>
-    </transformer>
-    <files>
-        <directory>.</directory>
-        <ignore>tests/*</ignore>
-        <ignore>build/*</ignore>
-        <ignore>var/*</ignore>
-        <ignore>vendor/*</ignore>
-        <ignore>report/*</ignore>
-    </files>
-    <plugins>
-        <plugin path="Core" />
-    </plugins>
-    <transformations>
-        <template name="responsive" />
-    </transformations>
+    <paths>
+        <output>build/api</output>
+        <cache>build/api-cache</cache>
+    </paths>
+    <version number="3.0.0">
+        <api format="php">
+            <source dsn=".">
+                <path>src</path>
+            </source>
+            <ignore hidden="true" symlinks="true">
+                <path>src/CustomLogger.php</path>
+            </ignore>
+            <default-package-name>HEXONET</default-package-name>
+            <markers>
+                <marker>TODO</marker>
+                <marker>FIXME</marker>
+            </markers>
+            <extensions>
+                <extension>php</extension>
+            </extensions>
+        </api>
+    </version>
 </phpdocumentor>
