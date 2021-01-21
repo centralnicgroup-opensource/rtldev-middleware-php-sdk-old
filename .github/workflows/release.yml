@@ -43,7 +43,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm prune && npm i
-          sudo apt install graphviz plantuml
           composer run-script docs
       - name: Release
         env:
