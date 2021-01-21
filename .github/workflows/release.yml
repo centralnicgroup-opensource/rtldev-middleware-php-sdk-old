@@ -18,6 +18,7 @@ jobs:
       - name: Install Dependencies::PHP${{ matrix.php-version }}
         run: |
           echo "$HOME/.composer/vendor/bin" >> $GITHUB_PATH
+          composer update
           composer global require phpunit/phpunit phpstan/phpstan dealerdirect/phpcodesniffer-composer-installer roave/security-advisories:dev-master squizlabs/php_codesniffer phpcompatibility/php-compatibility
       - name: Code Validation
         run: |
