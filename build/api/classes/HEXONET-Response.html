@@ -79,9 +79,6 @@
         <h2 class="phpdocumentor-content__title">
     Response
 
-        <span class="phpdocumentor-element__extends">
-        extends <a href="classes/HEXONET-ResponseTemplate.html"><abbr title="\HEXONET\ResponseTemplate">ResponseTemplate</abbr></a>
-    </span>
     
     
     
@@ -90,7 +87,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
             <p class="phpdocumentor-summary">HEXONET Response</p>
@@ -110,21 +107,7 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/HEXONET-ResponseTemplate.html#property_hash">$hash</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd>hash representation of plain API response</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/HEXONET-ResponseTemplate.html#property_raw">$raw</a>
-    <span>
-                &nbsp;: string            </span>
-</dt>
-<dd>plain API response</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+                <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/HEXONET-Response.html#property_columnkeys">$columnkeys</a>
     <span>
                 &nbsp;: array&lt;string|int, string&gt;            </span>
@@ -146,6 +129,20 @@ and maybe further specific columns in case of a list query</dd>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd>The API Command used within this request</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/HEXONET-Response.html#property_hash">$hash</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>hash representation of plain API response</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/HEXONET-Response.html#property_raw">$raw</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>plain API response</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/HEXONET-Response.html#property_recordIndex">$recordIndex</a>
@@ -183,7 +180,7 @@ and maybe further specific columns in case of a list query</dd>
 <dd>Add a record to the record list</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_getCode">getCode()</a>
+    <a href="classes/HEXONET-Response.html#method_getCode">getCode()</a>
     <span>
                         &nbsp;: int    </span>
 </dt>
@@ -246,7 +243,7 @@ and maybe further specific columns in case of a list query</dd>
 <dd>Get Record of current record index</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_getDescription">getDescription()</a>
+    <a href="classes/HEXONET-Response.html#method_getDescription">getDescription()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
@@ -260,7 +257,7 @@ and maybe further specific columns in case of a list query</dd>
 <dd>Get Index of first row in this response</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_getHash">getHash()</a>
+    <a href="classes/HEXONET-Response.html#method_getHash">getHash()</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
@@ -309,7 +306,7 @@ and maybe further specific columns in case of a list query</dd>
 <dd>Get object containing all paging data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_getPlain">getPlain()</a>
+    <a href="classes/HEXONET-Response.html#method_getPlain">getPlain()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
@@ -330,7 +327,7 @@ and maybe further specific columns in case of a list query</dd>
 <dd>Get previous record in record list</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_getQueuetime">getQueuetime()</a>
+    <a href="classes/HEXONET-Response.html#method_getQueuetime">getQueuetime()</a>
     <span>
                         &nbsp;: float    </span>
 </dt>
@@ -373,7 +370,7 @@ This is the count of requested rows</dd>
 <dd>Get total count of records available for the list query</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_getRuntime">getRuntime()</a>
+    <a href="classes/HEXONET-Response.html#method_getRuntime">getRuntime()</a>
     <span>
                         &nbsp;: float    </span>
 </dt>
@@ -394,7 +391,7 @@ This is the count of requested rows</dd>
 <dd>Check if this list query has a previous page</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_isError">isError()</a>
+    <a href="classes/HEXONET-Response.html#method_isError">isError()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
@@ -402,14 +399,14 @@ This is the count of requested rows</dd>
 API response code is an 5xx code</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_isPending">isPending()</a>
+    <a href="classes/HEXONET-Response.html#method_isPending">isPending()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
 <dd>Check if current operation is returned as pending</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_isSuccess">isSuccess()</a>
+    <a href="classes/HEXONET-Response.html#method_isSuccess">isSuccess()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
@@ -417,7 +414,7 @@ API response code is an 5xx code</dd>
 API response code is an 2xx code</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplate.html#method_isTmpError">isTmpError()</a>
+    <a href="classes/HEXONET-Response.html#method_isTmpError">isTmpError()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
@@ -478,70 +475,6 @@ current record index in use</dd>
         class="
             phpdocumentor-element
             -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_hash">
-        $hash
-        <a href="classes/HEXONET-ResponseTemplate.html#property_hash" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">32</span>
-</aside>
-
-        <p class="phpdocumentor-summary">hash representation of plain API response</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$hash</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_raw">
-        $raw
-        <a href="classes/HEXONET-ResponseTemplate.html#property_raw" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">27</span>
-</aside>
-
-        <p class="phpdocumentor-summary">plain API response</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$raw</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
             -private
                                                         "
 >
@@ -554,7 +487,7 @@ current record index in use</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
         <p class="phpdocumentor-summary">Column names available in this responsse
@@ -588,7 +521,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
         <p class="phpdocumentor-summary">Container of Column Instances</p>
@@ -620,7 +553,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">The API Command used within this request</p>
@@ -629,6 +562,70 @@ and maybe further specific columns in case of a list query</p>
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$command</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_hash">
+        $hash
+        <a href="classes/HEXONET-Response.html#property_hash" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+</aside>
+
+        <p class="phpdocumentor-summary">hash representation of plain API response</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$hash</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_raw">
+        $raw
+        <a href="classes/HEXONET-Response.html#property_raw" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">33</span>
+</aside>
+
+        <p class="phpdocumentor-summary">plain API response</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$raw</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -652,7 +649,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Record Index we currently point to in record list</p>
@@ -684,7 +681,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
         <p class="phpdocumentor-summary">Record List (List of rows)</p>
@@ -720,7 +717,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
         <p class="phpdocumentor-summary">Constructor</p>
@@ -784,7 +781,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a column to the column list</p>
@@ -839,7 +836,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add a record to the record list</p>
@@ -880,12 +877,12 @@ and maybe further specific columns in case of a list query</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getCode">
         getCode()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_getCode" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_getCode" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get API response code</p>
@@ -920,7 +917,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">239</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get column by column name</p>
@@ -967,7 +964,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Data by Column Name and Index</p>
@@ -1023,7 +1020,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">260</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Column Names</p>
@@ -1058,7 +1055,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get List of Columns</p>
@@ -1093,7 +1090,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">172</span>
+    <span class="phpdocumentor-element-found-in__line">278</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Command used in this request</p>
@@ -1128,7 +1125,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">287</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Command used in this request in plain text format</p>
@@ -1163,7 +1160,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">300</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Page Number of current List Query</p>
@@ -1198,7 +1195,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">208</span>
+    <span class="phpdocumentor-element-found-in__line">314</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Record of current record index</p>
@@ -1228,12 +1225,12 @@ and maybe further specific columns in case of a list query</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getDescription">
         getDescription()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_getDescription" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_getDescription" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get API response description</p>
@@ -1268,7 +1265,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Index of first row in this response</p>
@@ -1298,12 +1295,12 @@ and maybe further specific columns in case of a list query</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getHash">
         getHash()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_getHash" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_getHash" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get API response as Hash</p>
@@ -1338,7 +1335,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">340</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get last record index of the current list query</p>
@@ -1373,7 +1370,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Response as List Hash including useful meta data for tables</p>
@@ -1408,7 +1405,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">285</span>
+    <span class="phpdocumentor-element-found-in__line">391</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Page Number of next list query</p>
@@ -1443,7 +1440,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get next record in record list</p>
@@ -1478,7 +1475,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">300</span>
+    <span class="phpdocumentor-element-found-in__line">406</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the number of pages available for this list query</p>
@@ -1513,7 +1510,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get object containing all paging data</p>
@@ -1543,12 +1540,12 @@ and maybe further specific columns in case of a list query</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getPlain">
         getPlain()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_getPlain" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_getPlain" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Plain API response</p>
@@ -1583,7 +1580,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">439</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Page Number of previous list query</p>
@@ -1618,7 +1615,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">350</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get previous record in record list</p>
@@ -1648,12 +1645,12 @@ and maybe further specific columns in case of a list query</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getQueuetime">
         getQueuetime()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_getQueuetime" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_getQueuetime" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Queuetime of API response</p>
@@ -1688,7 +1685,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">363</span>
+    <span class="phpdocumentor-element-found-in__line">469</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Record at given index</p>
@@ -1735,7 +1732,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">375</span>
+    <span class="phpdocumentor-element-found-in__line">481</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get all Records</p>
@@ -1770,7 +1767,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">384</span>
+    <span class="phpdocumentor-element-found-in__line">490</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get count of rows in this response</p>
@@ -1805,7 +1802,7 @@ and maybe further specific columns in case of a list query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">516</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get limit(ation) setting of the current list query
@@ -1841,7 +1838,7 @@ This is the count of requested rows</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">393</span>
+    <span class="phpdocumentor-element-found-in__line">499</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get total count of records available for the list query</p>
@@ -1871,12 +1868,12 @@ This is the count of requested rows</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getRuntime">
         getRuntime()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_getRuntime" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_getRuntime" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">162</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get Runtime of API response</p>
@@ -1911,7 +1908,7 @@ This is the count of requested rows</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">426</span>
+    <span class="phpdocumentor-element-found-in__line">532</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if this list query has a next page</p>
@@ -1946,7 +1943,7 @@ This is the count of requested rows</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">439</span>
+    <span class="phpdocumentor-element-found-in__line">545</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if this list query has a previous page</p>
@@ -1976,12 +1973,12 @@ This is the count of requested rows</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_isError">
         isError()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_isError" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_isError" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if current API response represents an error case
@@ -2012,12 +2009,12 @@ API response code is an 5xx code</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_isPending">
         isPending()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_isPending" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_isPending" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if current operation is returned as pending</p>
@@ -2047,12 +2044,12 @@ API response code is an 5xx code</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_isSuccess">
         isSuccess()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_isSuccess" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_isSuccess" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if current API response represents a success case
@@ -2083,12 +2080,12 @@ API response code is an 2xx code</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_isTmpError">
         isTmpError()
-        <a href="classes/HEXONET-ResponseTemplate.html#method_isTmpError" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/HEXONET-Response.html#method_isTmpError" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplate.php"><a href="files/src-responsetemplate.html"><abbr title="src/ResponseTemplate.php">ResponseTemplate.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if current API response represents a temporary error case
@@ -2124,7 +2121,7 @@ API response code is an 4xx code</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">452</span>
+    <span class="phpdocumentor-element-found-in__line">558</span>
 </aside>
 
         <p class="phpdocumentor-summary">Reset index in record list back to zero</p>
@@ -2158,7 +2155,7 @@ API response code is an 4xx code</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">463</span>
+    <span class="phpdocumentor-element-found-in__line">569</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if column exists in response</p>
@@ -2205,7 +2202,7 @@ API response code is an 4xx code</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">473</span>
+    <span class="phpdocumentor-element-found-in__line">579</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the record list contains a record for the
@@ -2241,7 +2238,7 @@ current record index in use</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">488</span>
+    <span class="phpdocumentor-element-found-in__line">594</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the record list contains a next record for the
@@ -2277,7 +2274,7 @@ current record index in use</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response.php"><a href="files/src-response.html"><abbr title="src/Response.php">Response.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">499</span>
+    <span class="phpdocumentor-element-found-in__line">605</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if the record list contains a previous record for the

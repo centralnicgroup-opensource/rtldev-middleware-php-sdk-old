@@ -321,6 +321,56 @@ Search.appendIndex(
             "summary": "Constructor",
             "url": "classes/HEXONET-Response.html#method___construct"
         },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AgetCode\u0028\u0029",
+            "name": "getCode",
+            "summary": "Get\u0020API\u0020response\u0020code",
+            "url": "classes/HEXONET-Response.html#method_getCode"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AgetDescription\u0028\u0029",
+            "name": "getDescription",
+            "summary": "Get\u0020API\u0020response\u0020description",
+            "url": "classes/HEXONET-Response.html#method_getDescription"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AgetPlain\u0028\u0029",
+            "name": "getPlain",
+            "summary": "Get\u0020Plain\u0020API\u0020response",
+            "url": "classes/HEXONET-Response.html#method_getPlain"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AgetQueuetime\u0028\u0029",
+            "name": "getQueuetime",
+            "summary": "Get\u0020Queuetime\u0020of\u0020API\u0020response",
+            "url": "classes/HEXONET-Response.html#method_getQueuetime"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AgetHash\u0028\u0029",
+            "name": "getHash",
+            "summary": "Get\u0020API\u0020response\u0020as\u0020Hash",
+            "url": "classes/HEXONET-Response.html#method_getHash"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AgetRuntime\u0028\u0029",
+            "name": "getRuntime",
+            "summary": "Get\u0020Runtime\u0020of\u0020API\u0020response",
+            "url": "classes/HEXONET-Response.html#method_getRuntime"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AisError\u0028\u0029",
+            "name": "isError",
+            "summary": "Check\u0020if\u0020current\u0020API\u0020response\u0020represents\u0020an\u0020error\u0020case\nAPI\u0020response\u0020code\u0020is\u0020an\u00205xx\u0020code",
+            "url": "classes/HEXONET-Response.html#method_isError"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AisSuccess\u0028\u0029",
+            "name": "isSuccess",
+            "summary": "Check\u0020if\u0020current\u0020API\u0020response\u0020represents\u0020a\u0020success\u0020case\nAPI\u0020response\u0020code\u0020is\u0020an\u00202xx\u0020code",
+            "url": "classes/HEXONET-Response.html#method_isSuccess"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AisTmpError\u0028\u0029",
+            "name": "isTmpError",
+            "summary": "Check\u0020if\u0020current\u0020API\u0020response\u0020represents\u0020a\u0020temporary\u0020error\u0020case\nAPI\u0020response\u0020code\u0020is\u0020an\u00204xx\u0020code",
+            "url": "classes/HEXONET-Response.html#method_isTmpError"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003AisPending\u0028\u0029",
+            "name": "isPending",
+            "summary": "Check\u0020if\u0020current\u0020operation\u0020is\u0020returned\u0020as\u0020pending",
+            "url": "classes/HEXONET-Response.html#method_isPending"
+        },                {
             "fqsen": "\\HEXONET\\Response\u003A\u003AaddColumn\u0028\u0029",
             "name": "addColumn",
             "summary": "Add\u0020a\u0020column\u0020to\u0020the\u0020column\u0020list",
@@ -481,6 +531,16 @@ Search.appendIndex(
             "summary": "The\u0020API\u0020Command\u0020used\u0020within\u0020this\u0020request",
             "url": "classes/HEXONET-Response.html#property_command"
         },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003A\u0024raw",
+            "name": "raw",
+            "summary": "plain\u0020API\u0020response",
+            "url": "classes/HEXONET-Response.html#property_raw"
+        },                {
+            "fqsen": "\\HEXONET\\Response\u003A\u003A\u0024hash",
+            "name": "hash",
+            "summary": "hash\u0020representation\u0020of\u0020plain\u0020API\u0020response",
+            "url": "classes/HEXONET-Response.html#property_hash"
+        },                {
             "fqsen": "\\HEXONET\\Response\u003A\u003A\u0024columnkeys",
             "name": "columnkeys",
             "summary": "Column\u0020names\u0020available\u0020in\u0020this\u0020responsse\nNOTE\u003A\u0020this\u0020includes\u0020also\u0020FIRST,\u0020LAST,\u0020LIMIT,\u0020COUNT,\u0020TOTAL\nand\u0020maybe\u0020further\u0020specific\u0020columns\u0020in\u0020case\u0020of\u0020a\u0020list\u0020query",
@@ -516,100 +576,10 @@ Search.appendIndex(
             "summary": "Serialize\u0020given\u0020parsed\u0020response\u0020hash\u0020back\u0020to\u0020plain\u0020text",
             "url": "classes/HEXONET-ResponseParser.html#method_serialize"
         },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate",
-            "name": "ResponseTemplate",
-            "summary": "HEXONET\u0020ResponseTemplate",
-            "url": "classes/HEXONET-ResponseTemplate.html"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor",
-            "url": "classes/HEXONET-ResponseTemplate.html#method___construct"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AgetCode\u0028\u0029",
-            "name": "getCode",
-            "summary": "Get\u0020API\u0020response\u0020code",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_getCode"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AgetDescription\u0028\u0029",
-            "name": "getDescription",
-            "summary": "Get\u0020API\u0020response\u0020description",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_getDescription"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AgetPlain\u0028\u0029",
-            "name": "getPlain",
-            "summary": "Get\u0020Plain\u0020API\u0020response",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_getPlain"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AgetQueuetime\u0028\u0029",
-            "name": "getQueuetime",
-            "summary": "Get\u0020Queuetime\u0020of\u0020API\u0020response",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_getQueuetime"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AgetHash\u0028\u0029",
-            "name": "getHash",
-            "summary": "Get\u0020API\u0020response\u0020as\u0020Hash",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_getHash"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AgetRuntime\u0028\u0029",
-            "name": "getRuntime",
-            "summary": "Get\u0020Runtime\u0020of\u0020API\u0020response",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_getRuntime"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AisError\u0028\u0029",
-            "name": "isError",
-            "summary": "Check\u0020if\u0020current\u0020API\u0020response\u0020represents\u0020an\u0020error\u0020case\nAPI\u0020response\u0020code\u0020is\u0020an\u00205xx\u0020code",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_isError"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AisSuccess\u0028\u0029",
-            "name": "isSuccess",
-            "summary": "Check\u0020if\u0020current\u0020API\u0020response\u0020represents\u0020a\u0020success\u0020case\nAPI\u0020response\u0020code\u0020is\u0020an\u00202xx\u0020code",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_isSuccess"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AisTmpError\u0028\u0029",
-            "name": "isTmpError",
-            "summary": "Check\u0020if\u0020current\u0020API\u0020response\u0020represents\u0020a\u0020temporary\u0020error\u0020case\nAPI\u0020response\u0020code\u0020is\u0020an\u00204xx\u0020code",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_isTmpError"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003AisPending\u0028\u0029",
-            "name": "isPending",
-            "summary": "Check\u0020if\u0020current\u0020operation\u0020is\u0020returned\u0020as\u0020pending",
-            "url": "classes/HEXONET-ResponseTemplate.html#method_isPending"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003A\u0024raw",
-            "name": "raw",
-            "summary": "plain\u0020API\u0020response",
-            "url": "classes/HEXONET-ResponseTemplate.html#property_raw"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplate\u003A\u003A\u0024hash",
-            "name": "hash",
-            "summary": "hash\u0020representation\u0020of\u0020plain\u0020API\u0020response",
-            "url": "classes/HEXONET-ResponseTemplate.html#property_hash"
-        },                {
             "fqsen": "\\HEXONET\\ResponseTemplateManager",
             "name": "ResponseTemplateManager",
             "summary": "HEXONET\u0020ResponseTemplateManager",
             "url": "classes/HEXONET-ResponseTemplateManager.html"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplateManager\u003A\u003AgetInstance\u0028\u0029",
-            "name": "getInstance",
-            "summary": "Get\u0020ResponseTemplateManager\u0020Instance",
-            "url": "classes/HEXONET-ResponseTemplateManager.html#method_getInstance"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplateManager\u003A\u003A__clone\u0028\u0029",
-            "name": "__clone",
-            "summary": "clone\nForbid\u0020creating\u0020a\u0020copy\u0020of\u0020that\u0020instance\u0020from\u0020outside",
-            "url": "classes/HEXONET-ResponseTemplateManager.html#method___clone"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplateManager\u003A\u003A__wakeup\u0028\u0029",
-            "name": "__wakeup",
-            "summary": "wakeup\nprevent\u0020from\u0020being\u0020unserialized\u0020\u0028which\u0020would\u0020create\u0020a\u0020second\u0020instance\u0020of\u0020it\u0029",
-            "url": "classes/HEXONET-ResponseTemplateManager.html#method___wakeup"
-        },                {
-            "fqsen": "\\HEXONET\\ResponseTemplateManager\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor\nForbid\u0020creating\u0020an\u0020instance\u0020from\u0020outside",
-            "url": "classes/HEXONET-ResponseTemplateManager.html#method___construct"
         },                {
             "fqsen": "\\HEXONET\\ResponseTemplateManager\u003A\u003AgenerateTemplate\u0028\u0029",
             "name": "generateTemplate",
@@ -646,15 +616,25 @@ Search.appendIndex(
             "summary": "Check\u0020if\u0020given\u0020API\u0020plain\u0020response\u0020matches\u0020a\u0020given\u0020template\u0020by\u0020code\u0020and\u0020description",
             "url": "classes/HEXONET-ResponseTemplateManager.html#method_isTemplateMatchPlain"
         },                {
-            "fqsen": "\\HEXONET\\ResponseTemplateManager\u003A\u003A\u0024_instance",
-            "name": "_instance",
-            "summary": "ResponseTemplateManager\u0020Instance",
-            "url": "classes/HEXONET-ResponseTemplateManager.html#property__instance"
-        },                {
             "fqsen": "\\HEXONET\\ResponseTemplateManager\u003A\u003A\u0024templates",
             "name": "templates",
             "summary": "template\u0020container",
             "url": "classes/HEXONET-ResponseTemplateManager.html#property_templates"
+        },                {
+            "fqsen": "\\HEXONET\\ResponseTranslator",
+            "name": "ResponseTranslator",
+            "summary": "HEXONET\u0020ResponseTranslator",
+            "url": "classes/HEXONET-ResponseTranslator.html"
+        },                {
+            "fqsen": "\\HEXONET\\ResponseTranslator\u003A\u003Atranslate\u0028\u0029",
+            "name": "translate",
+            "summary": "translate\u0020a\u0020raw\u0020api\u0020response",
+            "url": "classes/HEXONET-ResponseTranslator.html#method_translate"
+        },                {
+            "fqsen": "\\HEXONET\\ResponseTranslator\u003A\u003A\u0024descriptionRegexMap",
+            "name": "descriptionRegexMap",
+            "summary": "hidden\u0020class\u0020var\u0020of\u0020API\u0020description\u0020regex\u0020mappings\u0020for\u0020translation",
+            "url": "classes/HEXONET-ResponseTranslator.html#property_descriptionRegexMap"
         },                {
             "fqsen": "\\HEXONET\\SocketConfig",
             "name": "SocketConfig",

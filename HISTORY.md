@@ -1,3 +1,20 @@
+# [6.0.0](https://github.com/hexonet/php-sdk/compare/v5.8.9...v6.0.0) (2021-04-06)
+
+
+### Bug Fixes
+
+* **response translator:** added missing typehints ([8b3acb7](https://github.com/hexonet/php-sdk/commit/8b3acb7aa83adc5a459413bd7e519b7360538103))
+
+
+### Features
+
+* **response translator:** added initial version coming with rewrite/restructuring from scratch ([8f19444](https://github.com/hexonet/php-sdk/commit/8f19444479cea5feac6d7fcd427b2dbb675c0bec))
+
+
+### BREAKING CHANGES
+
+* **response translator:** Downward incompatible restructuring (Merge of Response/ResponseTemplate, Rewrite ResponseTemplateManager) and introducing ResponseTranslator
+
 ## [5.8.9](https://github.com/hexonet/php-sdk/compare/v5.8.8...v5.8.9) (2021-01-21)
 
 

@@ -107,14 +107,7 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/HEXONET-ResponseTemplateManager.html#property__instance">$_instance</a>
-    <span>
-                &nbsp;: <a href="classes/HEXONET-ResponseTemplateManager.html"><abbr title="\HEXONET\ResponseTemplateManager">ResponseTemplateManager</abbr></a>|null            </span>
-</dt>
-<dd>ResponseTemplateManager Instance</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+                <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/HEXONET-ResponseTemplateManager.html#property_templates">$templates</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
@@ -122,14 +115,6 @@
 <dd>template container</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplateManager.html#method___wakeup">__wakeup()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>wakeup
-prevent from being unserialized (which would create a second instance of it)</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/HEXONET-ResponseTemplateManager.html#method_addTemplate">addTemplate()</a>
     <span>
                         &nbsp;: self    </span>
@@ -144,16 +129,9 @@ prevent from being unserialized (which would create a second instance of it)</dd
 <dd>Generate API response template string for given code and description</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/HEXONET-ResponseTemplateManager.html#method_getInstance">getInstance()</a>
-    <span>
-                        &nbsp;: self    </span>
-</dt>
-<dd>Get ResponseTemplateManager Instance</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/HEXONET-ResponseTemplateManager.html#method_getTemplate">getTemplate()</a>
     <span>
-                        &nbsp;: <a href="classes/HEXONET-ResponseTemplate.html"><abbr title="\HEXONET\ResponseTemplate">ResponseTemplate</abbr></a>    </span>
+                        &nbsp;: <a href="classes/HEXONET-Response.html"><abbr title="\HEXONET\Response">Response</abbr></a>    </span>
 </dt>
 <dd>Get response template instance from template container</dd>
 
@@ -185,22 +163,6 @@ prevent from being unserialized (which would create a second instance of it)</dd
 </dt>
 <dd>Check if given API plain response matches a given template by code and description</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/HEXONET-ResponseTemplateManager.html#method___clone">__clone()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>clone
-Forbid creating a copy of that instance from outside</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/HEXONET-ResponseTemplateManager.html#method___construct">__construct()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>Constructor
-Forbid creating an instance from outside</dd>
-
         </dl>
 
 
@@ -217,40 +179,8 @@ Forbid creating an instance from outside</dd>
         class="
             phpdocumentor-element
             -property
-            -private
+            -public
             -static                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property__instance">
-        $_instance
-        <a href="classes/HEXONET-ResponseTemplateManager.html#property__instance" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">37</span>
-</aside>
-
-        <p class="phpdocumentor-summary">ResponseTemplateManager Instance</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type"><a href="classes/HEXONET-ResponseTemplateManager.html"><abbr title="\HEXONET\ResponseTemplateManager">ResponseTemplateManager</abbr></a>|null</span>
-    <span class="phpdocumentor-signature__name">$_instance</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
 >
     <h4 class="phpdocumentor-element__name" id="property_templates">
         $templates
@@ -261,16 +191,56 @@ Forbid creating an instance from outside</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
         <p class="phpdocumentor-summary">template container</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$templates</span>
-    </code>
+     = <span class="phpdocumentor-signature__default-value">[&quot;404&quot; =&gt; &quot;[RESPONSE]
+CODE=421
+DESCRIPTION=Page not found
+EOF
+&quot;, &quot;500&quot; =&gt; &quot;[RESPONSE]
+CODE=500
+DESCRIPTION=Internal server error
+EOF
+&quot;, &quot;empty&quot; =&gt; &quot;[RESPONSE]
+CODE=423
+DESCRIPTION=Empty API response. Probably unreachable API end point {CONNECTION_URL}
+EOF
+&quot;, &quot;error&quot; =&gt; &quot;[RESPONSE]
+CODE=421
+DESCRIPTION=Command failed due to server error. Client should try again
+EOF
+&quot;, &quot;expired&quot; =&gt; &quot;[RESPONSE]
+CODE=530
+DESCRIPTION=SESSION NOT FOUND
+EOF
+&quot;, &quot;httperror&quot; =&gt; &quot;[RESPONSE]
+CODE=421
+DESCRIPTION=Command failed due to HTTP communication error
+EOF
+&quot;, &quot;invalid&quot; =&gt; &quot;[RESPONSE]
+CODE=423
+DESCRIPTION=Invalid API response. Contact Support
+EOF
+&quot;, &quot;nocurl&quot; =&gt; &quot;[RESPONSE]
+CODE=423
+DESCRIPTION=API access error: curl_init failed
+EOF
+&quot;, &quot;notfound&quot; =&gt; &quot;[RESPONSE]
+CODE=500
+DESCRIPTION=Response Template not found
+EOF
+&quot;, &quot;unauthorized&quot; =&gt; &quot;[RESPONSE]
+CODE=530
+DESCRIPTION=Unauthorized
+EOF
+&quot;]</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -288,42 +258,7 @@ Forbid creating an instance from outside</dd>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method___wakeup">
-        __wakeup()
-        <a href="classes/HEXONET-ResponseTemplateManager.html#method___wakeup" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">57</span>
-</aside>
-
-        <p class="phpdocumentor-summary">wakeup
-prevent from being unserialized (which would create a second instance of it)</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__wakeup</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_addTemplate">
         addTemplate()
@@ -332,14 +267,14 @@ prevent from being unserialized (which would create a second instance of it)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add response template to template container</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">addTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plain</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">addTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plain</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$descr</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -359,7 +294,16 @@ prevent from being unserialized (which would create a second instance of it)</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>API plain response</p>
+                    <section class="phpdocumentor-description"><p>API plain response or API response code (when providing $descr)</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$descr</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>API response description</p>
 </section>
 
             </dd>
@@ -378,7 +322,7 @@ prevent from being unserialized (which would create a second instance of it)</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_generateTemplate">
         generateTemplate()
@@ -387,14 +331,14 @@ prevent from being unserialized (which would create a second instance of it)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate API response template string for given code and description</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">generateTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$code</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$description</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">generateTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$code</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$description</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -436,40 +380,6 @@ prevent from being unserialized (which would create a second instance of it)</p>
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getInstance">
-        getInstance()
-        <a href="classes/HEXONET-ResponseTemplateManager.html#method_getInstance" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">26</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Get ResponseTemplateManager Instance</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getTemplate">
         getTemplate()
         <a href="classes/HEXONET-ResponseTemplateManager.html#method_getTemplate" class="headerlink"><i class="fas fa-link"></i></a>
@@ -477,14 +387,14 @@ prevent from being unserialized (which would create a second instance of it)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get response template instance from template container</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/HEXONET-ResponseTemplate.html"><abbr title="\HEXONET\ResponseTemplate">ResponseTemplate</abbr></a></span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/HEXONET-Response.html"><abbr title="\HEXONET\Response">Response</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -504,7 +414,7 @@ prevent from being unserialized (which would create a second instance of it)</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/HEXONET-ResponseTemplate.html"><abbr title="\HEXONET\ResponseTemplate">ResponseTemplate</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/HEXONET-Response.html"><abbr title="\HEXONET\Response">Response</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"><p>template instance</p>
 </section>
@@ -515,7 +425,7 @@ prevent from being unserialized (which would create a second instance of it)</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_getTemplates">
         getTemplates()
@@ -524,14 +434,14 @@ prevent from being unserialized (which would create a second instance of it)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return all available response templates</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getTemplates</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">getTemplates</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -541,7 +451,7 @@ prevent from being unserialized (which would create a second instance of it)</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>all available response template instances</p>
+            <section class="phpdocumentor-description"><p>all available response instances</p>
 </section>
 
     
@@ -550,7 +460,7 @@ prevent from being unserialized (which would create a second instance of it)</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_hasTemplate">
         hasTemplate()
@@ -559,14 +469,14 @@ prevent from being unserialized (which would create a second instance of it)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if given template exists in template container</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">hasTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">hasTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -597,7 +507,7 @@ prevent from being unserialized (which would create a second instance of it)</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_isTemplateMatchHash">
         isTemplateMatchHash()
@@ -606,14 +516,14 @@ prevent from being unserialized (which would create a second instance of it)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if given API response hash matches a given template by code and description</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">isTemplateMatchHash</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tpl</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">isTemplateMatchHash</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tpl</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -653,7 +563,7 @@ prevent from being unserialized (which would create a second instance of it)</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+                                    -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_isTemplateMatchPlain">
         isTemplateMatchPlain()
@@ -662,14 +572,14 @@ prevent from being unserialized (which would create a second instance of it)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 </aside>
 
         <p class="phpdocumentor-summary">Check if given API plain response matches a given template by code and description</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">isTemplateMatchPlain</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plain</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">isTemplateMatchPlain</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plain</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -702,76 +612,6 @@ prevent from being unserialized (which would create a second instance of it)</p>
             &mdash;
             <section class="phpdocumentor-description"><p>boolean result</p>
 </section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method___clone">
-        __clone()
-        <a href="classes/HEXONET-ResponseTemplateManager.html#method___clone" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">48</span>
-</aside>
-
-        <p class="phpdocumentor-summary">clone
-Forbid creating a copy of that instance from outside</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">__clone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/HEXONET-ResponseTemplateManager.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ResponseTemplateManager.php"><a href="files/src-responsetemplatemanager.html"><abbr title="src/ResponseTemplateManager.php">ResponseTemplateManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">65</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Constructor
-Forbid creating an instance from outside</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
 
     
 </article>
