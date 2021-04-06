@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/hexonet/php-sdk/compare/v6.0.0...v6.0.1) (2021-04-06)
+
+
+### Bug Fixes
+
+* **response translator:** fix response translator regarding ACL response case ([4fa8ef8](https://github.com/hexonet/php-sdk/commit/4fa8ef8051973cfe02a700c98c66f7afd4114095))
+
 # [6.0.0](https://github.com/hexonet/php-sdk/compare/v5.8.9...v6.0.0) (2021-04-06)
 
 
