@@ -81,4 +81,15 @@ final class ResponseTranslatorTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals("423", $h["CODE"]);
         $this->assertEquals("Empty API response. Probably unreachable API end point", $h["DESCRIPTION"]);
     }
+
+    /**
+     * Test ACL error translation
+     */
+    public function testACLTranslation(): void
+    {
+        $cmd = ["COMMAND" => "StatusAccount"];
+        $r = new R("[RESPONSE]\r\ncode=530\r\ndescription=Authorization failed; Operation forbidden by ACL\r\nEOF\r\n", $cmd);
+        $this->assertEquals(530, $r->getCode());
+        $this->assertEquals("Authorization failed; Used Command `StatusAccount` not white-listed by your Access Control List", $r->getDescription());
+    }
 }

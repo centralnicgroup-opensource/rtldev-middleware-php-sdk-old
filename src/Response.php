@@ -73,7 +73,7 @@ class Response
             $cmd["PASSWORD"] = "***";
         }
 
-        $this->raw = RT::translate($raw, $this->command, $ph);
+        $this->raw = RT::translate($raw, $cmd, $ph);
         $this->hash = RP::parse($this->raw);
         $this->command = $cmd;
         $this->columnkeys = [];

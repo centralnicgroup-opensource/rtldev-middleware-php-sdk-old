@@ -63,16 +63,20 @@ class ResponseTranslator
             $newraw = RTM::$templates[$newraw];
         }
 
-       // generic API response description rewrite
+        // generic API response description rewrite
         foreach (self::$descriptionRegexMap as $regex => $val) {
-            // replace command place holder with API command name used
-            if (isset($cmd["COMMAND"])) {
-                $val = preg_replace("/\{COMMAND\}/", $cmd["COMMAND"], $newraw);
-            }
-            // switch to better readable response if matching
-            $tmp = preg_replace("/description=" . preg_quote($regex) . "/i", $val, $newraw);
-            if (strcmp($tmp, $newraw)) {
-                break;
+            $qregex = "/description=" . preg_quote($regex) . "/i";
+            if (preg_match($qregex, $newraw)) {
+                // replace command place holder with API command name used
+                if (isset($cmd["COMMAND"])) {
+                    $val = str_replace("{COMMAND}", $cmd["COMMAND"], $val);
+                }
+                // switch to better readable response if matching
+                $tmp = preg_replace($qregex, "description=" . $val, $newraw);
+                if (strcmp($tmp, $newraw) !== 0) {
+                    $newraw = $tmp;
+                    break;
+                }
             }
         }
 
