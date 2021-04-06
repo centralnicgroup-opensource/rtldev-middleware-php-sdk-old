@@ -481,43 +481,37 @@ class APIClient
         $data = $this->getPOSTData($mycmd);
         $secured = $this->getPOSTData($mycmd, true);
         if ($curl === false) {
-            $plain = RTM::getInstance()->getTemplate("nocurl")->getPlain();
-            $r = new Response($plain, $mycmd, $cfg);
+            $r = new Response("nocurl", $mycmd, $cfg);
             if ($this->debugMode) {
                 $this->logger->log($secured, $r, "CURL for PHP missing.");
             }
             return $r;
         }
-        curl_setopt_array($curl, array(
+        curl_setopt_array($curl, [
             //timeout: APIClient.socketTimeout,
-            //CURLOPT_POSTFIELDS      =>  gzencode($this->getPOSTData($cmd)),
-            //CURLOPT_ENCODING        => 'gzip',
             CURLOPT_POST            =>  1,
             CURLOPT_POSTFIELDS      =>  $data,
             CURLOPT_HEADER          =>  0,
             CURLOPT_RETURNTRANSFER  =>  1,
             CURLOPT_USERAGENT       =>  $this->getUserAgent(),
-            CURLOPT_HTTPHEADER      =>  array(
+            CURLOPT_HTTPHEADER      =>  [
                 'Expect:',
-                'Content-type: text/html; charset=UTF-8',
-                //'Content-Encoding: gzip',
-                //'Accept-Encoding: gzip'
-            )
-        ) + $this->curlopts);
+                'Content-type: text/html; charset=UTF-8'
+            ]
+        ] + $this->curlopts);
         $r = curl_exec($curl);
-        $r = ($r === false) ?
-            RTM::getInstance()->getTemplate("httperror")->getPlain() :
-            //gzdecode($r);
-            $r;
+        $error = null;
+        if ($r === false) {
+            $r = "httperror";
+            $error = curl_error($curl);
+        }
+        $r = new Response($r, $mycmd, $cfg);
 
-        //"If both Content-Length and Transfer-Encoding headers are missing,
-        //then at the end of the response the connection must be closed."
-        //-> That's what we do
         curl_close($curl);
         if ($this->debugMode) {
-            $this->logger->log($secured, new Response($r, $mycmd, $cfg));
+            $this->logger->log($secured, $r, $error);
         }
-        return new Response($r, $mycmd, $cfg);
+        return $r;
     }
 
     /**

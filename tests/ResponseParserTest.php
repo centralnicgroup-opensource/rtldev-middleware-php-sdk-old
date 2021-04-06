@@ -9,25 +9,15 @@ use HEXONET\ResponseTemplateManager as RTM;
 
 final class ResponseParserTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @var \HEXONET\ResponseTemplateManager|null
-     */
-    public static $rtm;
 
     public static function setupBeforeClass(): void
     {
-        self::$rtm = RTM::getInstance();
-        self::$rtm->addTemplate("OK", self::$rtm->generateTemplate("200", "Command completed successfully"));
-    }
-
-    public static function tearDownAfterClass(): void
-    {
-        self::$rtm = null;
+        RTM::addTemplate("OK", "200", "Command completed successfully");
     }
 
     public function testSerializeProperty(): void
     {
-        $r = self::$rtm->getTemplate('OK')->getHash();
+        $r = RTM::getTemplate('OK')->getHash();
         $r["PROPERTY"] = array(
           "DOMAIN" => array('mydomain1.com', 'mydomain2.com', 'mydomain3.com'),
           "RATING" => array('1', '2', '3'),
@@ -38,13 +28,13 @@ final class ResponseParserTest extends \PHPUnit\Framework\TestCase
 
     public function testSerializeNoProperty(): void
     {
-        $tpl = self::$rtm->getTemplate('OK');
+        $tpl = RTM::getTemplate('OK');
         $this->assertEquals($tpl->getPlain(), RP::serialize($tpl->getHash()));
     }
 
     public function testSerializeNoCodeNoDescription(): void
     {
-        $h = self::$rtm->getTemplate('OK')->getHash();
+        $h = RTM::getTemplate('OK')->getHash();
         unset($h["CODE"]);
         unset($h["DESCRIPTION"]);
         $this->assertEquals("[RESPONSE]\r\nEOF\r\n", RP::serialize($h));
@@ -52,7 +42,7 @@ final class ResponseParserTest extends \PHPUnit\Framework\TestCase
 
     public function testSerializeQTandRT(): void
     {
-        $h = self::$rtm->getTemplate('OK')->getHash();
+        $h = RTM::getTemplate('OK')->getHash();
         $h["QUEUETIME"] = "0";
         $h["RUNTIME"] = "0.12";
         $this->assertEquals("[RESPONSE]\r\nCODE=200\r\nDESCRIPTION=Command completed successfully\r\nQUEUETIME=0\r\nRUNTIME=0.12\r\nEOF\r\n", RP::serialize($h));

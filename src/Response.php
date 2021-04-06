@@ -9,12 +9,15 @@
 
 namespace HEXONET;
 
+use HEXONET\ResponseParser as RP;
+use HEXONET\ResponseTranslator as RT;
+
 /**
  * HEXONET Response
  *
  * @package HEXONET
  */
-class Response extends \HEXONET\ResponseTemplate
+class Response
 {
 
     /**
@@ -22,6 +25,19 @@ class Response extends \HEXONET\ResponseTemplate
      * @var array
      */
     private $command;
+
+     /**
+     * plain API response
+     * @var string
+     */
+    private $raw;
+
+    /**
+     * hash representation of plain API response
+     * @var array
+     */
+    private $hash;
+
     /**
      * Column names available in this responsse
      * NOTE: this includes also FIRST, LAST, LIMIT, COUNT, TOTAL
@@ -53,26 +69,17 @@ class Response extends \HEXONET\ResponseTemplate
      */
     public function __construct($raw, $cmd = null, $ph = [])
     {
-        parent::__construct($raw);
-
-        // care about getting placeholder variables replaced
-        if (preg_match("/\{[A-Z_]+\}/", $this->raw)) {
-            foreach ($ph as $varName => $varVal) {
-                $this->raw = str_replace("{$varName}", $varVal, $this->raw);
-            }
-            $this->raw = preg_replace("/\{[A-Z_]+\}/", "", $this->raw);
-            parent::__construct($this->raw);
+        if (isset($cmd["PASSWORD"])) { // make password no longer accessible
+            $cmd["PASSWORD"] = "***";
         }
 
+        $this->raw = RT::translate($raw, $this->command, $ph);
+        $this->hash = RP::parse($this->raw);
         $this->command = $cmd;
-        if (isset($this->command["PASSWORD"])) { // make password no longer accessible
-            $this->command["PASSWORD"] = "***";
-        }
-
-        $this->columnkeys = array();
-        $this->columns = array();
+        $this->columnkeys = [];
+        $this->columns = [];
         $this->recordIndex = 0;
-        $this->records = array();
+        $this->records = [];
 
         if (array_key_exists("PROPERTY", $this->hash)) {
             $colKeys = array_keys($this->hash["PROPERTY"]);
@@ -98,6 +105,105 @@ class Response extends \HEXONET\ResponseTemplate
                 $this->addRecord($d);
             }
         }
+    }
+
+    /**
+     * Get API response code
+     * @return integer API response code
+     */
+    public function getCode()
+    {
+        return intval($this->hash["CODE"], 10);
+    }
+
+    /**
+     * Get API response description
+     * @return string API response description
+     */
+    public function getDescription()
+    {
+        return $this->hash["DESCRIPTION"];
+    }
+
+    /**
+     * Get Plain API response
+     * @return string Plain API response
+     */
+    public function getPlain()
+    {
+        return $this->raw;
+    }
+
+    /**
+     * Get Queuetime of API response
+     * @return float Queuetime of API response
+     */
+    public function getQueuetime()
+    {
+        if (array_key_exists("QUEUETIME", $this->hash)) {
+            return floatval($this->hash["QUEUETIME"]);
+        }
+        return 0.00;
+    }
+
+    /**
+     * Get API response as Hash
+     * @return array API response hash
+     */
+    public function getHash()
+    {
+        return $this->hash;
+    }
+
+    /**
+     * Get Runtime of API response
+     * @return float Runtime of API response
+     */
+    public function getRuntime()
+    {
+        if (array_key_exists("RUNTIME", $this->hash)) {
+            return floatval($this->hash["RUNTIME"]);
+        }
+        return 0.00;
+    }
+
+    /**
+     * Check if current API response represents an error case
+     * API response code is an 5xx code
+     * @return boolean boolean result
+     */
+    public function isError()
+    {
+        return substr($this->hash["CODE"], 0, 1) === "5";
+    }
+
+    /**
+     * Check if current API response represents a success case
+     * API response code is an 2xx code
+     * @return boolean boolean result
+     */
+    public function isSuccess()
+    {
+        return substr($this->hash["CODE"], 0, 1) === "2";
+    }
+
+    /**
+     * Check if current API response represents a temporary error case
+     * API response code is an 4xx code
+     * @return boolean result
+     */
+    public function isTmpError()
+    {
+        return substr($this->hash["CODE"], 0, 1) === "4";
+    }
+
+    /**
+     * Check if current operation is returned as pending
+     * @return boolean result
+     */
+    public function isPending()
+    {
+        return isset($this->hash["PENDING"]) ? $this->hash["PENDING"] === "1" : false;
     }
 
     /**

@@ -20,62 +20,21 @@ use HEXONET\ResponseParser as RP;
 final class ResponseTemplateManager
 {
     /**
-     * Get ResponseTemplateManager Instance
-     * @return self
-     */
-    public static function getInstance()
-    {
-        if (null === static::$_instance) {
-            static::$_instance = new static();
-        }
-        return static::$_instance;
-    }
-    /**
-     * ResponseTemplateManager Instance
-     * @var ResponseTemplateManager|null
-     */
-    private static $_instance = null;
-    /**
      * template container
      * @var array
      */
-    private $templates;
-
-    /**
-    * clone
-    * Forbid creating a copy of that instance from outside
-    */
-    private function __clone()
-    {
-    }
-
-
-    /**
-    * wakeup
-    * prevent from being unserialized (which would create a second instance of it)
-    */
-    public function __wakeup()
-    {
-    }
-
-    /**
-     * Constructor
-     * Forbid creating an instance from outside
-     */
-    private function __construct()
-    {
-        $this->templates = array(
-            "404" => $this->generateTemplate("421", "Page not found"),
-            "500" => $this->generateTemplate("500", "Internal server error"),
-            "empty" => $this->generateTemplate("423", "Empty API response. Probably unreachable API end point {CONNECTION_URL}"),
-            "invalid" => $this->generateTemplate("423", "Invalid API response. Contact Support"),
-            "error" => $this->generateTemplate("421", "Command failed due to server error. Client should try again"),
-            "expired" => $this->generateTemplate("530", "SESSION NOT FOUND"),
-            "httperror" => $this->generateTemplate("421", "Command failed due to HTTP communication error"),
-            "nocurl" => $this->generateTemplate("423", "API access error: curl_init failed"),
-            "unauthorized" => $this->generateTemplate("530", "Unauthorized")
-        );
-    }
+    public static $templates = [
+        "404" => "[RESPONSE]\r\nCODE=421\r\nDESCRIPTION=Page not found\r\nEOF\r\n",
+        "500" => "[RESPONSE]\r\nCODE=500\r\nDESCRIPTION=Internal server error\r\nEOF\r\n",
+        "empty" => "[RESPONSE]\r\nCODE=423\r\nDESCRIPTION=Empty API response. Probably unreachable API end point {CONNECTION_URL}\r\nEOF\r\n",
+        "error" => "[RESPONSE]\r\nCODE=421\r\nDESCRIPTION=Command failed due to server error. Client should try again\r\nEOF\r\n",
+        "expired" => "[RESPONSE]\r\nCODE=530\r\nDESCRIPTION=SESSION NOT FOUND\r\nEOF\r\n",
+        "httperror" => "[RESPONSE]\r\nCODE=421\r\nDESCRIPTION=Command failed due to HTTP communication error\r\nEOF\r\n",
+        "invalid" => "[RESPONSE]\r\nCODE=423\r\nDESCRIPTION=Invalid API response. Contact Support\r\nEOF\r\n",
+        "nocurl" => "[RESPONSE]\r\nCODE=423\r\nDESCRIPTION=API access error: curl_init failed\r\nEOF\r\n",
+        "notfound" => "[RESPONSE]\r\nCODE=500\r\nDESCRIPTION=Response Template not found\r\nEOF\r\n",
+        "unauthorized" => "[RESPONSE]\r\nCODE=530\r\nDESCRIPTION=Unauthorized\r\nEOF\r\n"
+    ];
 
     /**
      * Generate API response template string for given code and description
@@ -83,7 +42,7 @@ final class ResponseTemplateManager
      * @param string $description API response description
      * @return string generate response template string
      */
-    public function generateTemplate($code, $description)
+    public static function generateTemplate($code, $description)
     {
         return "[RESPONSE]\r\nCODE=" . $code . "\r\nDESCRIPTION=" . $description . "\r\nEOF\r\n";
     }
@@ -91,39 +50,42 @@ final class ResponseTemplateManager
     /**
      * Add response template to template container
      * @param string $id template id
-     * @param string $plain API plain response
+     * @param string $plain API plain response or API response code (when providing $descr)
+     * @param string|null $descr API response description
      * @return self
      */
-    public function addTemplate($id, $plain)
+    public static function addTemplate($id, $plain, $descr = null)
     {
-        $this->templates[$id] = $plain;
-        return self::$_instance;
+        if (is_null($descr)) {
+            self::$templates[$id] = $plain;
+        } else {
+            self::$templates[$id] = self::generateTemplate($plain, $descr);
+        }
+        return new self();
     }
 
     /**
      * Get response template instance from template container
      * @param string $id template id
-     * @return ResponseTemplate template instance
+     * @return Response template instance
      */
-    public function getTemplate($id)
+    public static function getTemplate($id)
     {
-        if ($this->hasTemplate($id)) {
-            return new ResponseTemplate($this->templates[$id]);
+        if (self::hasTemplate($id)) {
+            return new Response($id);
         }
-        return new ResponseTemplate(
-            $this->generateTemplate("500", "Response Template not found")
-        );
+        return new Response("notfound");
     }
 
     /**
      * Return all available response templates
-     * @return array all available response template instances
+     * @return array all available response instances
      */
-    public function getTemplates()
+    public static function getTemplates()
     {
-        $tpls = array();
-        foreach ($this->templates as $key => $raw) {
-            $tpls[$key] = new ResponseTemplate($raw);
+        $tpls = [];
+        foreach (self::$templates as $key => $raw) {
+            $tpls[$key] = new Response($raw);
         }
         return $tpls;
     }
@@ -133,9 +95,9 @@ final class ResponseTemplateManager
      * @param string $id template id
      * @return boolean boolean result
      */
-    public function hasTemplate($id)
+    public static function hasTemplate($id)
     {
-        return array_key_exists($id, $this->templates);
+        return array_key_exists($id, self::$templates);
     }
 
     /**
@@ -144,9 +106,9 @@ final class ResponseTemplateManager
      * @param string $id template id
      * @return boolean boolean result
      */
-    public function isTemplateMatchHash($tpl, $id)
+    public static function isTemplateMatchHash($tpl, $id)
     {
-        $h = $this->getTemplate($id)->getHash();
+        $h = self::getTemplate($id)->getHash();
         return (
             ($h["CODE"] === $tpl["CODE"]) &&
             ($h["DESCRIPTION"] === $tpl["DESCRIPTION"])
@@ -159,9 +121,9 @@ final class ResponseTemplateManager
      * @param string $id template id
      * @return boolean boolean result
      */
-    public function isTemplateMatchPlain($plain, $id)
+    public static function isTemplateMatchPlain($plain, $id)
     {
-        $h = $this->getTemplate($id)->getHash();
+        $h = self::getTemplate($id)->getHash();
         $tpl = RP::parse($plain);
         return (
             ($h["CODE"] === $tpl["CODE"]) &&

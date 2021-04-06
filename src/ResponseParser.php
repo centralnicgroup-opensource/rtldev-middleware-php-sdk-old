@@ -14,7 +14,7 @@ namespace HEXONET;
  *
  * @package HEXONET
  */
-class ResponseParser
+final class ResponseParser
 {
     /**
      * Method to parse plain API response into js object
