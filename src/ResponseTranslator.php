@@ -18,11 +18,21 @@ use HEXONET\ResponseTemplateManager as RTM;
  */
 class ResponseTranslator
 {
-    /* hidden class var of API description regex mappings for translation */
+    /**
+     * hidden class var of API description regex mappings for translation
+     * @var array
+     */
     private static $descriptionRegexMap = [
        "Authorization failed; Operation forbidden by ACL" => "Authorization failed; Used Command `{COMMAND}` not white-listed by your Access Control List"
     ];
 
+    /**
+     * translate a raw api response
+     * @param String $raw API raw response
+     * @param Array $cmd requested API command
+     * @param Array $ph list of place holder vars
+     * @return String
+     */
     public static function translate($raw, $cmd, $ph = [])
     {
         $newraw = empty($raw) ? "empty" : $raw;
