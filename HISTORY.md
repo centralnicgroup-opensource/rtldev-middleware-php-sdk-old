@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/hexonet/php-sdk/compare/v6.0.1...v6.0.2) (2021-05-11)
+
+
+### Bug Fixes
+
+* **api docs:** cleanup build folder before generating the docs to avoid keeping deprecated files ([563266c](https://github.com/hexonet/php-sdk/commit/563266c89b9f69d4067955a12366da9dfd79bb4d))
+
 ## [6.0.1](https://github.com/hexonet/php-sdk/compare/v6.0.0...v6.0.1) (2021-04-06)
 
 
