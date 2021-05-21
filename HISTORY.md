@@ -1,3 +1,10 @@
+## [6.0.7](https://github.com/hexonet/php-sdk/compare/v6.0.6...v6.0.7) (2021-05-21)
+
+
+### Bug Fixes
+
+* **responsetranslator:** fixed regex which stripped out other returned properties ([2848c16](https://github.com/hexonet/php-sdk/commit/2848c1696a804a99a775d0d57e881afcba29a63d))
+
 ## [6.0.6](https://github.com/hexonet/php-sdk/compare/v6.0.5...v6.0.6) (2021-05-21)
 
 
