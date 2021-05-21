@@ -92,4 +92,72 @@ final class ResponseTranslatorTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(530, $r->getCode());
         $this->assertEquals("Authorization failed; Used Command `StatusAccount` not white-listed by your Access Control List", $r->getDescription());
     }
+
+    /**
+     * Test CheckDomainTransfer translations
+     */
+    public function testCheckDomainTransferTranslation(): void
+    {
+        $cmd = [
+            "COMMAND" => "CheckDomainTransfer",
+            "DOMAIN" => "mydomain.com",
+            "AUTH" => "blablabla"
+        ];
+
+        // status: locked
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("This Domain is locked. Initiating a Transfer is therefore impossible.", $r->getDescription());
+
+        // status: requested
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requested)\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("Registration of this Domain Name has not yet completed. Initiating a Transfer is therefore impossible.", $r->getDescription());
+
+        // status: requestedcreate
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requestedcreate)\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("Registration of this Domain Name has not yet completed. Initiating a Transfer is therefore impossible.", $r->getDescription());
+
+        // status: requesteddelete
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requesteddelete)\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("Deletion of this Domain Name has been requested. Initiating a Transfer is therefore impossible.", $r->getDescription());
+
+        // status: pendingdelete
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (pendingdelete)\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("Deletion of this Domain Name is pending. Initiating a Transfer is therefore impossible.", $r->getDescription());
+
+        // Wrong AUTH
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY WRONG AUTH\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("The given Authorization Code is wrong. Initiating a Transfer is therefore impossible.", $r->getDescription());
+
+        // Age of the Domain <= 60d
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY AGE OF THE DOMAIN\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("This Domain Name is within 60 days of initial registration. Initiating a Transfer is therefore impossible.", $r->getDescription());
+    }
+
+    /**
+     * Test translate fn
+     */
+    public function testTranslate(): void
+    {
+        $cmd = [
+            "COMMAND" => "CheckDomainTransfer",
+            "DOMAIN" => "mydomain.com",
+            "AUTH" => "blablabla"
+        ];
+        // no placeholder vars provided
+        $r = RT::translate("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)\r\nEOF\r\n", $cmd);
+        $this->assertEquals("[RESPONSE]\r\ncode=219\r\ndescription=This Domain is locked. Initiating a Transfer is therefore impossible.\r\nEOF\r\n", $r);
+        // placeholder vars provided
+        $r = RT::translate("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)\r\nEOF\r\n", $cmd, []);
+        $this->assertEquals("[RESPONSE]\r\ncode=219\r\ndescription=This Domain is locked. Initiating a Transfer is therefore impossible.\r\nEOF\r\n", $r);
+        // template match
+        $r = RT::translate("404", $cmd);
+        $this->assertEquals("[RESPONSE]\r\nCODE=421\r\nDESCRIPTION=Page not found\r\nEOF\r\n", $r);
+    }
 }
