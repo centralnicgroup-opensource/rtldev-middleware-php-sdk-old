@@ -63,13 +63,6 @@ class ResponseTranslator
             $newraw = RTM::$templates["invalid"];
         }
 
-       // Explicit call for a static template
-        if (RTM::hasTemplate($newraw)) {
-            // don't use getTemplate as it leads to endless loop as of again
-            // creating a response instance
-            $newraw = RTM::$templates[$newraw];
-        }
-
         // generic API response description rewrite
         foreach (self::$descriptionRegexMap as $regex => $val) {
             $qregex = "/description=" . preg_quote($regex) . "/i";

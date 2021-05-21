@@ -36,4 +36,25 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
         $tpl = new R('');
         $this->assertEquals(true, RTM::isTemplateMatchPlain($tpl->getPlain(), "empty"));
     }
+
+    public function testAddTemplate(): void
+    {
+        // providing template in plain text
+        $tplid = "custom404";
+        $descr = "Page not found";
+        $code = 421;
+
+        RTM::addTemplate($tplid, "[RESPONSE]\r\nCODE=$code\r\nDESCRIPTION=$descr\r\nEOF\r\n");
+        $this->assertEquals(true, RTM::hasTemplate($tplid));
+        $tpl = RTM::getTemplate($tplid);
+        $this->assertEquals($code, $tpl->getCode());
+        $this->assertEquals($descr, $tpl->getDescription());
+        // providing template by code and description
+        $tplid = "custom2_404";
+        RTM::addTemplate($tplid, "". $code, $descr);
+        $this->assertEquals(true, RTM::hasTemplate($tplid));
+        $tpl = RTM::getTemplate($tplid);
+        $this->assertEquals($code, $tpl->getCode());
+        $this->assertEquals($descr, $tpl->getDescription());
+    }
 }

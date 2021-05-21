@@ -157,7 +157,7 @@ final class ResponseTranslatorTest extends \PHPUnit\Framework\TestCase
         $r = RT::translate("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)\r\nEOF\r\n", $cmd, []);
         $this->assertEquals("[RESPONSE]\r\ncode=219\r\ndescription=This Domain is locked. Initiating a Transfer is therefore impossible.\r\nEOF\r\n", $r);
         // template match
-        $r = RT::translate("404", $cmd);
-        $this->assertEquals("[RESPONSE]\r\nCODE=421\r\nDESCRIPTION=Page not found\r\nEOF\r\n", $r);
+        $r = RT::translate("[RESPONSE]\r\ncode=219\r\nEOF\r\n", $cmd);
+        $this->assertEquals("[RESPONSE]\r\nCODE=423\r\nDESCRIPTION=Invalid API response. Contact Support\r\nEOF\r\n", $r);
     }
 }

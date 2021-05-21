@@ -296,4 +296,10 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $r = new R("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response. Probably unreachable API end point\r\npending=1\r\nEOF\r\n");
         $this->assertEquals(true, $r->isPending());
     }
+
+    public function testIsTmpError(): void
+    {
+        $r = new R("[RESPONSE]\r\ncode=423\r\ndescription=Empty API response. Probably unreachable API end point\r\nEOF\r\n");
+        $this->assertEquals(true, $r->isTmpError());
+    }
 }
