@@ -1,3 +1,10 @@
+## [6.0.3](https://github.com/hexonet/php-sdk/compare/v6.0.2...v6.0.3) (2021-05-21)
+
+
+### Bug Fixes
+
+* **responsetranslator:** added templates for translating CheckDomainTransfer ([9f812db](https://github.com/hexonet/php-sdk/commit/9f812db89ba6e5e6ff13d017c9e514b89abc4007))
+
 ## [6.0.2](https://github.com/hexonet/php-sdk/compare/v6.0.1...v6.0.2) (2021-05-11)
 
 
