@@ -24,6 +24,7 @@ class ResponseTranslator
      */
     private static $descriptionRegexMap = [
        "Authorization failed; Operation forbidden by ACL" => "Authorization failed; Used Command `{COMMAND}` not white-listed by your Access Control List",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)/WRONG AUTH" => "This Domain is locked and the given Authorization Code is wrong. Initiating a Transfer is therefore impossible.",
        "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)" => "This Domain is locked. Initiating a Transfer is therefore impossible.",
        "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requested)" => "Registration of this Domain Name has not yet completed. Initiating a Transfer is therefore impossible.",
        "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requestedcreate)" => "Registration of this Domain Name has not yet completed. Initiating a Transfer is therefore impossible.",
@@ -68,7 +69,7 @@ class ResponseTranslator
             // match the response for given description
             // NOTE: we match if the description starts with the given description
             // it would also match if it is followed by additional text
-            $qregex = "/description=" . preg_quote($regex) . "([^\r]+)?/i";
+            $qregex = "/description=" . preg_quote($regex) . "/i";
             if (preg_match($qregex, $newraw)) {
                 // replace command place holder with API command name used
                 if (isset($cmd["COMMAND"])) {
