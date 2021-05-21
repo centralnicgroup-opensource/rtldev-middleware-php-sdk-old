@@ -1,3 +1,11 @@
+## [6.0.6](https://github.com/hexonet/php-sdk/compare/v6.0.5...v6.0.6) (2021-05-21)
+
+
+### Bug Fixes
+
+* **responsetranslator:** fixed preg_quote usage, added delimiter ([8988cdd](https://github.com/hexonet/php-sdk/commit/8988cdd1cb896693f145511e56a1eb5a979dc242))
+* **responsetranslator:** reviewed regex and added translation case ([c513fe6](https://github.com/hexonet/php-sdk/commit/c513fe65391288779346bc2c33503f22b6142c1c))
+
 ## [6.0.5](https://github.com/hexonet/php-sdk/compare/v6.0.4...v6.0.5) (2021-05-21)
 
 
