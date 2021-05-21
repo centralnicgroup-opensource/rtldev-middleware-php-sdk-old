@@ -1,3 +1,10 @@
+## [6.0.4](https://github.com/hexonet/php-sdk/compare/v6.0.3...v6.0.4) (2021-05-21)
+
+
+### Bug Fixes
+
+* **responsetranslator:** review generic replacement logic ([c76d2f6](https://github.com/hexonet/php-sdk/commit/c76d2f6e7119e3d689322c0c9cf1d5619bc099b4))
+
 ## [6.0.3](https://github.com/hexonet/php-sdk/compare/v6.0.2...v6.0.3) (2021-05-21)
 
 
