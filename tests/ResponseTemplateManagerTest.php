@@ -51,7 +51,7 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($descr, $tpl->getDescription());
         // providing template by code and description
         $tplid = "custom2_404";
-        RTM::addTemplate($tplid, "". $code, $descr);
+        RTM::addTemplate($tplid, "$code", $descr);
         $this->assertEquals(true, RTM::hasTemplate($tplid));
         $tpl = RTM::getTemplate($tplid);
         $this->assertEquals($code, $tpl->getCode());
