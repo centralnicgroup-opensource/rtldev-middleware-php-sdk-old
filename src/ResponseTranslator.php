@@ -23,7 +23,14 @@ class ResponseTranslator
      * @var array
      */
     private static $descriptionRegexMap = [
-       "Authorization failed; Operation forbidden by ACL" => "Authorization failed; Used Command `{COMMAND}` not white-listed by your Access Control List"
+       "Authorization failed; Operation forbidden by ACL" => "Authorization failed; Used Command `{COMMAND}` not white-listed by your Access Control List",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)" => "This Domain is locked. Initiating a Transfer is therefore impossible.",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requested)" => "Registration of this Domain Name has not yet completed. Initiating a Transfer is therefore impossible.",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requestedcreate)" => "Registration of this Domain Name has not yet completed. Initiating a Transfer is therefore impossible.",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (requesteddelete)" => "Deletion of this Domain Name has been requested. Initiating a Transfer is therefore impossible.",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (pendingdelete)" => "Deletion of this Domain Name is pending. Initiating a Transfer is therefore impossible.",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY WRONG AUTH" => "The given Authorization Code is wrong. Initiating a Transfer is therefore impossible.",
+       "Request is not available; DOMAIN TRANSFER IS PROHIBITED BY AGE OF THE DOMAIN" => "This Domain Name is within 60 days of initial registration. Initiating a Transfer is therefore impossible."
     ];
 
     /**
