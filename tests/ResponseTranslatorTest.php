@@ -134,6 +134,11 @@ final class ResponseTranslatorTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(219, $r->getCode());
         $this->assertEquals("The given Authorization Code is wrong. Initiating a Transfer is therefore impossible.", $r->getDescription());
 
+        // mixed status `locked` and Wrong Auth
+        $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY STATUS (clientTransferProhibited)/WRONG AUTH\r\nEOF\r\n", $cmd);
+        $this->assertEquals(219, $r->getCode());
+        $this->assertEquals("This Domain is locked. Initiating a Transfer is therefore impossible.", $r->getDescription());
+
         // Age of the Domain <= 60d
         $r = new R("[RESPONSE]\r\ncode=219\r\ndescription=Request is not available; DOMAIN TRANSFER IS PROHIBITED BY AGE OF THE DOMAIN\r\nEOF\r\n", $cmd);
         $this->assertEquals(219, $r->getCode());

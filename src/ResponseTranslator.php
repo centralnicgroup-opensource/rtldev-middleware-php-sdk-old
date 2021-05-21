@@ -65,7 +65,10 @@ class ResponseTranslator
 
         // generic API response description rewrite
         foreach (self::$descriptionRegexMap as $regex => $val) {
-            $qregex = "/description=" . preg_quote($regex) . "/i";
+            // match the response for given description
+            // NOTE: we match if the description starts with the given description
+            // it would also match if it is followed by additional text
+            $qregex = "/description=" . preg_quote($regex) . "[^\r]*/i";
             if (preg_match($qregex, $newraw)) {
                 // replace command place holder with API command name used
                 if (isset($cmd["COMMAND"])) {
