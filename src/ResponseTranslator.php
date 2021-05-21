@@ -69,7 +69,7 @@ class ResponseTranslator
             // match the response for given description
             // NOTE: we match if the description starts with the given description
             // it would also match if it is followed by additional text
-            $qregex = "/description=" . preg_quote($regex, "/") . "([^\r]+)?/i";
+            $qregex = "/description=" . preg_quote($regex, "/") . "([^\r\n]+)?/i";
             if (preg_match($qregex, $newraw)) {
                 // replace command place holder with API command name used
                 if (isset($cmd["COMMAND"])) {
