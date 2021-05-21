@@ -1,3 +1,10 @@
+## [6.0.5](https://github.com/hexonet/php-sdk/compare/v6.0.4...v6.0.5) (2021-05-21)
+
+
+### Bug Fixes
+
+* **responsetranslator:** fixed regular expression used ([e974948](https://github.com/hexonet/php-sdk/commit/e974948156495dbf61bb3f6a1959f39a899e24ff))
+
 ## [6.0.4](https://github.com/hexonet/php-sdk/compare/v6.0.3...v6.0.4) (2021-05-21)
 
 
