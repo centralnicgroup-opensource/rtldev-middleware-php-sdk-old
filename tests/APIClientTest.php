@@ -399,12 +399,12 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Parameter LAST in use. Please remove it to avoid issues in requestNextPage.');
-        $r = self::$cl->request(array(
+        $r = self::$cl->request([
             'COMMAND' => 'QueryDomainList',
             'LIMIT' => 2,
             'FIRST' => 0,
             'LAST'  => 1
-        ));
+        ]);
         $this->assertInstanceOf(R::class, $r);
         self::$cl->requestNextResponsePage($r);
     }
@@ -412,10 +412,10 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testRequestNextResponsePageNoFirst(): void
     {
         self::$cl->disableDebugMode();
-        $r = self::$cl->request(array(
+        $r = self::$cl->request([
             'COMMAND' => 'QueryDomainList',
             'LIMIT' => 2
-        ));
+        ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
         $nr = self::$cl->requestNextResponsePage($r);
@@ -433,11 +433,11 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
 
     public function testRequestAllResponsePagesOK(): void
     {
-        $pages = self::$cl->requestAllResponsePages(array(
+        $pages = self::$cl->requestAllResponsePages([
             'COMMAND' => 'QueryUserList',
             'FIRST' => 0,
             'LIMIT' => 10
-        ));
+        ]);
         $this->assertGreaterThan(0, count($pages));
         foreach ($pages as &$p) {
             $this->assertInstanceOf(R::class, $p);
@@ -448,9 +448,9 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testSetUserView(): void
     {
         self::$cl->setUserView('hexotestman.com');
-        $r = self::$cl->request(array(
+        $r = self::$cl->request([
             'COMMAND' => 'GetUserIndex'
-        ));
+        ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
     }
@@ -458,9 +458,9 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testResetUserView(): void
     {
         self::$cl->setUserView();
-        $r = self::$cl->request(array(
+        $r = self::$cl->request([
             'COMMAND' => 'GetUserIndex'
-        ));
+        ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
     }
