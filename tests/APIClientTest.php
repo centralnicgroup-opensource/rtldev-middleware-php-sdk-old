@@ -29,21 +29,21 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testGetPOSTDataSecured(): void
     {
         self::$cl->setCredentials('test.user', 'test.passw0rd');
-        $enc = self::$cl->getPOSTData(array(
+        $enc = self::$cl->getPOSTData([
             'COMMAND' => 'CheckAuthentication',
             'SUBUSER' => 'test.user',
             'PASSWORD' => 'test.passw0rd'
-        ), true);
+        ], true);
         self::$cl->setCredentials('', '');
         $this->assertEquals('s_entity=54cd&s_login=test.user&s_pw=***&s_command=COMMAND%3DCheckAuthentication%0ASUBUSER%3Dtest.user%0APASSWORD%3D%2A%2A%2A', $enc);
     }
 
     public function testGetPOSTDataObj(): void
     {
-        $enc = self::$cl->getPOSTData(array(
+        $enc = self::$cl->getPOSTData([
             'COMMAND' => 'ModifyDomain',
             'AUTH' => 'gwrgwqg%&\\44t3*'
-        ));
+        ]);
         $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DModifyDomain%0AAUTH%3Dgwrgwqg%25%26%5C44t3%2A');
     }
 
@@ -55,10 +55,10 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
 
     public function testGetPOSTDataNull(): void
     {
-        $enc = self::$cl->getPOSTData(array(
+        $enc = self::$cl->getPOSTData([
             'COMMAND' => 'ModifyDomain',
             'AUTH' => null
-        ));
+        ]);
         $this->assertEquals($enc, 's_entity=54cd&s_command=COMMAND%3DModifyDomain');
     }
 
@@ -131,27 +131,27 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testSetOTPSet(): void
     {
         self::$cl->setOTP('12345678');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
           'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_otp=12345678&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetOTPReset(): void
     {
         self::$cl->setOTP('');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
           'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetSessionSet(): void
     {
         self::$cl->setSession('12345678');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
           'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_session=12345678&s_command=COMMAND%3DStatusAccount');
     }
 
@@ -161,18 +161,18 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         self::$cl->setRoleCredentials('myaccountid', 'myrole', 'mypassword')
                 ->setOTP('12345678')
                 ->setSession('12345678');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
             'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_session=12345678&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetSessionReset(): void
     {
         self::$cl->setSession('');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
           'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
@@ -182,9 +182,9 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
                 ->saveSession($_SESSION);
         $cl2 = new CL();
         $cl2->reuseSession($_SESSION);
-        $tmp = $cl2->getPOSTData(array(
+        $tmp = $cl2->getPOSTData([
             'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_session=12345678&s_command=COMMAND%3DStatusAccount');
         self::$cl->setSession('');
     }
@@ -192,54 +192,54 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testSetRemoteIPAddressSet(): void
     {
         self::$cl->setRemoteIPAddress('10.10.10.10');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
           'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_remoteaddr=10.10.10.10&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetRemoteIPAddressReset(): void
     {
         self::$cl->setRemoteIPAddress('');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
             'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetCredentialsSet(): void
     {
         self::$cl->setCredentials('myaccountid', 'mypassword');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
           'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_login=myaccountid&s_pw=mypassword&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetCredentialsReset(): void
     {
         self::$cl->setCredentials('', '');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
             'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetRoleCredentialsSet(): void
     {
         self::$cl->setRoleCredentials('myaccountid', 'myroleid', 'mypassword');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
           'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_login=myaccountid%21myroleid&s_pw=mypassword&s_command=COMMAND%3DStatusAccount');
     }
 
     public function testSetRoleCredentialsReset(): void
     {
         self::$cl->setRoleCredentials('', '', '');
-        $tmp = self::$cl->getPOSTData(array(
+        $tmp = self::$cl->getPOSTData([
             'COMMAND' => 'StatusAccount'
-        ));
+        ]);
         $this->assertEquals($tmp, 's_entity=54cd&s_command=COMMAND%3DStatusAccount');
     }
 
@@ -281,9 +281,9 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     {
         self::$cl->useOTESystem()
                 ->setCredentials('test.user', 'test.passw0rd');
-        $r = self::$cl->loginExtended(array(
+        $r = self::$cl->loginExtended([
             "TIMEOUT" => 60
-        ));
+        ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
         $rec = $r->getRecord(0);
@@ -309,7 +309,10 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     {
         self::$cl->setCredentials('test.user', 'test.passw0rd')
                 ->useOTESystem();
-        $r = self::$cl->request(array( 'COMMAND' => 'CheckDomains', 'DOMAIN' => ['example.com', 'example.net'] ));
+        $r = self::$cl->request([
+            'COMMAND' => 'CheckDomains',
+            'DOMAIN' => ['example.com', 'example.net']
+        ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
         $this->assertEquals($r->getCode(), 200);
@@ -327,7 +330,10 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     {
         self::$cl->setCredentials('test.user', 'test.passw0rd')
                 ->useOTESystem();
-        $r = self::$cl->request(array( 'COMMAND' => 'CheckDomains', 'DOMAIN' => ['example.com', 'dömäin.example', 'example.net'] ));
+        $r = self::$cl->request([
+            'COMMAND' => 'CheckDomains',
+            'DOMAIN' => ['example.com', 'dömäin.example', 'example.net']
+        ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
         $this->assertEquals($r->getCode(), 200);
@@ -348,7 +354,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
         self::$cl->enableDebugMode()
                 ->setCredentials('test.user', 'test.passw0rd')
                 ->useOTESystem();
-        $r = self::$cl->request(array( 'COMMAND' => 'GetUserIndex' ));
+        $r = self::$cl->request(['COMMAND' => 'GetUserIndex']);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
         $this->assertEquals($r->getCode(), 200);
@@ -359,7 +365,7 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
     public function testRequestCodeTmpErrorNoDbg(): void
     {
         self::$cl->disableDebugMode();
-        $r = self::$cl->request(array( 'COMMAND' => 'GetUserIndex' ));
+        $r = self::$cl->request([ 'COMMAND' => 'GetUserIndex' ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
         $this->assertEquals($r->getCode(), 200);
@@ -369,11 +375,11 @@ final class APIClientTest extends \PHPUnit\Framework\TestCase
 
     public function testRequestNextResponsePageNoLast(): void
     {
-        $r = self::$cl->request(array(
+        $r = self::$cl->request([
             'COMMAND' => 'QueryDomainList',
             'LIMIT' => 2,
             'FIRST' => 0
-        ));
+        ]);
         $this->assertInstanceOf(R::class, $r);
         $this->assertEquals($r->isSuccess(), true);
         $nr = self::$cl->requestNextResponsePage($r);

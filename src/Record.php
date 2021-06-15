@@ -21,11 +21,11 @@ class Record
      * row data container
      * e.g.
      * <code>
-     * $data = array(
+     * $data = [
      *   'DOMAIN' => 'mydomain.com',
      *   'USER'   => 'test.user',
      *   // ... further column data ...
-     * );
+     * ];
      * </code>
      * @var array
      */
@@ -35,11 +35,11 @@ class Record
      * Constructor
      * e.g.
      * <code>
-     * $data = array(
+     * $data = [
      *   'DOMAIN' => 'mydomain.com',
      *   'USER'   => 'test.user',
      *   // ... further column data ...
-     * );
+     * ];
      * </code>
      * @param array $data data object
      */

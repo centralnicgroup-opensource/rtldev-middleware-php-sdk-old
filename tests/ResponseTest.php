@@ -53,9 +53,9 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     public function testGetFirstRecordIndexNoFirstRows(): void
     {
         $h = RTM::getTemplate('OK')->getHash();
-        $h["PROPERTY"] = array(
-            "DOMAIN" => array('mydomain1.com', 'mydomain2.com')
-        );
+        $h["PROPERTY"] = [
+            "DOMAIN" => ['mydomain1.com', 'mydomain2.com']
+        ];
         $r = new R(RP::serialize($h));
         $this->assertEquals(0, $r->getFirstRecordIndex());
     }
@@ -98,14 +98,14 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     {
         $r = new R("listP0");
         $rec = $r->getCurrentRecord();
-        $this->assertEquals(array(
+        $this->assertEquals([
             'COUNT' => '2',
             'DOMAIN' => '0-60motorcycletimes.com',
             'FIRST' => '0',
             'LAST' => '1',
             'LIMIT' => '2',
             'TOTAL' => '2701'
-        ), $rec->getData());
+        ], $rec->getData());
     }
 
     public function testGetCurrentRecordNoRows(): void
@@ -127,7 +127,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     {
         $r = new R("listP0");
         $rec = $r->getNextRecord();
-        $this->assertEquals(array('DOMAIN' => '0-be-s01-0.com'), $rec->getData());
+        $this->assertEquals(['DOMAIN' => '0-be-s01-0.com'], $rec->getData());
         $this->assertNull($r->getNextRecord());
     }
 
@@ -150,14 +150,14 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     {
         $r = new R("listP0");
         $r->getNextRecord();
-        $this->assertEquals(array(
+        $this->assertEquals([
             'COUNT' => '2',
             'DOMAIN' => '0-60motorcycletimes.com',
             'FIRST' => '0',
             'LAST' => '1',
             'LIMIT' => '2',
             'TOTAL' => '2701'
-        ), ($r->getPreviousRecord())->getData());
+        ], ($r->getPreviousRecord())->getData());
         $this->assertNull($r->getPreviousRecord());
     }
 
@@ -194,9 +194,9 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     public function testGetLastRecordIndexNoLastRows(): void
     {
         $h = RTM::getTemplate('OK')->getHash();
-        $h["PROPERTY"] = array(
-            'DOMAIN' => array('mydomain1.com', 'mydomain2.com')
-        );
+        $h["PROPERTY"] = [
+            'DOMAIN' => ['mydomain1.com', 'mydomain2.com']
+        ];
         $r = new R(RP::serialize($h));
         $this->assertEquals(1, $r->getLastRecordIndex());
     }

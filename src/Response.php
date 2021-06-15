@@ -92,7 +92,7 @@ class Response
                 }
             }
             for ($i = 0; $i < $count; $i++) {
-                $d = array();
+                $d = [];
                 foreach ($colKeys as $k) {
                     $col = $this->getColumn($k);
                     if ($col) {
@@ -359,17 +359,17 @@ class Response
      */
     public function getListHash()
     {
-        $lh = array();
+        $lh = [];
         foreach ($this->records as $rec) {
             $lh[] = $rec->getData();
         }
-        return array(
+        return [
             "LIST" => $lh,
-            "meta" => array(
+            "meta" => [
                 "columns" => $this->getColumnKeys(),
                 "pg" => $this->getPagination()
-            )
-        );
+            ]
+        ];
     }
 
     /**
@@ -419,7 +419,7 @@ class Response
      */
     public function getPagination()
     {
-        return array(
+        return [
             "COUNT" => $this->getRecordsCount(),
             "CURRENTPAGE" => $this->getCurrentPageNumber(),
             "FIRST" => $this->getFirstRecordIndex(),
@@ -429,7 +429,7 @@ class Response
             "PAGES" => $this->getNumberOfPages(),
             "PREVIOUSPAGE" => $this->getPreviousPageNumber(),
             "TOTAL" => $this->getRecordsTotalCount()
-        );
+        ];
     }
 
     /**

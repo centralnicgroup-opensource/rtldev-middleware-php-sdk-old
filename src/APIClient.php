@@ -253,10 +253,10 @@ class APIClient
      */
     public function saveSession(&$session)
     {
-        $session["socketcfg"] = array(
+        $session["socketcfg"] = [
             "entity" => $this->socketConfig->getSystemEntity(),
             "session" => $this->socketConfig->getSession()
-        );
+        ];
         return $this;
     }
 
@@ -351,7 +351,7 @@ class APIClient
     public function login($otp = "")
     {
         $this->setOTP($otp);
-        $rr = $this->request(array("COMMAND" => "StartSession"));
+        $rr = $this->request(["COMMAND" => "StartSession"]);
         if ($rr->isSuccess()) {
             $col = $rr->getColumn("SESSION");
             $this->setSession($col ? $col->getData()[0] : "");
@@ -370,7 +370,7 @@ class APIClient
     {
         $this->setOTP($otp);
         $rr = $this->request(array_merge(
-            array("COMMAND" => "StartSession"),
+            ["COMMAND" => "StartSession"],
             $params
         ));
         if ($rr->isSuccess()) {
@@ -386,7 +386,7 @@ class APIClient
      */
     public function logout()
     {
-        $rr = $this->request(array("COMMAND" => "EndSession"));
+        $rr = $this->request(["COMMAND" => "EndSession"]);
         if ($rr->isSuccess()) {
             $this->setSession("");
         }
@@ -550,8 +550,8 @@ class APIClient
      */
     public function requestAllResponsePages($cmd)
     {
-        $responses = array();
-        $rr = $this->request(array_merge(array(), $cmd, array("FIRST" => 0)));
+        $responses = [];
+        $rr = $this->request(array_merge([], $cmd, ["FIRST" => 0]));
         $tmp = $rr;
         $idx = 0;
         do {
