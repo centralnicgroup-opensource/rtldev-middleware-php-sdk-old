@@ -37,7 +37,7 @@ final class ResponseParser
                     $prop = strtoupper($m[1]);
                     $prop = preg_replace("/\s/", "", $prop);
                     if (array_key_exists($prop, $hash["PROPERTY"])) {
-                        array_push($hash["PROPERTY"][$prop], $value);
+                        $hash["PROPERTY"][$prop][] = $value;
                     } else {
                         $hash["PROPERTY"][$prop] = [$value];
                     }
