@@ -1,3 +1,11 @@
+## [6.0.8](https://github.com/hexonet/php-sdk/compare/v6.0.7...v6.0.8) (2021-06-15)
+
+
+### Performance Improvements
+
+* **array_push:** replaced with brackets notation ([7008d50](https://github.com/hexonet/php-sdk/commit/7008d5034903a931354c96d3653df748c5e610e8))
+* **short array syntax:** usage reviewed ([c6b7261](https://github.com/hexonet/php-sdk/commit/c6b72613b1eebffe56783792bc62248263eb2423))
+
 ## [6.0.7](https://github.com/hexonet/php-sdk/compare/v6.0.6...v6.0.7) (2021-05-21)
 
 
