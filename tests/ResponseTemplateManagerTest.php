@@ -11,9 +11,9 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetTemplateNotFound(): void
     {
-        $tpl = RTM::getTemplate('IwontExist');
+        $tpl = RTM::getTemplate("IwontExist");
         $this->assertEquals(500, $tpl->getCode());
-        $this->assertEquals('Response Template not found', $tpl->getDescription());
+        $this->assertEquals("Response Template not found", $tpl->getDescription());
     }
 
     public function testGetTemplates(): void
@@ -27,13 +27,13 @@ final class ResponseTemplateManagerTest extends \PHPUnit\Framework\TestCase
 
     public function testIsTemplateMatchHash(): void
     {
-        $tpl = new R('');
+        $tpl = new R("");
         $this->assertEquals(true, RTM::isTemplateMatchHash($tpl->getHash(), "empty"));
     }
 
     public function testIsTemplateMatchPlain(): void
     {
-        $tpl = new R('');
+        $tpl = new R("");
         $this->assertEquals(true, RTM::isTemplateMatchPlain($tpl->getPlain(), "empty"));
     }
 
