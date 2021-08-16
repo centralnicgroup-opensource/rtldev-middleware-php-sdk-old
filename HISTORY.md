@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/hexonet/php-sdk/compare/v6.0.8...v6.1.0) (2021-08-16)
+
+
+### Features
+
+* **auto idn conversion:** for Object related commands ([a855500](https://github.com/hexonet/php-sdk/commit/a8555004a012bbd2876e42cbcbf49c158c12540b))
+
 ## [6.0.8](https://github.com/hexonet/php-sdk/compare/v6.0.7...v6.0.8) (2021-06-15)
 
 
