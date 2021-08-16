@@ -52,9 +52,9 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
 
     public function testGetFirstRecordIndexNoFirstRows(): void
     {
-        $h = RTM::getTemplate('OK')->getHash();
+        $h = RTM::getTemplate("OK")->getHash();
         $h["PROPERTY"] = [
-            "DOMAIN" => ['mydomain1.com', 'mydomain2.com']
+            "DOMAIN" => ["mydomain1.com", "mydomain2.com"]
         ];
         $r = new R(RP::serialize($h));
         $this->assertEquals(0, $r->getFirstRecordIndex());
@@ -70,14 +70,14 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     public function testGetColumnIndexExists(): void
     {
         $r = new R("listP0");
-        $data = $r->getColumnIndex('DOMAIN', 0);
-        $this->assertEquals('0-60motorcycletimes.com', $data);
+        $data = $r->getColumnIndex("DOMAIN", 0);
+        $this->assertEquals("0-60motorcycletimes.com", $data);
     }
 
     public function testGetColumnIndexNotExists(): void
     {
         $r = new R("listP0");
-        $data = $r->getColumnIndex('COLUMN_NOT_EXISTS', 0);
+        $data = $r->getColumnIndex("COLUMN_NOT_EXISTS", 0);
         $this->assertNull($data);
     }
 
@@ -86,12 +86,12 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $r = new R("listP0");
         $colKeys = $r->getColumnKeys();
         $this->assertCount(6, $colKeys);
-        $this->assertContains('COUNT', $colKeys);
-        $this->assertContains('DOMAIN', $colKeys);
-        $this->assertContains('FIRST', $colKeys);
-        $this->assertContains('LAST', $colKeys);
-        $this->assertContains('LIMIT', $colKeys);
-        $this->assertContains('TOTAL', $colKeys);
+        $this->assertContains("COUNT", $colKeys);
+        $this->assertContains("DOMAIN", $colKeys);
+        $this->assertContains("FIRST", $colKeys);
+        $this->assertContains("LAST", $colKeys);
+        $this->assertContains("LIMIT", $colKeys);
+        $this->assertContains("TOTAL", $colKeys);
     }
 
     public function testGetCurrentRecordRows(): void
@@ -99,12 +99,12 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $r = new R("listP0");
         $rec = $r->getCurrentRecord();
         $this->assertEquals([
-            'COUNT' => '2',
-            'DOMAIN' => '0-60motorcycletimes.com',
-            'FIRST' => '0',
-            'LAST' => '1',
-            'LIMIT' => '2',
-            'TOTAL' => '2701'
+            "COUNT" => "2",
+            "DOMAIN" => "0-60motorcycletimes.com",
+            "FIRST" => "0",
+            "LAST" => "1",
+            "LIMIT" => "2",
+            "TOTAL" => "2701"
         ], $rec->getData());
     }
 
@@ -127,7 +127,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     {
         $r = new R("listP0");
         $rec = $r->getNextRecord();
-        $this->assertEquals(['DOMAIN' => '0-be-s01-0.com'], $rec->getData());
+        $this->assertEquals(["DOMAIN" => "0-be-s01-0.com"], $rec->getData());
         $this->assertNull($r->getNextRecord());
     }
 
@@ -135,15 +135,15 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
     {
         $r = new R("listP0");
         $pager = $r->getPagination();
-        $this->assertArrayHasKey('COUNT', $pager);
-        $this->assertArrayHasKey('CURRENTPAGE', $pager);
-        $this->assertArrayHasKey('FIRST', $pager);
-        $this->assertArrayHasKey('LAST', $pager);
-        $this->assertArrayHasKey('LIMIT', $pager);
-        $this->assertArrayHasKey('NEXTPAGE', $pager);
-        $this->assertArrayHasKey('PAGES', $pager);
-        $this->assertArrayHasKey('PREVIOUSPAGE', $pager);
-        $this->assertArrayHasKey('TOTAL', $pager);
+        $this->assertArrayHasKey("COUNT", $pager);
+        $this->assertArrayHasKey("CURRENTPAGE", $pager);
+        $this->assertArrayHasKey("FIRST", $pager);
+        $this->assertArrayHasKey("LAST", $pager);
+        $this->assertArrayHasKey("LIMIT", $pager);
+        $this->assertArrayHasKey("NEXTPAGE", $pager);
+        $this->assertArrayHasKey("PAGES", $pager);
+        $this->assertArrayHasKey("PREVIOUSPAGE", $pager);
+        $this->assertArrayHasKey("TOTAL", $pager);
     }
 
     public function testGetPreviousRecord(): void
@@ -151,12 +151,12 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
         $r = new R("listP0");
         $r->getNextRecord();
         $this->assertEquals([
-            'COUNT' => '2',
-            'DOMAIN' => '0-60motorcycletimes.com',
-            'FIRST' => '0',
-            'LAST' => '1',
-            'LIMIT' => '2',
-            'TOTAL' => '2701'
+            "COUNT" => "2",
+            "DOMAIN" => "0-60motorcycletimes.com",
+            "FIRST" => "0",
+            "LAST" => "1",
+            "LIMIT" => "2",
+            "TOTAL" => "2701"
         ], ($r->getPreviousRecord())->getData());
         $this->assertNull($r->getPreviousRecord());
     }
@@ -193,9 +193,9 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
 
     public function testGetLastRecordIndexNoLastRows(): void
     {
-        $h = RTM::getTemplate('OK')->getHash();
+        $h = RTM::getTemplate("OK")->getHash();
         $h["PROPERTY"] = [
-            'DOMAIN' => ['mydomain1.com', 'mydomain2.com']
+            "DOMAIN" => ["mydomain1.com", "mydomain2.com"]
         ];
         $r = new R(RP::serialize($h));
         $this->assertEquals(1, $r->getLastRecordIndex());
@@ -256,14 +256,14 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
 
     public function testGetHash(): void
     {
-        $h = (new R(''))->getHash();
+        $h = (new R(""))->getHash();
         $this->assertEquals("423", $h["CODE"]);
         $this->assertEquals("Empty API response. Probably unreachable API end point", $h["DESCRIPTION"]);
     }
 
     public function testGetQueuetimeNo(): void
     {
-        $r = new R('');
+        $r = new R("");
         $this->assertEquals(0, $r->getQueuetime());
     }
 
@@ -275,7 +275,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
 
     public function testGetRuntimeNo(): void
     {
-        $r = new R('');
+        $r = new R("");
         $this->assertEquals(0, $r->getRuntime());
     }
 
@@ -287,7 +287,7 @@ final class ResponseTest extends \PHPUnit\Framework\TestCase
 
     public function testIsPendingNo(): void
     {
-        $r = new R('');
+        $r = new R("");
         $this->assertEquals(false, $r->isPending());
     }
 

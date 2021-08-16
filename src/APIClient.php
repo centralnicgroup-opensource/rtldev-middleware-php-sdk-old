@@ -174,7 +174,7 @@ class APIClient
     {
         $mods = empty($modules) ? "" : " " . implode(" ", $modules);
         $this->ua = (
-            $str . " (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $rv . ")" . $mods . " php-sdk/" . $this->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION])
+            $str . " (" . PHP_OS . "; " . php_uname("m") . "; rv:" . $rv . ")" . $mods . " php-sdk/" . $this->getVersion() . " php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION])
         );
         return $this;
     }
@@ -186,7 +186,7 @@ class APIClient
     public function getUserAgent()
     {
         if (!strlen($this->ua)) {
-            $this->ua = "PHP-SDK (" . PHP_OS . "; " . php_uname('m') . "; rv:" . $this->getVersion() . ") php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
+            $this->ua = "PHP-SDK (" . PHP_OS . "; " . php_uname("m") . "; rv:" . $this->getVersion() . ") php/" . implode(".", [PHP_MAJOR_VERSION, PHP_MINOR_VERSION, PHP_RELEASE_VERSION]);
         }
         return $this->ua;
     }
@@ -429,18 +429,25 @@ class APIClient
         if (is_string($cmd) || preg_match("/^CONVERTIDN$/i", $cmd["COMMAND"])) {
             return $cmd;
         }
-        $keys = preg_grep("/^(DOMAIN|NAMESERVER|DNSZONE)([0-9]*)$/i", array_keys($cmd));
+        $cmdkeys = array_keys($cmd);
+        $prodregex = "/^(DOMAIN|NAMESERVER|DNSZONE|OBJECTID)([0-9]*)$/";
+        $keys = preg_grep($prodregex, $cmdkeys);
         if (empty($keys)) {
             return $cmd;
         }
         $toconvert = [];
         $idxs = [];
         foreach ($keys as $key) {
-            if (isset($cmd[$key])) {
-                if (preg_match('/[^a-z0-9\.\- ]/i', $cmd[$key])) {// maybe preg_grep as replacement
-                    $toconvert[] = $cmd[$key];
-                    $idxs[] = $key;
-                }
+            if (
+                isset($cmd[$key])
+                && preg_match("/[^a-z0-9\.\- ]/i", $cmd[$key])
+                && (
+                    ($key !== "OBJECTID")
+                    || preg_match("/^(DOMAIN|NAMESERVER|DNSZONE)$/", $cmd["OBJECTCLASS"])
+                )
+            ) {
+                $toconvert[] = $cmd[$key];
+                $idxs[] = $key;
             }
         }
         if (empty($toconvert)) {
@@ -495,8 +502,8 @@ class APIClient
             CURLOPT_RETURNTRANSFER  =>  1,
             CURLOPT_USERAGENT       =>  $this->getUserAgent(),
             CURLOPT_HTTPHEADER      =>  [
-                'Expect:',
-                'Content-type: text/html; charset=UTF-8'
+                "Expect:",
+                "Content-type: text/html; charset=UTF-8"
             ]
         ] + $this->curlopts);
         $r = curl_exec($curl);
@@ -566,7 +573,7 @@ class APIClient
      * @param string $uid subuser account name
      * @return $this
      */
-    public function setUserView($uid = '')
+    public function setUserView($uid = "")
     {
         $this->socketConfig->setUser($uid);
         return $this;

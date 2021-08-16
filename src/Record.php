@@ -22,8 +22,8 @@ class Record
      * e.g.
      * <code>
      * $data = [
-     *   'DOMAIN' => 'mydomain.com',
-     *   'USER'   => 'test.user',
+     *   "DOMAIN" => "mydomain.com",
+     *   "USER"   => "test.user",
      *   // ... further column data ...
      * ];
      * </code>
@@ -36,8 +36,8 @@ class Record
      * e.g.
      * <code>
      * $data = [
-     *   'DOMAIN' => 'mydomain.com',
-     *   'USER'   => 'test.user',
+     *   "DOMAIN" => "mydomain.com",
+     *   "USER"   => "test.user",
      *   // ... further column data ...
      * ];
      * </code>
