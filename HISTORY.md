@@ -1,3 +1,10 @@
+## [6.1.1](https://github.com/hexonet/php-sdk/compare/v6.1.0...v6.1.1) (2021-08-18)
+
+
+### Bug Fixes
+
+* **auto idn conversion:** added object classes ([acda2dc](https://github.com/hexonet/php-sdk/commit/acda2dc6bf485b0f596cb5a2187125ec7ce38716))
+
 # [6.1.0](https://github.com/hexonet/php-sdk/compare/v6.0.8...v6.1.0) (2021-08-16)
 
 
