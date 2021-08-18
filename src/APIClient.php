@@ -443,7 +443,7 @@ class APIClient
                 && preg_match("/[^a-z0-9\.\- ]/i", $cmd[$key])
                 && (
                     ($key !== "OBJECTID")
-                    || preg_match("/^(DOMAIN|NAMESERVER|DNSZONE)$/", $cmd["OBJECTCLASS"])
+                    || preg_match("/^(DOMAIN|DELETEDDOMAIN|DOMAINAPPLICATION|NAMESERVER|DNSZONE)$/", $cmd["OBJECTCLASS"])
                 )
             ) {
                 $toconvert[] = $cmd[$key];
