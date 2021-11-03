@@ -140,7 +140,7 @@ class APIClient
         }
         $tmp = preg_replace("/\n$/", "", $tmp);
 
-        $data .= rawurlencode("s_command") . "=" . rawurlencode($tmp);
+        $data .= urlencode("s_command") . "=" . urlencode($tmp);
         return $data;
     }
 
@@ -503,7 +503,7 @@ class APIClient
             CURLOPT_USERAGENT       =>  $this->getUserAgent(),
             CURLOPT_HTTPHEADER      =>  [
                 "Expect:",
-                "Content-type: text/html; charset=UTF-8"
+                "Content-Type: application/x-www-form-urlencoded"
             ]
         ] + $this->curlopts);
         $r = curl_exec($curl);

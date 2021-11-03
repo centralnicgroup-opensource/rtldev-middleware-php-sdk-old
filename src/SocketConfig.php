@@ -72,25 +72,25 @@ class SocketConfig
     {
         $data = "";
         if (strlen($this->entity)) {
-            $data .= rawurlencode("s_entity") . "=" . rawurlencode($this->entity) . "&";
+            $data .= urlencode("s_entity") . "=" . urlencode($this->entity) . "&";
         }
         if (strlen($this->login)) {
-            $data .= rawurlencode("s_login") . "=" . rawurlencode($this->login) . "&";
+            $data .= urlencode("s_login") . "=" . urlencode($this->login) . "&";
         }
         if (strlen($this->otp)) {
-            $data .= rawurlencode("s_otp") . "=" . rawurlencode($this->otp) . "&";
+            $data .= urlencode("s_otp") . "=" . urlencode($this->otp) . "&";
         }
         if (strlen($this->pw)) {
-            $data .= rawurlencode("s_pw") . "=" . rawurlencode($this->pw) . "&";
+            $data .= urlencode("s_pw") . "=" . urlencode($this->pw) . "&";
         }
         if (strlen($this->remoteaddr)) {
-            $data .= rawurlencode("s_remoteaddr") . "=" . rawurlencode($this->remoteaddr) . "&";
+            $data .= urlencode("s_remoteaddr") . "=" . urlencode($this->remoteaddr) . "&";
         }
         if (strlen($this->session)) {
-            $data .= rawurlencode("s_session") . "=" . rawurlencode($this->session) . "&";
+            $data .= urlencode("s_session") . "=" . urlencode($this->session) . "&";
         }
         if (strlen($this->user)) {
-            $data .= rawurlencode("s_user") . "=" . rawurlencode($this->user) . "&";
+            $data .= urlencode("s_user") . "=" . urlencode($this->user) . "&";
         }
         return $data;
     }
