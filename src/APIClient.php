@@ -28,7 +28,7 @@ class APIClient
      * API connection timeout setting
      * @var integer
      */
-    private static $socketTimeout = 300000;
+    // private static $socketTimeout = 300000;
     /**
      * API connection url
      * @var string
