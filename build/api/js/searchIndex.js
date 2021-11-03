@@ -191,11 +191,6 @@ Search.appendIndex(
             "summary": "Set\u0020LIVE\u0020System\u0020for\u0020API\u0020communication\u0020\u0028this\u0020is\u0020the\u0020default\u0020setting\u0029",
             "url": "classes/HEXONET-APIClient.html#method_useLIVESystem"
         },                {
-            "fqsen": "\\HEXONET\\APIClient\u003A\u003A\u0024socketTimeout",
-            "name": "socketTimeout",
-            "summary": "API\u0020connection\u0020timeout\u0020setting",
-            "url": "classes/HEXONET-APIClient.html#property_socketTimeout"
-        },                {
             "fqsen": "\\HEXONET\\APIClient\u003A\u003A\u0024socketURL",
             "name": "socketURL",
             "summary": "API\u0020connection\u0020url",

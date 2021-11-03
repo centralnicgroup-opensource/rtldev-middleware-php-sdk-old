@@ -1,3 +1,11 @@
+## [6.1.2](https://github.com/hexonet/php-sdk/compare/v6.1.1...v6.1.2) (2021-11-03)
+
+
+### Bug Fixes
+
+* **apiclient:** deactivate unused private property ([ac177f7](https://github.com/hexonet/php-sdk/commit/ac177f780f5de9484f6685ecf10fcf2488fbc642))
+* **apiclient:** use correct content-type for post requests ([0dc02d6](https://github.com/hexonet/php-sdk/commit/0dc02d6ebef79e5a8ba9442639b8bde602ce424a))
+
 ## [6.1.1](https://github.com/hexonet/php-sdk/compare/v6.1.0...v6.1.1) (2021-08-18)
 
 
