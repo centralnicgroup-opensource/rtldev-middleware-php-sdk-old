@@ -7,6 +7,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/hexonet/php-sdk/blob/master/CONTRIBUTING.md)
 
+_DEPRECATION NOTICE: Please consider the revamped version of this module available under the CentralNic Reseller namespace. It supports connecting to the HEXONET API as well as to the RRPproxy API. Find the successor [here](https://github.com/centralnic-reseller/php-sdk)_
+
 This module is a connector library for the insanely fast HEXONET Backend API. For further informations visit our [homepage](http://hexonet.net) and do not hesitate to [contact us](https://www.hexonet.net/contact).
 
 ## Resources
